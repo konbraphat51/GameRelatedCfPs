@@ -18,7 +18,8 @@ src/
 ├── Data/Venues.json        データセット
 └── Styles/Global.css       デザイントークン (ライト/ダーク) と基本スタイル
 Tests/                      Vitest 単体テスト (データセット検証を含む)
-.github/workflows/          GitHub Pages デプロイ
+Scripts/                    情報更新 Issue の本文生成 (tsx で実行)
+.github/workflows/          GitHub Pages デプロイと2か月ごとの更新 Issue
 ```
 
 ## レイヤ
@@ -30,6 +31,7 @@ Tests/                      Vitest 単体テスト (データセット検証を�
   - `CfpStatusResolver`: 基準日に対する `open` / `rolling` / `unknown` / `closed` と次の締切を求めます。
   - `VenueFilter`: キーワード・種別・地域・状況・ゲームの扱い・分野で絞り込み、並べ替えます。
   - `DateUtility`: ISO 日付とロケールに応じた書式化を扱います。
+  - `FavoriteCookie`: お気に入りの id をクッキーに保存・読込します。
 - **Components** は props を描画しイベントを emit するだけで、状態の所有者は `App.vue` のみです。
 
 ## クラス図
@@ -65,6 +67,7 @@ classDiagram
   }
   class FilterCriteria {
     keyword: string
+    favoritesOnly: boolean
     venueTypes: VenueType[]
     regions: Region[]
     statuses: CfpStatus[]
@@ -76,7 +79,7 @@ classDiagram
     findNextDeadline(venue, today) Deadline?
   }
   class VenueFilter {
-    filterVenues(list, criteria, today) Venue[]
+    filterVenues(list, criteria, today, favoriteIds) Venue[]
     sortVenues(list, sortKey, today) Venue[]
   }
   VenueDataset "1" o-- "*" Venue
@@ -94,6 +97,7 @@ graph TD
   App --> FilterPanel --> ChipGroup
   App --> VenueList --> VenueCard
   VenueCard --> StatusBadge
+  VenueCard --> FavoriteButton
   VenueCard --> DeadlineList
   App --> AppFooter
 ```
@@ -132,6 +136,14 @@ sequenceDiagram
 「次の締切」で並べ替えると、`open` を締切日順に並べ、その後に `rolling`・`closed`・`unknown` が続きます。
 
 「本日」は閲覧者のローカル日付のため、サイトを再ビルドしなくても状況が更新されます。
+
+## お気に入り
+
+`App.vue` がお気に入り id の集合を保持し、`VenueCard` の ★ (`FavoriteButton`) からの `toggle-favorite` イベントで更新します。変更のたびに `FavoriteCookie` がクッキー `game-related-cfps-favorites` (Path はサイトのベースパス、有効期限 1 年、SameSite=Lax) に書き込み、起動時に読み込みます。「お気に入りのみ」がオンのとき、`filterVenues` は集合に含まれる id だけを残します。
+
+## 更新リマインダ
+
+`Scripts/UpdateIssueBuilder.ts` は `CfpStatusResolver` を再利用して、状況ごとの再確認チェックリストを作ります。`.github/workflows/DataUpdateIssue.yml` が2か月ごとに `pnpm issue-body` を実行し、その出力を本文として konbraphat51 宛ての Issue を作成します。
 
 ## 多言語化
 

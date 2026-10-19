@@ -7,6 +7,7 @@ A static website that lists the **2027 calls for papers (CfPs)** of academic con
 - Covers academic conferences whose **whole scope is games** (e.g. CHI PLAY, FDG, DiGRA, Game Programming Workshop) and conferences that have a **dedicated game track** (e.g. the game studies division of ICA). Journals are covered likewise: game journals (e.g. IEEE Transactions on Games, Game Studies) and game-related special issues of general journals. Game _theory_ (economics) and industry events (e.g. CEDEC, GDC) are out of scope.
 - Shows every known submission deadline with the remaining days; venues whose 2027 CfP is not yet published are marked **Unknown**, with a hint from the previous edition, and journals accepting submissions at any time are marked **Rolling**.
 - Each venue is classified into one or more research **fields** (HCI, AI, game studies, education, …) and can be filtered by type (conference / journal), field, region (Japan / international), CfP status and game focus.
+- Mark venues as **favorites** with the ★ button; favorites are kept in a browser cookie and can be shown alone with the "Favorites only" filter.
 - UI in English (default) and Japanese.
 
 ## Setup (first time)
@@ -30,19 +31,24 @@ pnpm dev
 
 ## Important CLIs
 
-| Command          | Purpose                                             |
-| ---------------- | --------------------------------------------------- |
-| `pnpm dev`       | Start the development server with hot reload        |
-| `pnpm build`     | Type-check and build the static site into `dist/`   |
-| `pnpm preview`   | Serve the production build locally                  |
-| `pnpm test`      | Run unit tests, including validation of the dataset |
-| `pnpm lint`      | Run ESLint                                          |
-| `pnpm typecheck` | Run `vue-tsc` type checking                         |
-| `pnpm format`    | Format all files with Prettier                      |
+| Command           | Purpose                                             |
+| ----------------- | --------------------------------------------------- |
+| `pnpm dev`        | Start the development server with hot reload        |
+| `pnpm build`      | Type-check and build the static site into `dist/`   |
+| `pnpm preview`    | Serve the production build locally                  |
+| `pnpm test`       | Run unit tests, including validation of the dataset |
+| `pnpm lint`       | Run ESLint                                          |
+| `pnpm typecheck`  | Run `vue-tsc` type checking                         |
+| `pnpm format`     | Format all files with Prettier                      |
+| `pnpm issue-body` | Print the data-update issue checklist for today     |
 
 ## Deployment
 
 Every push to `main` runs [.github/workflows/DeployPages.yml](.github/workflows/DeployPages.yml), which lints, tests, builds and deploys to GitHub Pages. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions** once.
+
+## Bimonthly update reminder
+
+[.github/workflows/DataUpdateIssue.yml](.github/workflows/DataUpdateIssue.yml) opens a "Data update: YYYY-MM" issue at 00:00 UTC on the 1st of every odd month (Jan, Mar, May, Jul, Sep, Nov). It is assigned to and mentions @konbraphat51, so GitHub sends a notification, and it lists every venue to re-check (Unknown calls, calls closing soon, passed calls, journals). It can also be run manually from the Actions tab (**Run workflow**). GitHub pauses scheduled workflows in public repositories after 60 days without commits; committing the data update that each issue asks for keeps the schedule active, and a paused workflow can be re-enabled from the Actions tab.
 
 ## Updating the data
 

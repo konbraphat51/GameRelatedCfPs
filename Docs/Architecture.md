@@ -18,7 +18,8 @@ src/
 ├── Data/Venues.json        The dataset
 └── Styles/Global.css       Design tokens (light/dark) and base styles
 Tests/                      Vitest unit tests, including dataset validation
-.github/workflows/          GitHub Pages deployment
+Scripts/                    Data-update issue body builder (run with tsx)
+.github/workflows/          GitHub Pages deployment and the bimonthly update issue
 ```
 
 ## Layers
@@ -30,6 +31,7 @@ Tests/                      Vitest unit tests, including dataset validation
   - `CfpStatusResolver` derives `open` / `rolling` / `unknown` / `closed` and the next deadline for a reference date.
   - `VenueFilter` filters by keyword, venue type, region, status, game scope and fields, and sorts.
   - `DateUtility` handles ISO dates and locale-aware formatting.
+  - `FavoriteCookie` stores and reads favourite venue ids in a cookie.
 - **Components** only render props and emit events; `App.vue` is the single owner of state.
 
 ## Class diagram
@@ -65,6 +67,7 @@ classDiagram
   }
   class FilterCriteria {
     keyword: string
+    favoritesOnly: boolean
     venueTypes: VenueType[]
     regions: Region[]
     statuses: CfpStatus[]
@@ -76,7 +79,7 @@ classDiagram
     findNextDeadline(venue, today) Deadline?
   }
   class VenueFilter {
-    filterVenues(list, criteria, today) Venue[]
+    filterVenues(list, criteria, today, favoriteIds) Venue[]
     sortVenues(list, sortKey, today) Venue[]
   }
   VenueDataset "1" o-- "*" Venue
@@ -94,6 +97,7 @@ graph TD
   App --> FilterPanel --> ChipGroup
   App --> VenueList --> VenueCard
   VenueCard --> StatusBadge
+  VenueCard --> FavoriteButton
   VenueCard --> DeadlineList
   App --> AppFooter
 ```
@@ -132,6 +136,14 @@ Rules are evaluated top to bottom:
 Sorting by "next deadline" lists `open` venues by date, then `rolling`, `closed` and `unknown`.
 
 "Today" is the viewer's local date, so statuses update without rebuilding the site.
+
+## Favorites
+
+`App.vue` owns the set of favourite ids and updates it on `toggle-favorite` events from the ★ `FavoriteButton` in each `VenueCard`. Every change is written by `FavoriteCookie` to the `game-related-cfps-favorites` cookie (path = site base path, one-year max age, SameSite=Lax), which is read back on start-up. With "Favorites only" on, `filterVenues` keeps only ids in the set.
+
+## Update reminder
+
+`Scripts/UpdateIssueBuilder.ts` reuses `CfpStatusResolver` to group venues into re-check checklists. `.github/workflows/DataUpdateIssue.yml` runs `pnpm issue-body` every two months and opens an issue with that output, assigned to konbraphat51.
 
 ## Localization
 
