@@ -1,0 +1,38 @@
+# Opens a data-update issue every two months (1st of Jan/Mar/May/Jul/Sep/Nov) and assigns the maintainer.
+name: Bimonthly data update issue
+
+on:
+  schedule:
+    - cron: "0 0 1 */2 *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  open-issue:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      MAINTAINER: konbraphat51
+      LABEL: data-update
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm --silent issue-body > IssueBody.md
+      - run: gh label create "$LABEL" --color 1f5fa8 --description "Periodic CfP data update" --force
+      - name: Open the issue
+        run: |
+          title="Data update: $(date -u +%Y-%m)"
+          if gh issue list --label "$LABEL" --state open --search "\"$title\" in:title" --json number --jq '.[].number' | grep -q .; then
+            echo "An open issue titled '$title' already exists; skipping."
+            exit 0
+          fi
+          gh issue create --title "$title" --body-file IssueBody.md --assignee "$MAINTAINER" --label "$LABEL"
