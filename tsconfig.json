@@ -15,7 +15,7 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
     "jsx": "preserve",
-    "types": ["vite/client", "vitest/importMeta"]
+    "types": ["vite/client", "vitest/importMeta", "node"]
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "Tests/**/*.ts", "vite.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.vue", "Tests/**/*.ts", "Scripts/**/*.ts", "vite.config.ts"]
 }
