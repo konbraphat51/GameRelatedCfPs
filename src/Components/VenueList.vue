@@ -3,7 +3,14 @@
   <section class="venue-list">
     <p v-if="venues.length === 0" class="empty">{{ t("empty") }}</p>
     <div v-else class="grid">
-      <VenueCard v-for="venue in venues" :key="venue.id" :venue="venue" :today="today" />
+      <VenueCard
+        v-for="venue in venues"
+        :key="venue.id"
+        :venue="venue"
+        :today="today"
+        :is-favorite="favoriteIds.has(venue.id)"
+        @toggle-favorite="$emit('toggle-favorite', venue.id)"
+      />
     </div>
   </section>
 </template>
@@ -23,6 +30,12 @@ export default defineComponent({
     venues: { type: Array as PropType<Venue[]>, required: true },
     /** Reference date (ISO) for status evaluation. */
     today: { type: String, required: true },
+    /** Ids of the viewer's favourite venues. */
+    favoriteIds: { type: Object as PropType<ReadonlySet<string>>, required: true },
+  },
+  emits: {
+    /** Requests toggling the favourite state of the venue with this id. */
+    "toggle-favorite": (id: string) => typeof id === "string",
   },
   setup() {
     const { t } = useI18n();

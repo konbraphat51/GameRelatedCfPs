@@ -13,9 +13,15 @@
       v-model:sort-key="sortKey"
       :shown="visibleVenues.length"
       :total="dataset.venues.length"
+      :favorite-count="favoriteIds.size"
       @reset="resetFilters"
     />
-    <VenueList :venues="visibleVenues" :today="today" />
+    <VenueList
+      :venues="visibleVenues"
+      :today="today"
+      :favorite-ids="favoriteIds"
+      @toggle-favorite="toggleFavorite"
+    />
     <AppFooter />
   </div>
 </template>
@@ -37,6 +43,7 @@ import {
 } from "./Services/VenueFilter";
 import { resolveCfpStatus } from "./Services/CfpStatusResolver";
 import { toIsoDate } from "./Services/DateUtility";
+import { readFavoriteIds, writeFavoriteIds } from "./Services/FavoriteCookie";
 import type { CfpStatus } from "./Types/CfpStatus";
 
 /** Application shell. */
@@ -48,6 +55,7 @@ export default defineComponent({
     const today = toIsoDate(new Date());
     const criteria = ref<FilterCriteria>(createEmptyCriteria());
     const sortKey = ref<SortKey>("deadline");
+    const favoriteIds = ref<ReadonlySet<string>>(new Set(readFavoriteIds()));
 
     const statusCounts = computed(() => {
       const counts: Record<CfpStatus, number> = { open: 0, rolling: 0, unknown: 0, closed: 0 };
@@ -58,7 +66,11 @@ export default defineComponent({
     });
 
     const visibleVenues = computed(() =>
-      sortVenues(filterVenues(dataset.venues, criteria.value, today), sortKey.value, today),
+      sortVenues(
+        filterVenues(dataset.venues, criteria.value, today, favoriteIds.value),
+        sortKey.value,
+        today,
+      ),
     );
 
     /** Adds or removes one status from the status filter. */
@@ -67,6 +79,18 @@ export default defineComponent({
         ? criteria.value.statuses.filter((selected) => selected !== status)
         : [...criteria.value.statuses, status];
       criteria.value = { ...criteria.value, statuses };
+    };
+
+    /** Adds or removes a venue from the favourites and persists them in a cookie. */
+    const toggleFavorite = (id: string): void => {
+      const next = new Set(favoriteIds.value);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      favoriteIds.value = next;
+      writeFavoriteIds(next, import.meta.env.BASE_URL);
     };
 
     /** Clears every filter while keeping the sort order. */
@@ -79,9 +103,11 @@ export default defineComponent({
       today,
       criteria,
       sortKey,
+      favoriteIds,
       statusCounts,
       visibleVenues,
       toggleStatus,
+      toggleFavorite,
       resetFilters,
     };
   },

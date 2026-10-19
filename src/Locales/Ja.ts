@@ -21,6 +21,8 @@ const messages: MessageSchema = {
   },
   filter: {
     keyword: "検索",
+    favorites: "お気に入り",
+    favoritesOnly: "お気に入りのみ ({n})",
     venueType: "種別",
     keywordPlaceholder: "名称・主催・開催地…",
     region: "地域",
@@ -94,7 +96,11 @@ const messages: MessageSchema = {
     passed: "締切済",
     notes: "備考",
   },
-  empty: "条件に一致する学会はありません。",
+  favorite: {
+    add: "お気に入りに追加",
+    remove: "お気に入りから削除",
+  },
+  empty: "条件に一致する学会・ジャーナルはありません。",
   language: "言語",
 };
 

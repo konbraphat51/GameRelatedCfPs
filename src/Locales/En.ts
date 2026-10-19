@@ -19,6 +19,8 @@ const messages = {
   },
   filter: {
     keyword: "Search",
+    favorites: "Favorites",
+    favoritesOnly: "Favorites only ({n})",
     venueType: "Type",
     keywordPlaceholder: "Name, organizer, location…",
     region: "Region",
@@ -92,7 +94,11 @@ const messages = {
     passed: "passed",
     notes: "Notes",
   },
-  empty: "No conferences match the current filters.",
+  favorite: {
+    add: "Add to favorites",
+    remove: "Remove from favorites",
+  },
+  empty: "No venues match the current filters.",
   language: "Language",
 };
 

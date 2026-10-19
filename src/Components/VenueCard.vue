@@ -8,7 +8,10 @@
         </h2>
         <p class="full-name">{{ displayName }}</p>
       </div>
-      <StatusBadge :status="status" />
+      <div class="header-actions">
+        <StatusBadge :status="status" />
+        <FavoriteButton :active="isFavorite" @toggle="$emit('toggle-favorite')" />
+      </div>
     </header>
 
     <div class="tags">
@@ -87,6 +90,7 @@
 import { computed, defineComponent, type PropType } from "vue";
 import { useI18n } from "vue-i18n";
 import StatusBadge from "./StatusBadge.vue";
+import FavoriteButton from "./FavoriteButton.vue";
 import DeadlineList from "./DeadlineList.vue";
 import type { Venue } from "../Types/Venue";
 import { resolveCfpStatus } from "../Services/CfpStatusResolver";
@@ -96,12 +100,18 @@ import { toIntlLocale } from "../I18n";
 /** Card presenting a single venue edition. */
 export default defineComponent({
   name: "VenueCard",
-  components: { StatusBadge, DeadlineList },
+  components: { StatusBadge, FavoriteButton, DeadlineList },
   props: {
     /** Venue to display. */
     venue: { type: Object as PropType<Venue>, required: true },
     /** Reference date (ISO) for status evaluation. */
     today: { type: String, required: true },
+    /** Whether the viewer marked this venue as a favourite. */
+    isFavorite: { type: Boolean, required: true },
+  },
+  emits: {
+    /** Requests toggling this venue's favourite state. */
+    "toggle-favorite": () => true,
   },
   setup(props) {
     const { t, locale } = useI18n();
@@ -165,6 +175,12 @@ export default defineComponent({
   justify-content: space-between;
   align-items: flex-start;
   gap: 12px;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
 }
 .heading {
   min-width: 0;

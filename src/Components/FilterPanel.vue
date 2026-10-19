@@ -11,6 +11,18 @@
           @input="updateKeyword"
         />
       </label>
+      <div class="field favorites">
+        <span>{{ t("filter.favorites") }}</span>
+        <button
+          type="button"
+          class="favorites-toggle"
+          :class="{ active: criteria.favoritesOnly }"
+          :aria-pressed="criteria.favoritesOnly"
+          @click="toggleFavoritesOnly"
+        >
+          ★ {{ t("filter.favoritesOnly", { n: favoriteCount }) }}
+        </button>
+      </div>
       <label class="field sort">
         <span>{{ t("filter.sort") }}</span>
         <select :value="sortKey" @change="updateSortKey">
@@ -88,6 +100,8 @@ export default defineComponent({
     shown: { type: Number, required: true },
     /** Number of venues before filtering. */
     total: { type: Number, required: true },
+    /** Number of venues the viewer marked as favourites. */
+    favoriteCount: { type: Number, required: true },
   },
   emits: {
     /** Emits replacement criteria. */
@@ -117,6 +131,11 @@ export default defineComponent({
       });
     };
 
+    /** Flips the favourites-only restriction. */
+    const toggleFavoritesOnly = (): void => {
+      emit("update:criteria", { ...props.criteria, favoritesOnly: !props.criteria.favoritesOnly });
+    };
+
     /** Replaces the sort key from a change event. */
     const updateSortKey = (event: Event): void => {
       emit("update:sortKey", (event.target as HTMLSelectElement).value as SortKey);
@@ -127,6 +146,7 @@ export default defineComponent({
       buildOptions,
       updateField,
       updateKeyword,
+      toggleFavoritesOnly,
       updateSortKey,
       sortKeys: SORT_KEYS,
       chipGroups: CHIP_GROUPS,
@@ -161,8 +181,26 @@ export default defineComponent({
 .keyword {
   flex: 1 1 260px;
 }
-.sort {
+.sort,
+.favorites {
   flex: 0 0 auto;
+}
+.favorites-toggle {
+  font: inherit;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.favorites-toggle.active {
+  color: var(--color-on-accent);
+  background: var(--color-favorite);
+  border-color: var(--color-favorite);
 }
 input,
 select {
