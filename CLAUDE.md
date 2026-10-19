@@ -122,8 +122,9 @@ export default {
 
 - Static Vue 3 + Vite SPA deployed to GitHub Pages (`base: "/GameRelatedCfPs/"`) by `.github/workflows/DeployPages.yml`.
 - Components use `<script lang="ts">` + `defineComponent` with `setup()` (Options-style SFC shell as requested above).
-- Scope (user decisions): academic conferences only (no CEDEC/GDC/industry), editions held in 2027, game theory excluded; unpublished CfPs show "Unknown".
+- Scope (user decisions): academic conferences and journals only (no CEDEC/GDC/industry), conference editions held in 2027, game theory excluded; unpublished CfPs show "Unknown".
+- Domain model is `Venue` (`venueType`: conference | journal). Journals use `rollingSubmission` (status "rolling"); game special issues of general journals are separate `gameScope: "track"` records.
 - Each conference gets one or more `fields` (taxonomy in `Docs/DataGuide.md`), assigned by Claude's judgement.
-- Data: `src/Data/Conferences.json`; validated by `Tests/ConferenceDataset.test.ts`. Research notes: `ResearchNotes/YYYYMMDD_*.md` (Japanese).
+- Data: `src/Data/Venues.json`; validated by `Tests/VenueDataset.test.ts`. Research notes: `ResearchNotes/YYYYMMDD_*.md` (Japanese).
 - TypeScript is pinned to 6.x because vue-tsc does not support TypeScript 7 yet.
 - `CLAUDE.md` is in `.prettierignore`; do not reformat it.
