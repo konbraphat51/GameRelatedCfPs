@@ -45,7 +45,7 @@ import { CFP_STATUS_VALUES } from "../Types/CfpStatus";
 import { FIELD_VALUES, VENUE_TYPE_VALUES } from "../Types/Venue";
 
 /** Filter fields that hold multi-select arrays. */
-type ArrayField = Exclude<keyof FilterCriteria, "keyword">;
+type ArrayField = Exclude<keyof FilterCriteria, "keyword" | "favoritesOnly">;
 
 /** Definition of one chip group in the panel. */
 interface ChipGroupDefinition {

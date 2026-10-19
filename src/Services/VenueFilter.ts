@@ -9,6 +9,8 @@ export type SortKey = "deadline" | "event" | "name";
 /** User-selected filter criteria; empty arrays mean "no restriction". */
 export interface FilterCriteria {
   keyword: string;
+  /** When true, only venues whose id is in the favourite set match. */
+  favoritesOnly: boolean;
   venueTypes: VenueType[];
   regions: Region[];
   statuses: CfpStatus[];
@@ -18,7 +20,15 @@ export interface FilterCriteria {
 
 /** Returns criteria that match every venue. */
 export function createEmptyCriteria(): FilterCriteria {
-  return { keyword: "", venueTypes: [], regions: [], statuses: [], scopes: [], fields: [] };
+  return {
+    keyword: "",
+    favoritesOnly: false,
+    venueTypes: [],
+    regions: [],
+    statuses: [],
+    scopes: [],
+    fields: [],
+  };
 }
 
 /** Returns true when `selected` is empty or contains `value`. */
@@ -51,9 +61,11 @@ export function filterVenues(
   venues: readonly Venue[],
   criteria: FilterCriteria,
   todayIso: string,
+  favoriteIds: ReadonlySet<string> = new Set(),
 ): Venue[] {
   return venues.filter(
     (venue) =>
+      (!criteria.favoritesOnly || favoriteIds.has(venue.id)) &&
       matchesKeyword(venue, criteria.keyword) &&
       matchesSelection(criteria.venueTypes, venue.venueType) &&
       matchesSelection(criteria.regions, venue.region) &&

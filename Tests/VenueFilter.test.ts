@@ -52,6 +52,19 @@ describe("filterVenues", () => {
   });
 });
 
+describe("favourites", () => {
+  it("keeps only favourite ids when favoritesOnly is set", () => {
+    const criteria = { ...createEmptyCriteria(), favoritesOnly: true };
+    const favorites = new Set(["closed"]);
+    expect(filterVenues(all, criteria, TODAY, favorites).map((c) => c.id)).toEqual(["closed"]);
+    expect(filterVenues(all, criteria, TODAY)).toEqual([]);
+  });
+
+  it("ignores favourites when favoritesOnly is off", () => {
+    expect(filterVenues(all, createEmptyCriteria(), TODAY, new Set(["closed"]))).toHaveLength(3);
+  });
+});
+
 describe("venue type", () => {
   const journal = createJournal({ id: "journal", acronym: "D-JOURNAL" });
 
