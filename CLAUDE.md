@@ -126,5 +126,7 @@ export default {
 - Domain model is `Venue` (`venueType`: conference | journal). Journals use `rollingSubmission` (status "rolling"); game special issues of general journals are separate `gameScope: "track"` records.
 - Each conference gets one or more `fields` (taxonomy in `Docs/DataGuide.md`), assigned by Claude's judgement.
 - Data: `src/Data/Venues.json`; validated by `Tests/VenueDataset.test.ts`. Research notes: `ResearchNotes/YYYYMMDD_*.md` (Japanese).
+- Favourites are stored in the `game-related-cfps-favorites` cookie (user asked for cookies) via `src/Services/FavoriteCookie.ts`.
+- `.github/workflows/DataUpdateIssue.yml` opens a bimonthly data-update issue for konbraphat51; body from `pnpm issue-body` (`Scripts/`, run with tsx).
 - TypeScript is pinned to 6.x because vue-tsc does not support TypeScript 7 yet.
 - `CLAUDE.md` is in `.prettierignore`; do not reformat it.
