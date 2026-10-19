@@ -1,4 +1,4 @@
-<!-- Headline counts of conferences per CfP status; each tile toggles a status filter. -->
+<!-- Headline counts of venues per CfP status; each tile toggles a status filter. -->
 <template>
   <section class="summary-stats">
     <div class="tile">
@@ -29,9 +29,9 @@ import { CFP_STATUS_VALUES, type CfpStatus } from "../Types/CfpStatus";
 export default defineComponent({
   name: "SummaryStats",
   props: {
-    /** Total number of conferences in the dataset. */
+    /** Total number of venues in the dataset. */
     total: { type: Number, required: true },
-    /** Number of conferences per status. */
+    /** Number of venues per status. */
     counts: { type: Object as PropType<Record<CfpStatus, number>>, required: true },
     /** Statuses currently selected in the filter. */
     activeStatuses: { type: Array as PropType<CfpStatus[]>, required: true },

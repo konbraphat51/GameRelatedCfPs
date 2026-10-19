@@ -24,12 +24,12 @@
 <script lang="ts">
 import { computed, defineComponent, type PropType } from "vue";
 import { useI18n } from "vue-i18n";
-import type { Deadline } from "../Types/Conference";
+import type { Deadline } from "../Types/Venue";
 import { isDeadlinePassed, sortDeadlines } from "../Services/CfpStatusResolver";
 import { countDaysBetween, formatIsoDate } from "../Services/DateUtility";
 import { toIntlLocale } from "../I18n";
 
-/** Deadline table of one conference; the next upcoming deadline is highlighted. */
+/** Deadline table of one venue; the next upcoming deadline is highlighted. */
 export default defineComponent({
   name: "DeadlineList",
   props: {

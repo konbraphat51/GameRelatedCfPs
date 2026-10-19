@@ -1,4 +1,4 @@
-<!-- Search box, filter chips and sort selector for the conference list. -->
+<!-- Search box, filter chips and sort selector for the venue list. -->
 <template>
   <section class="filter-panel">
     <div class="top-row">
@@ -40,9 +40,9 @@
 import { defineComponent, type PropType } from "vue";
 import { useI18n } from "vue-i18n";
 import ChipGroup, { type ChipOption } from "./ChipGroup.vue";
-import type { FilterCriteria, SortKey } from "../Services/ConferenceFilter";
+import type { FilterCriteria, SortKey } from "../Services/VenueFilter";
 import { CFP_STATUS_VALUES } from "../Types/CfpStatus";
-import { FIELD_VALUES } from "../Types/Conference";
+import { FIELD_VALUES } from "../Types/Venue";
 
 /** Filter fields that hold multi-select arrays. */
 type ArrayField = Exclude<keyof FilterCriteria, "keyword">;
@@ -78,9 +78,9 @@ export default defineComponent({
     criteria: { type: Object as PropType<FilterCriteria>, required: true },
     /** Current sort key. */
     sortKey: { type: String as PropType<SortKey>, required: true },
-    /** Number of conferences after filtering. */
+    /** Number of venues after filtering. */
     shown: { type: Number, required: true },
-    /** Number of conferences before filtering. */
+    /** Number of venues before filtering. */
     total: { type: Number, required: true },
   },
   emits: {

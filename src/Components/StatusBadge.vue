@@ -1,4 +1,4 @@
-<!-- Coloured pill showing a conference's CfP status. -->
+<!-- Coloured pill showing a venue's CfP status. -->
 <template>
   <span class="status-badge" :class="`status-${status}`">{{ t(`status.${status}`) }}</span>
 </template>

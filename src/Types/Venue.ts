@@ -1,12 +1,12 @@
-// Domain types describing one game-related conference edition and its call for papers.
+// Domain types describing one game-related venue edition and its call for papers.
 
-/** Where the conference is organised relative to Japan. */
+/** Where the venue is organised relative to Japan. */
 export type Region = "domestic" | "international";
 
-/** "whole": the entire conference is about games; "track": only a dedicated game track is. */
+/** "whole": the entire venue is about games; "track": only a dedicated game track is. */
 export type GameScope = "whole" | "track";
 
-/** Research fields (分野) a conference covers; one conference may span several. */
+/** Research fields (分野) a venue covers; one venue may span several. */
 export type Field =
   | "hci"
   | "ai"
@@ -55,8 +55,8 @@ export interface Deadline {
   note: string | null;
 }
 
-/** One 2027 edition of a game-related conference, as stored in Conferences.json. */
-export interface Conference {
+/** One 2027 edition of a game-related venue, as stored in Venues.json. */
+export interface Venue {
   id: string;
   acronym: string;
   nameEn: string;
@@ -88,9 +88,9 @@ export interface Conference {
   sources: string[];
 }
 
-/** Root object of Conferences.json. */
-export interface ConferenceDataset {
+/** Root object of Venues.json. */
+export interface VenueDataset {
   /** ISO date when the dataset was last researched. */
   lastUpdated: string;
-  conferences: Conference[];
+  venues: Venue[];
 }

@@ -1,12 +1,12 @@
-// Shared test fixtures for conference records.
-import type { Conference } from "../src/Types/Conference";
+// Shared test fixtures for venue records.
+import type { Venue } from "../src/Types/Venue";
 
-/** Returns a valid conference record, optionally overriding fields. */
-export function createConference(overrides: Partial<Conference> = {}): Conference {
+/** Returns a valid venue record, optionally overriding fields. */
+export function createVenue(overrides: Partial<Venue> = {}): Venue {
   return {
     id: "sample-2027",
     acronym: "SAMPLE 2027",
-    nameEn: "Sample Conference on Games",
+    nameEn: "Sample Venue on Games",
     nameJa: null,
     organizer: "Sample Society",
     region: "international",

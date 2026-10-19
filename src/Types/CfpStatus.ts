@@ -1,4 +1,4 @@
-// Derived call-for-papers status of a conference relative to a reference date.
+// Derived call-for-papers status of a venue relative to a reference date.
 
 /** "unknown": CfP not yet published; "open": at least one deadline remains; "closed": all passed. */
 export type CfpStatus = "unknown" | "open" | "closed";

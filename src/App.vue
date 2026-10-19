@@ -3,7 +3,7 @@
   <div class="app">
     <AppHeader :last-updated="dataset.lastUpdated" />
     <SummaryStats
-      :total="dataset.conferences.length"
+      :total="dataset.venues.length"
       :counts="statusCounts"
       :active-statuses="criteria.statuses"
       @toggle-status="toggleStatus"
@@ -11,11 +11,11 @@
     <FilterPanel
       v-model:criteria="criteria"
       v-model:sort-key="sortKey"
-      :shown="visibleConferences.length"
-      :total="dataset.conferences.length"
+      :shown="visibleVenues.length"
+      :total="dataset.venues.length"
       @reset="resetFilters"
     />
-    <ConferenceList :conferences="visibleConferences" :today="today" />
+    <VenueList :venues="visibleVenues" :today="today" />
     <AppFooter />
   </div>
 </template>
@@ -25,16 +25,16 @@ import { computed, defineComponent, ref } from "vue";
 import AppHeader from "./Components/AppHeader.vue";
 import SummaryStats from "./Components/SummaryStats.vue";
 import FilterPanel from "./Components/FilterPanel.vue";
-import ConferenceList from "./Components/ConferenceList.vue";
+import VenueList from "./Components/VenueList.vue";
 import AppFooter from "./Components/AppFooter.vue";
-import { loadConferenceDataset } from "./Services/ConferenceRepository";
+import { loadVenueDataset } from "./Services/VenueRepository";
 import {
   createEmptyCriteria,
-  filterConferences,
-  sortConferences,
+  filterVenues,
+  sortVenues,
   type FilterCriteria,
   type SortKey,
-} from "./Services/ConferenceFilter";
+} from "./Services/VenueFilter";
 import { resolveCfpStatus } from "./Services/CfpStatusResolver";
 import { toIsoDate } from "./Services/DateUtility";
 import type { CfpStatus } from "./Types/CfpStatus";
@@ -42,27 +42,23 @@ import type { CfpStatus } from "./Types/CfpStatus";
 /** Application shell. */
 export default defineComponent({
   name: "App",
-  components: { AppHeader, SummaryStats, FilterPanel, ConferenceList, AppFooter },
+  components: { AppHeader, SummaryStats, FilterPanel, VenueList, AppFooter },
   setup() {
-    const dataset = loadConferenceDataset();
+    const dataset = loadVenueDataset();
     const today = toIsoDate(new Date());
     const criteria = ref<FilterCriteria>(createEmptyCriteria());
     const sortKey = ref<SortKey>("deadline");
 
     const statusCounts = computed(() => {
       const counts: Record<CfpStatus, number> = { open: 0, unknown: 0, closed: 0 };
-      for (const conference of dataset.conferences) {
-        counts[resolveCfpStatus(conference, today)] += 1;
+      for (const venue of dataset.venues) {
+        counts[resolveCfpStatus(venue, today)] += 1;
       }
       return counts;
     });
 
-    const visibleConferences = computed(() =>
-      sortConferences(
-        filterConferences(dataset.conferences, criteria.value, today),
-        sortKey.value,
-        today,
-      ),
+    const visibleVenues = computed(() =>
+      sortVenues(filterVenues(dataset.venues, criteria.value, today), sortKey.value, today),
     );
 
     /** Adds or removes one status from the status filter. */
@@ -84,7 +80,7 @@ export default defineComponent({
       criteria,
       sortKey,
       statusCounts,
-      visibleConferences,
+      visibleVenues,
       toggleStatus,
       resetFilters,
     };

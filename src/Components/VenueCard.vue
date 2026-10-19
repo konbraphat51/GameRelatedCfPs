@@ -1,10 +1,10 @@
-<!-- Detailed card for one conference: identity, event info, CfP deadlines and links. -->
+<!-- Detailed card for one venue: identity, event info, CfP deadlines and links. -->
 <template>
-  <article class="conference-card" :class="`status-${status}`">
+  <article class="venue-card" :class="`status-${status}`">
     <header class="card-header">
       <div class="heading">
         <h2>
-          <a :href="conference.url" target="_blank" rel="noopener">{{ conference.acronym }}</a>
+          <a :href="venue.url" target="_blank" rel="noopener">{{ venue.acronym }}</a>
         </h2>
         <p class="full-name">{{ displayName }}</p>
       </div>
@@ -12,9 +12,9 @@
     </header>
 
     <div class="tags">
-      <span class="tag tag-region">{{ t(`region.${conference.region}`) }}</span>
-      <span class="tag">{{ t(`scope.${conference.gameScope}`) }}</span>
-      <span v-for="field in conference.fields" :key="field" class="tag tag-field">
+      <span class="tag tag-region">{{ t(`region.${venue.region}`) }}</span>
+      <span class="tag">{{ t(`scope.${venue.gameScope}`) }}</span>
+      <span v-for="field in venue.fields" :key="field" class="tag tag-field">
         {{ t(`field.${field}`) }}
       </span>
     </div>
@@ -26,21 +26,21 @@
       </div>
       <div>
         <dt>{{ t("card.location") }}</dt>
-        <dd>{{ conference.location ?? t("card.dateTbd") }}</dd>
+        <dd>{{ venue.location ?? t("card.dateTbd") }}</dd>
       </div>
       <div>
         <dt>{{ t("card.organizer") }}</dt>
-        <dd>{{ conference.organizer }}</dd>
+        <dd>{{ venue.organizer }}</dd>
       </div>
-      <div v-if="conference.trackName" class="wide">
+      <div v-if="venue.trackName" class="wide">
         <dt>{{ t("card.track") }}</dt>
-        <dd>{{ conference.trackName }}</dd>
+        <dd>{{ venue.trackName }}</dd>
       </div>
     </dl>
 
     <section class="cfp">
       <h3>{{ t("card.deadlines") }}</h3>
-      <DeadlineList v-if="status !== 'unknown'" :deadlines="conference.deadlines" :today="today" />
+      <DeadlineList v-if="status !== 'unknown'" :deadlines="venue.deadlines" :today="today" />
       <template v-else>
         <p class="unknown">{{ t("card.cfpUnknown") }}</p>
         <p v-if="pastPattern" class="past-pattern">
@@ -54,14 +54,14 @@
     </p>
 
     <footer class="links">
-      <a :href="conference.url" target="_blank" rel="noopener">{{ t("card.website") }}</a>
-      <a v-if="conference.cfpUrl" :href="conference.cfpUrl" target="_blank" rel="noopener">
+      <a :href="venue.url" target="_blank" rel="noopener">{{ t("card.website") }}</a>
+      <a v-if="venue.cfpUrl" :href="venue.cfpUrl" target="_blank" rel="noopener">
         {{ t("card.cfp") }}
       </a>
       <details class="sources">
-        <summary>{{ t("card.sources") }} ({{ conference.sources.length }})</summary>
+        <summary>{{ t("card.sources") }} ({{ venue.sources.length }})</summary>
         <ul>
-          <li v-for="source in conference.sources" :key="source">
+          <li v-for="source in venue.sources" :key="source">
             <a :href="source" target="_blank" rel="noopener">{{ source }}</a>
           </li>
         </ul>
@@ -75,18 +75,18 @@ import { computed, defineComponent, type PropType } from "vue";
 import { useI18n } from "vue-i18n";
 import StatusBadge from "./StatusBadge.vue";
 import DeadlineList from "./DeadlineList.vue";
-import type { Conference } from "../Types/Conference";
+import type { Venue } from "../Types/Venue";
 import { resolveCfpStatus } from "../Services/CfpStatusResolver";
 import { formatIsoDateRange } from "../Services/DateUtility";
 import { toIntlLocale } from "../I18n";
 
-/** Card presenting a single conference edition. */
+/** Card presenting a single venue edition. */
 export default defineComponent({
-  name: "ConferenceCard",
+  name: "VenueCard",
   components: { StatusBadge, DeadlineList },
   props: {
-    /** Conference to display. */
-    conference: { type: Object as PropType<Conference>, required: true },
+    /** Venue to display. */
+    venue: { type: Object as PropType<Venue>, required: true },
     /** Reference date (ISO) for status evaluation. */
     today: { type: String, required: true },
   },
@@ -94,16 +94,14 @@ export default defineComponent({
     const { t, locale } = useI18n();
     const isJapanese = computed(() => locale.value === "ja");
 
-    const status = computed(() => resolveCfpStatus(props.conference, props.today));
+    const status = computed(() => resolveCfpStatus(props.venue, props.today));
 
     const displayName = computed(() =>
-      isJapanese.value && props.conference.nameJa
-        ? props.conference.nameJa
-        : props.conference.nameEn,
+      isJapanese.value && props.venue.nameJa ? props.venue.nameJa : props.venue.nameEn,
     );
 
     const eventDateLabel = computed(() => {
-      const { eventStart, eventEnd, eventDateText } = props.conference;
+      const { eventStart, eventEnd, eventDateText } = props.venue;
       if (eventStart !== null) {
         return formatIsoDateRange(eventStart, eventEnd, toIntlLocale(locale.value));
       }
@@ -112,14 +110,14 @@ export default defineComponent({
 
     const pastPattern = computed(() =>
       isJapanese.value
-        ? (props.conference.pastPatternJa ?? props.conference.pastPatternEn)
-        : (props.conference.pastPatternEn ?? props.conference.pastPatternJa),
+        ? (props.venue.pastPatternJa ?? props.venue.pastPatternEn)
+        : (props.venue.pastPatternEn ?? props.venue.pastPatternJa),
     );
 
     const notes = computed(() =>
       isJapanese.value
-        ? (props.conference.notesJa ?? props.conference.notesEn)
-        : (props.conference.notesEn ?? props.conference.notesJa),
+        ? (props.venue.notesJa ?? props.venue.notesEn)
+        : (props.venue.notesEn ?? props.venue.notesJa),
     );
 
     return { t, status, displayName, eventDateLabel, pastPattern, notes };
@@ -128,7 +126,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.conference-card {
+.venue-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -139,10 +137,10 @@ export default defineComponent({
   background: var(--color-surface);
   min-width: 0;
 }
-.conference-card.status-open {
+.venue-card.status-open {
   border-top-color: var(--color-open);
 }
-.conference-card.status-closed {
+.venue-card.status-closed {
   border-top-color: var(--color-closed);
 }
 .card-header {
