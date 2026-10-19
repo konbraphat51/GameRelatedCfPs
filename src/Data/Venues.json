@@ -68,6 +68,74 @@
       ]
     },
     {
+      "id": "acm-games",
+      "acronym": "ACM GAMES",
+      "nameEn": "ACM Games: Research and Practice",
+      "nameJa": null,
+      "organizer": "Association for Computing Machinery (ACM)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies", "hci", "ai", "design-art"],
+      "url": "https://dl.acm.org/journal/games",
+      "cfpUrl": "https://dl.acm.org/journal/games/calls-for-papers",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Special issue: Game Design Praxiology: The Openings",
+          "date": "2026-11-15",
+          "note": "Guest editors: Annakaisa Kultima, Rilla Khaled, John P. Healy. Open to new submissions as well as PRAXI Seminar papers. Tentative publication Sep 2027."
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "ACM moved to full open access in 2026: free for authors at ACM Open institutions, otherwise APC USD 125–1,450 (subsidized). Submit via mc.manuscriptcentral.com/acmgames. Latest issue: Vol. 4 Issue 4 (Dec 2026).",
+      "notesJa": "ACMは2026年に完全OA化。ACM Open参加機関の著者は無料、それ以外はAPC 125〜1,450米ドル。随時投稿可。特集号の締切は2026年11月15日。",
+      "sources": [
+        "https://dl.acm.org/journal/games",
+        "https://dl.acm.org/journal/games/calls-for-papers",
+        "https://dl.acm.org/pb-assets/static_journal_pages/games/pdf/ACM-GAMES-CFP-SI-Game-Design-Praxiology-Openings-1786044332017.pdf"
+      ]
+    },
+    {
+      "id": "acta-ludologica",
+      "acronym": "Acta Ludologica",
+      "nameEn": "Acta Ludologica",
+      "nameJa": null,
+      "organizer": "Faculty of Mass Media Communication, University of Ss. Cyril and Methodius in Trnava (Slovakia)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://actaludologica.com/",
+      "cfpUrl": "https://actaludologica.com/wp-content/uploads/2026/09/Acta-Ludologica-Call-for-Papers-Vol.-10-No.-1-2027.pdf",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Call for papers: Vol. 10 No. 1 (June 2027), non-thematic",
+          "date": "2026-12-31",
+          "note": "Sections: game studies, reviews, add-ons. Submit by email to actaludologica@fmk.sk."
+        }
+      ],
+      "pastPatternEn": "One general call per issue; the June issue closes around 31 Dec.",
+      "pastPatternJa": "号ごとに一般募集。6月号の締切は12月31日頃。",
+      "notesEn": "English-language, double-blind peer review. No publication, APC or submission fees. Site shows CEEOL, CEJSH, Index Copernicus and ERIH PLUS logos.",
+      "notesJa": "英語誌、ダブルブラインド査読、掲載料・APCなし。2027年6月号の締切は2026年12月31日。",
+      "sources": ["https://actaludologica.com/", "https://actaludologica.com/guidelines/"]
+    },
+    {
       "id": "afk-florida-2027",
       "acronym": "AFK in Florida 2027",
       "nameEn": "AFK in Florida: The 5th Annual Philosophy of Video Games Conference",
@@ -159,6 +227,65 @@
         "https://amcis2027.aisconferences.org/",
         "https://amcis2027.aisconferences.org/track-descriptions/",
         "https://aisnet.org/news/691251/AMCIS-2025-Call-for-Papers.htm"
+      ]
+    },
+    {
+      "id": "american-journal-of-play",
+      "acronym": "AJP",
+      "nameEn": "American Journal of Play",
+      "nameJa": null,
+      "organizer": "The Strong National Museum of Play",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["social-science", "game-studies"],
+      "url": "https://www.museumofplay.org/journalofplay/",
+      "cfpUrl": "https://www.museumofplay.org/journalofplay/authors/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Year-round submissions by email (submissions@journalofplay.org). Double-blind review. Covers the history, science and culture of play. Latest issue: Vol. 18 No. 2.",
+      "notesJa": "通年でメール投稿可。遊びの歴史・科学・文化を扱う。最新号は18巻2号。",
+      "sources": [
+        "https://www.museumofplay.org/journalofplay/",
+        "https://www.museumofplay.org/journalofplay/authors/"
+      ]
+    },
+    {
+      "id": "analog-game-studies",
+      "acronym": "AGS",
+      "nameEn": "Analog Game Studies",
+      "nameJa": null,
+      "organizer": "Analog Game Studies (published via eScholarship, University of California)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["analog", "game-studies"],
+      "url": "https://analoggamestudies.org/",
+      "cfpUrl": "https://analoggamestudies.org/submission-guidelines/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": "General submissions by email at any time, with no window stated. Special-issue calls come occasionally; the Environmental Analog Game Studies issue closed 1 Sep 2026.",
+      "pastPatternJa": "一般投稿は随時メールで受付（期限の記載なし）。特集号の募集はときどきあり、Environmental Analog Game Studies特集は2026年9月1日に締切済み。",
+      "notesEn": "Open access. Moved to eScholarship from spring 2026 (Vol. XIII No. 1).",
+      "notesJa": "オープンアクセス。2026年春（13巻1号）からeScholarshipへ移行。",
+      "sources": [
+        "https://analoggamestudies.org/",
+        "https://analoggamestudies.org/submission-guidelines/",
+        "https://analoggamestudies.org/cfp/"
       ]
     },
     {
@@ -260,6 +387,67 @@
         "https://easychair.org/cfp/BIPOCG2",
         "https://app.entrythingy.com/calls/external/playable-experiences-game-studies-conference/"
       ]
+    },
+    {
+      "id": "bmc-med-educ-gamification-vr-2",
+      "acronym": "BMC Med Educ SI: Gamification & VR II",
+      "nameEn": "BMC Medical Education — Special Issue: Gamification and virtual reality in medical education and related healthcare professions - Part II",
+      "nameJa": null,
+      "organizer": "BioMed Central (Springer Nature)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Gamification and virtual reality in medical education and related healthcare professions - Part II",
+      "fields": ["education", "gamification", "health", "serious-games"],
+      "url": "https://bmcmededuc.biomedcentral.com/",
+      "cfpUrl": "https://bmcmededuc.biomedcentral.com/collections/fdccffagib",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Submission",
+          "date": "2027-01-11",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "BMC article collection, gold OA with APC. The journal is indexed in SCIE, SSCI and Scopus. The call favours controlled effectiveness studies over descriptions of innovations.",
+      "notesJa": "医療者教育におけるゲーミフィケーションとVRのコレクション第2弾。締切は2027/1/11。OA（APCあり）。",
+      "sources": [
+        "https://bmcmededuc.biomedcentral.com/articles/collections",
+        "https://link.springer.com/collections/fdccffagib"
+      ]
+    },
+    {
+      "id": "board-game-studies-journal",
+      "acronym": "BGSJ",
+      "nameEn": "Board Game Studies Journal",
+      "nameJa": null,
+      "organizer": "Ludus Association (hosted on Sciendo / reference-global.com)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["analog", "game-studies"],
+      "url": "https://reference-global.com/journal/BGS",
+      "cfpUrl": "https://reference-global.com/journal/BGS",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Open access with no APC or submission fees. Historical and systematic research on board games. Annual volume; Vol. 19 published Dec 2025. Rejection rate 40%.",
+      "notesJa": "OA、APC・投稿料なし。ボードゲームの歴史的・体系的研究。年1巻（19巻は2025年12月刊行）。",
+      "sources": ["https://reference-global.com/journal/BGS"]
     },
     {
       "id": "ceegs-2027",
@@ -375,6 +563,112 @@
       "sources": ["https://aniwow.cuc.edu.cn/en_aniwow/2025/0908/c13939a261265/page.htm"]
     },
     {
+      "id": "computers-mdpi-beyond-play",
+      "acronym": "Computers (MDPI) SI: Beyond Play",
+      "nameEn": "Computers — Special Issue: Beyond Play—Serious Games, Gamification in Education, and Game-Based Learning",
+      "nameJa": null,
+      "organizer": "MDPI",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Beyond Play—Serious Games, Gamification in Education, and Game-Based Learning",
+      "fields": ["serious-games", "gamification", "education", "hci"],
+      "url": "https://www.mdpi.com/journal/computers",
+      "cfpUrl": "https://www.mdpi.com/journal/computers/special_issues/4309560ZRX",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-06-30",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Guest editors: Carlos Vaz de Carvalho, Hariklia Tsalapatas, Ricardo Baptista. MDPI special issue, gold OA with APC; the journal is Scopus-indexed. Papers are published continuously after acceptance.",
+      "notesJa": "シリアスゲーム・ゲーミフィケーション・GBL特集。締切は2027/6/30。MDPIの特集号（OA・APCあり）。",
+      "sources": ["https://www.mdpi.com/journal/computers/special_issues/4309560ZRX"]
+    },
+    {
+      "id": "connectist-si-game-studies",
+      "acronym": "Connectist SI: Game Studies",
+      "nameEn": "Connectist: Istanbul University Journal of Communication Sciences — Special Issue: Game Studies",
+      "nameJa": null,
+      "organizer": "Istanbul University Press",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Game Studies",
+      "fields": ["game-studies", "social-science"],
+      "url": "https://iupress.istanbul.edu.tr/en/journal/connectist/home",
+      "cfpUrl": "https://iupress.istanbul.edu.tr/en/journal/connectist/announcements/special-issue-conflicts-communication-the-media",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Abstract",
+          "date": "2026-12-28",
+          "note": "400–500 words, by email to connectist@istanbul.edu.tr"
+        },
+        {
+          "label": "Final paper",
+          "date": "2027-07-26",
+          "note": "After the online conference (25–26 March 2027)"
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Guest editors: Ertuğrul Süngü, Barbaros Bostan (Bahçeşehir University), Michał Mochocki (University of Gdańsk). Abstract acceptance is notified 15 January 2027. Accepted authors are expected to present at the free Game Studies Online Conference on 25–26 March 2027. Online publication is planned for December 2027. Open access, no APC, English-language manuscripts, double-blind review. The journal is an ICA affiliate journal; its call says it is indexed by ProQuest and EBSCO among others.",
+      "notesJa": "コミュニケーション学の総合誌によるゲーム研究特集。要旨締切は2026/12/28。2027/3/25–26にオンライン会議で発表してから本稿を提出する。APCなし。",
+      "sources": [
+        "https://iupress.istanbul.edu.tr/en/journal/connectist/announcements/special-issue-conflicts-communication-the-media",
+        "https://service-yayin.istanbul.edu.tr/api/webclient/getJournalAnnouncements?lang=en&slug=connectist"
+      ]
+    },
+    {
+      "id": "dc-si-interactive-digital-narratives",
+      "acronym": "Digital Creativity SI: Interactive Digital Narratives",
+      "nameEn": "Digital Creativity — Special Issue: Interactive Digital Narratives: Creativity, Theory, and Emerging Practices",
+      "nameJa": null,
+      "organizer": "Taylor & Francis",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Interactive Digital Narratives: Creativity, Theory, and Emerging Practices",
+      "fields": ["narrative", "design-art", "game-studies", "ai"],
+      "url": "https://www.tandfonline.com/journals/ndcr20",
+      "cfpUrl": "https://think.taylorandfrancis.com/special_issues/interactive-digital-narratives-creativity-theory-and-emerging-practices/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2026-10-31",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Guest editors: Mehulkumar Desai and Shanmugapriya T (IIT (ISM) Dhanbad), Terhi Marttila (ITI/LARSyS), Serge Bouchardon (UTC Compiègne). The call names game studies and video games explicitly, along with AI-mediated narrative, storylets and drama management. The abstract deadline has passed.",
+      "notesJa": "インタラクティブ・デジタル・ナラティブ特集（ゲーム研究も対象）。本稿締切は2026/10/31。要旨締切は過ぎている。",
+      "sources": [
+        "https://think.taylorandfrancis.com/special_issues/interactive-digital-narratives-creativity-theory-and-emerging-practices/"
+      ]
+    },
+    {
       "id": "digra-2027",
       "acronym": "DiGRA 2027",
       "nameEn": "DiGRA International Conference 2027",
@@ -433,6 +727,37 @@
         "https://digrajapan.org/",
         "https://digrajapan.org/?page_id=10984",
         "https://digrajapan.org/?s=%E5%B9%B4%E6%AC%A1%E5%A4%A7%E4%BC%9A"
+      ]
+    },
+    {
+      "id": "digra-japan-journal",
+      "acronym": "デジタルゲーム学研究",
+      "nameEn": "Journal of Digital Games Research (DiGRA Japan)",
+      "nameJa": "デジタルゲーム学研究",
+      "organizer": "Digital Games Research Association Japan",
+      "region": "domestic",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies", "design-art", "engineering", "education", "social-science"],
+      "url": "https://digrajapan.org/?page_id=275",
+      "cfpUrl": "https://digrajapan.org/?page_id=321",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Society site marks the journal as 'accepting submissions' (投稿募集中) with no deadline; submit via online form. Categories include research, practice, works (作品論文), short papers and research notes. At least one author must be a member (non-member first author: 30,000 JPY fee). Published on J-STAGE (latest: Vol.19 No.1, Sep 2026).",
+      "notesJa": "学会サイトで「学会誌 投稿募集中」と表示、締切の記載なし。投稿フォームから随時投稿。研究論文・実践論文・作品論文・ショートペーパー・研究ノート等。共著者の1名以上が会員であること(筆頭著者が非会員の場合3万円)。J-STAGEで公開(最新19巻1号, 2026年9月)。",
+      "sources": [
+        "https://digrajapan.org/?page_id=275",
+        "https://digrajapan.org/?page_id=321",
+        "https://digrajapan.org/?page_id=1619",
+        "https://www.jstage.jst.go.jp/browse/digraj/list/-char/ja"
       ]
     },
     {
@@ -497,6 +822,70 @@
       "notesEn": "Extended abstracts up to 800 words; Practice Track for exhibited works. Notifications November 2026. Free registration; presenters must be DiGRAA members.",
       "notesJa": "拡張アブストラクトは800語以内、作品展示のPractice Trackあり。採否通知は2026年11月。参加無料、発表者はDiGRAA会員である必要あり。",
       "sources": ["https://digraa.org/post/cfp-digra-australia-2027/"]
+    },
+    {
+      "id": "discover-computing-ci-adaptive-games",
+      "acronym": "Discover Computing SI: CI for Adaptive Games",
+      "nameEn": "Discover Computing — Special Issue: Computational Intelligence for Adaptive Games and Virtual and Immersive Environments",
+      "nameJa": null,
+      "organizer": "Springer Nature",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Computational Intelligence for Adaptive Games and Virtual and Immersive Environments",
+      "fields": ["ai", "engineering", "graphics"],
+      "url": "https://link.springer.com/journal/10791",
+      "cfpUrl": "https://link.springer.com/collections/gaibjciidc",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Submission",
+          "date": "2027-05-31",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Editors include Ruba Abu Khurma (Jordan University of Science and Technology); other editors are listed on the page. Topics: game AI and NPCs, procedural content generation, player modelling, LLMs and generative AI for games, XR. Gold OA with APC (discounted until 31 Dec 2026). Discover Computing continues Springer journal ID 10791 (formerly Information Retrieval Journal).",
+      "notesJa": "ゲームAI・PCG・プレイヤーモデリング等の計算知能のコレクション。締切は2027/5/31。OA。",
+      "sources": ["https://link.springer.com/collections/gaibjciidc"]
+    },
+    {
+      "id": "discover-psych-games-social-good",
+      "acronym": "Discover Psychol SI: Games for Social Good",
+      "nameEn": "Discover Psychology — Special Issue: Next move: Games for social good",
+      "nameJa": null,
+      "organizer": "Springer Nature",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Next move: Games for social good",
+      "fields": ["social-science", "health", "analog", "serious-games"],
+      "url": "https://link.springer.com/journal/44202",
+      "cfpUrl": "https://link.springer.com/collections/jfhdfagdgh",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Submission",
+          "date": "2026-10-30",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Springer Nature Discover-series topical collection, gold OA with APC (journal JIF 1.5, 2025). It especially invites tabletop-game work, but digital games are welcome too.",
+      "notesJa": "社会的善のためのゲーム（特にボードゲーム）のコレクション。締切は2026/10/30。OA。",
+      "sources": ["https://link.springer.com/collections/jfhdfagdgh"]
     },
     {
       "id": "ec-2027",
@@ -600,6 +989,134 @@
       ]
     },
     {
+      "id": "edsci-mdpi-game-based-learning",
+      "acronym": "Educ Sci (MDPI) SI: Game-Based Learning",
+      "nameEn": "Education Sciences — Special Issue: Game-Based Learning: Strategies, Outcomes and Challenges",
+      "nameJa": null,
+      "organizer": "MDPI",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Game-Based Learning: Strategies, Outcomes and Challenges",
+      "fields": ["education", "serious-games"],
+      "url": "https://www.mdpi.com/journal/education",
+      "cfpUrl": "https://www.mdpi.com/journal/education/special_issues/4U82CW7UC5",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-02-01",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Guest editors: Vita Kogan, Stacy Gillis. MDPI special issue, gold OA with APC; the journal is Scopus-indexed. Papers are published continuously after acceptance.",
+      "notesJa": "ゲーム型学習特集。締切は2027/2/1。MDPIの特集号（OA・APCあり）。",
+      "sources": ["https://www.mdpi.com/journal/education/special_issues/4U82CW7UC5"]
+    },
+    {
+      "id": "edsci-mdpi-learning-through-play-ai",
+      "acronym": "Educ Sci (MDPI) SI: Learning Through Play in the Age of AI",
+      "nameEn": "Education Sciences — Special Issue: Learning Through Play in the Age of AI: Gamification, Digital Games, and Personalized Learning",
+      "nameJa": null,
+      "organizer": "MDPI",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Learning Through Play in the Age of AI: Gamification, Digital Games, and Personalized Learning",
+      "fields": ["education", "gamification", "ai"],
+      "url": "https://www.mdpi.com/journal/education",
+      "cfpUrl": "https://www.mdpi.com/journal/education/special_issues/68088WBN95",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2026-12-31",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Guest editor: Merav Hayak. MDPI special issue, gold OA with APC; the journal is Scopus-indexed. Papers are published continuously after acceptance.",
+      "notesJa": "AI時代の遊びを通じた学び特集。締切は2026/12/31。MDPIの特集号（OA・APCあり）。",
+      "sources": ["https://www.mdpi.com/journal/education/special_issues/68088WBN95"]
+    },
+    {
+      "id": "eludamos",
+      "acronym": "Eludamos",
+      "nameEn": "Eludamos: Journal for Computer Game Culture",
+      "nameJa": null,
+      "organizer": "Eludamos (Septentrio Academic Publishing, UiT The Arctic University of Norway)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://septentrio.uit.no/index.php/eludamos",
+      "cfpUrl": "https://septentrio.uit.no/index.php/eludamos/about/submissions",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": "Takes unsolicited original articles up to 8,000 words. Special-issue calls are announced several times a year; the latest, Men and Masculinity in Gaming, closed 1 Apr 2026.",
+      "pastPatternJa": "8,000語以内の論文は自由投稿可。特集号の募集は年に数回あり、直近の「Men and Masculinity in Gaming」は2026年4月1日に締切済み。",
+      "notesEn": "Diamond open access (OJS). Unsolicited reviews and commentaries are not accepted.",
+      "notesJa": "OA誌。論文は随時投稿可（書評・論評は不可）。",
+      "sources": [
+        "https://septentrio.uit.no/index.php/eludamos/about/submissions",
+        "https://septentrio.uit.no/index.php/eludamos/announcement"
+      ]
+    },
+    {
+      "id": "entertainment-computing",
+      "acronym": "Entertainment Computing",
+      "nameEn": "Entertainment Computing",
+      "nameJa": null,
+      "organizer": "Elsevier",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["hci", "engineering", "serious-games"],
+      "url": "https://www.sciencedirect.com/journal/entertainment-computing",
+      "cfpUrl": "https://www.sciencedirect.com/journal/entertainment-computing/about/call-for-papers",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Special issue: Audience Interaction and Engagement Dynamics in Digital Media and Interactive Entertainment",
+          "date": "2027-04-30",
+          "note": "Guest editors: Balasubramanian A, Jeffrey Wimmer. Call posted 2 June 2026."
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Impact Factor 2.4, CiteScore 5.1. Hybrid open access. Covers digital entertainment broadly, with games at its core.",
+      "notesJa": "IF 2.4、CiteScore 5.1。ハイブリッドOA。随時投稿可。特集号の締切は2027年4月30日。",
+      "sources": [
+        "https://www.sciencedirect.com/journal/entertainment-computing/about/call-for-papers",
+        "https://www.sciencedirect.com/journal/entertainment-computing/about/aims-and-scope"
+      ]
+    },
+    {
       "id": "evoapps-2027",
       "acronym": "EvoApplications 2027 (EvoStar 2027)",
       "nameEn": "EvoApplications — 30th International Conference on the Applications of Evolutionary Computation (part of EvoStar 2027)",
@@ -638,6 +1155,74 @@
         "https://www.evostar.org/2027/",
         "https://www.evostar.org/2027/evoapps/",
         "https://www.evostar.org/2027/evoapps/scag/"
+      ]
+    },
+    {
+      "id": "fcomm-rt-video-games-cultural-knowledge",
+      "acronym": "Front Commun RT: Video Games as Cultural Knowledge",
+      "nameEn": "Frontiers in Communication — Special Issue: Video Games as Cultural Knowledge: Intermediality, Transmedia Remediation, and Ludonarrative Agency",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Video Games as Cultural Knowledge: Intermediality, Transmedia Remediation, and Ludonarrative Agency",
+      "fields": ["game-studies", "narrative", "social-science"],
+      "url": "https://www.frontiersin.org/journals/communication",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/82099/video-games-as-cultural-knowledge-intermediality-transmedia-remediation-and-ludonarrative-agency",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-04-30",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: Alfonso Freire-Sánchez, Montserrat Vidal-Mestre, Yago Lavandeira Amenedo, Roser Serra Florensa. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown).",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 文化的知識としてのビデオゲーム。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/82099/video-games-as-cultural-knowledge-intermediality-transmedia-remediation-and-ludonarrative-agency"
+      ]
+    },
+    {
+      "id": "fcomp-rt-video-games-for-impact-2",
+      "acronym": "Front Comput Sci RT: Video Games for Impact II",
+      "nameEn": "Frontiers in Computer Science — Special Issue: Video Games for Impact: Design Projects That Can Change the Way We Think: Volume II",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Video Games for Impact: Design Projects That Can Change the Way We Think: Volume II",
+      "fields": ["serious-games", "design-art", "hci"],
+      "url": "https://www.frontiersin.org/journals/computer-science",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/83158/video-games-for-impact-design-projects-that-can-change-the-way-we-think-volume-ii",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-01-31",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: Anastasios Theodoropoulos, Iro Voulgari, Manolis Wallace, Kostas Karpouzis, Angeliki Antoniou, Elina Roinioti. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: Human-Media Interaction.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 インパクトのためのゲームデザイン。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/83158/video-games-for-impact-design-projects-that-can-change-the-way-we-think-volume-ii"
       ]
     },
     {
@@ -698,6 +1283,142 @@
       "sources": ["https://fdg2027.org/", "https://fdg2027.org/authorinformation.html"]
     },
     {
+      "id": "feduc-rt-gamification-language-learning",
+      "acronym": "Front Educ RT: Gamification in Language Learning",
+      "nameEn": "Frontiers in Education — Special Issue: Digital Innovation and Gamification in Language Learning: Emerging Technologies, Pedagogies, and Learner Experiences",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Digital Innovation and Gamification in Language Learning: Emerging Technologies, Pedagogies, and Learner Experiences",
+      "fields": ["gamification", "education"],
+      "url": "https://www.frontiersin.org/journals/education",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/86310/digital-innovation-and-gamification-in-language-learning-emerging-technologies-pedagogies-and-learner-experiences",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-04-11",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: Larisa Olesova, Qian Xu, Suzhen Duan, Rong Zhang, Zhuo Zhang. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: Digital Education; Frontiers in Computer Science also participates.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 言語学習のゲーミフィケーション。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/86310/digital-innovation-and-gamification-in-language-learning-emerging-technologies-pedagogies-and-learner-experiences"
+      ]
+    },
+    {
+      "id": "fpsyg-rt-evolution-of-play-game-design",
+      "acronym": "Front Psychol RT: From Play to Game Design",
+      "nameEn": "Frontiers in Psychology — Special Issue: In the Shadow of Neurodevelopmental Processes and Media-Digitalism Impacts: The Evolution of Play from Unoccupied Play to Game Design",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "In the Shadow of Neurodevelopmental Processes and Media-Digitalism Impacts: The Evolution of Play from Unoccupied Play to Game Design",
+      "fields": ["game-studies", "education", "design-art"],
+      "url": "https://www.frontiersin.org/journals/psychology",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/82806/in-the-shadow-of-neurodevelopmental-processes-and-media-digitalism-impacts-the-evolution-of-play-from-unoccupied-play-to-game-design",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-01-30",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: Gökhan Güneş, Kaan Batı, Seray Olçay. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: Educational Psychology.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 遊びの発達からゲームデザインまで。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/82806/in-the-shadow-of-neurodevelopmental-processes-and-media-digitalism-impacts-the-evolution-of-play-from-unoccupied-play-to-game-design"
+      ]
+    },
+    {
+      "id": "fpsyt-rt-gamification-computational-psychiatry",
+      "acronym": "Front Psychiatry RT: Gamification in Computational Psychiatry",
+      "nameEn": "Frontiers in Psychiatry — Special Issue: Innovative Applications of Gamification in Computational Psychiatry",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Innovative Applications of Gamification in Computational Psychiatry",
+      "fields": ["health", "gamification"],
+      "url": "https://www.frontiersin.org/journals/psychiatry",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/76429/innovative-applications-of-gamification-in-computational-psychiatry",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-01-15",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: David Benrimoh, Andreea Oliviana Diaconescu, Albert Powers. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: Computational Psychiatry.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 計算論的精神医学におけるゲーミフィケーション。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/76429/innovative-applications-of-gamification-in-computational-psychiatry"
+      ]
+    },
+    {
+      "id": "frai-rt-human-ai-gamification-learning",
+      "acronym": "Front AI RT: Human-AI Interaction & Gamification in Learning",
+      "nameEn": "Frontiers in Artificial Intelligence — Special Issue: Human-AI Interaction and Gamification in Intelligent Learning Environments",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Human-AI Interaction and Gamification in Intelligent Learning Environments",
+      "fields": ["gamification", "ai", "education"],
+      "url": "https://www.frontiersin.org/journals/artificial-intelligence",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/81234/human-ai-interaction-and-gamification-in-intelligent-learning-environments",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2026-12-20",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: Simone Bassanelli, Antonio Bucchiarone, Gianluca Schiavo, Andrea Vázquez Ingelmo, Enes Yigitbas. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: AI for Human Learning and Behavior Change; Frontiers in Psychology also participates.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 知的学習環境における人間-AI相互作用とゲーミフィケーション。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/81234/human-ai-interaction-and-gamification-in-intelligent-learning-environments"
+      ]
+    },
+    {
       "id": "frog-2027",
       "acronym": "FROG 2027",
       "nameEn": "Future and Reality of Gaming (Vienna Games Conference)",
@@ -724,6 +1445,142 @@
       "sources": [
         "https://www.frogvienna.at/",
         "https://www.frogvienna.at/call-for-abstracts-2026/"
+      ]
+    },
+    {
+      "id": "frvir-rt-collaborative-xr-serious-games-heritage",
+      "acronym": "Front Virtual Real RT: XR Serious Games for Heritage",
+      "nameEn": "Frontiers in Virtual Reality — Special Issue: Collaborative XR Serious Games for Cultural Heritage Interpretation and Learning",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Collaborative XR Serious Games for Cultural Heritage Interpretation and Learning",
+      "fields": ["serious-games", "education", "hci"],
+      "url": "https://www.frontiersin.org/journals/virtual-reality",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/83734/collaborative-xr-serious-games-for-cultural-heritage-interpretation-and-learning",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-04-09",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: David Plecher (TU Munich), Stephan Lukosch (University of Canterbury), Christian Eichhorn (TU Munich). Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: Virtual Reality and Human Behaviour.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 文化遺産のための協調型XRシリアスゲーム。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/83734/collaborative-xr-serious-games-for-cultural-heritage-interpretation-and-learning"
+      ]
+    },
+    {
+      "id": "frvir-rt-gamified-vr",
+      "acronym": "Front Virtual Real RT: Gamified VR",
+      "nameEn": "Frontiers in Virtual Reality — Special Issue: Gamified Virtual Reality: Training, Treating and Feeling - The Fun, Functional and Human Factors",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Gamified Virtual Reality: Training, Treating and Feeling - The Fun, Functional and Human Factors",
+      "fields": ["gamification", "hci", "health"],
+      "url": "https://www.frontiersin.org/journals/virtual-reality",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/83564/gamified-virtual-reality-training-treating-and-feeling---the-fun-functional-and-human-factors",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-05-31",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: Anca Morar, Alin Moldoveanu, Alexandru Ion Berceanu, Romina Boldasu. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: Virtual Reality and Human Behaviour.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 ゲーミファイドVR（訓練・治療・感情）。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/83564/gamified-virtual-reality-training-treating-and-feeling---the-fun-functional-and-human-factors"
+      ]
+    },
+    {
+      "id": "fspor-rt-engineering-esports-excellence",
+      "acronym": "Front Sports Act Living RT: Engineering Esports Excellence",
+      "nameEn": "Frontiers in Sports and Active Living — Special Issue: Engineering Esports Excellence: Data, AI, and High-Performance Human-Computer Interaction in Gaming",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Engineering Esports Excellence: Data, AI, and High-Performance Human-Computer Interaction in Gaming",
+      "fields": ["esports", "ai", "hci"],
+      "url": "https://www.frontiersin.org/journals/sports-and-active-living",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/84772/engineering-esports-excellence-data-ai-and-high-performance-human-computer-interaction-in-gaming",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-02-28",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: Andrzej Białecki, Jan Gajewski, Oskar Szymon Słowik. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: Sports Science, Technology and Engineering.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 eスポーツのデータ・AI・HCI。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/84772/engineering-esports-excellence-data-ai-and-high-performance-human-computer-interaction-in-gaming"
+      ]
+    },
+    {
+      "id": "fspor-rt-exergames-2",
+      "acronym": "Front Sports Act Living RT: Evaluating Exergames II",
+      "nameEn": "Frontiers in Sports and Active Living — Special Issue: Evaluating Exergames: Impacts on Physical Health and Activity Levels Vol.II",
+      "nameJa": null,
+      "organizer": "Frontiers",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Evaluating Exergames: Impacts on Physical Health and Activity Levels Vol.II",
+      "fields": ["health", "serious-games"],
+      "url": "https://www.frontiersin.org/journals/sports-and-active-living",
+      "cfpUrl": "https://www.frontiersin.org/research-topics/81383/evaluating-exergames-impacts-on-physical-health-and-activity-levels-volii",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2027-01-03",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Topic editors: Cíntia França, Pedro Campos, Élvio Rúbio Gouveia, Andreas Ihle. Frontiers Research Topic (gold OA, APC applies); journal indexed in Scopus/WoS. Manuscripts are published continuously; a manuscript summary can be submitted first (no fixed summary deadline shown). Section: Sports Science, Technology and Engineering.",
+      "notesJa": "Frontiersのリサーチトピック（OA・APCあり）。論文は随時掲載。 エクサゲームの健康効果。",
+      "sources": [
+        "https://www.frontiersin.org/research-topics/81383/evaluating-exergames-impacts-on-physical-health-and-activity-levels-volii"
       ]
     },
     {
@@ -756,6 +1613,71 @@
       ]
     },
     {
+      "id": "game-amusement-society-journal",
+      "acronym": "ゲーム学会論文誌",
+      "nameEn": "Journal of Game Amusement Society",
+      "nameJa": "ゲーム学会 論文誌",
+      "organizer": "Game Amusement Society",
+      "region": "domestic",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies", "engineering", "education", "design-art"],
+      "url": "http://www.gameamusementsociety.org/",
+      "cfpUrl": "http://www.gameamusementsociety.org/html/CallForPapers.html",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Vol.21 paper submission",
+          "date": "2026-12-31",
+          "note": "Official FY2026 schedule says only '締切：12月末' (end of December); exact day not specified."
+        }
+      ],
+      "pastPatternEn": "Annual volume; call listed in the society's yearly schedule with an end-of-December deadline.",
+      "pastPatternJa": "年1巻。学会の年間スケジュールに「論文誌投稿募集 締切：12月末」として掲載。",
+      "notesEn": "Japanese-language journal; full papers (7-8 pp) and short notes (3-4 pp). Submission via Google Form; members invited (non-member first author pays extra 20,000 JPY offprint fee).",
+      "notesJa": "和文誌。原著論文(7〜8頁)・ショートノート(3〜4頁)。Googleフォームで電子投稿。第1著者が非会員の場合は別刷代2万円加算。",
+      "sources": [
+        "http://www.gameamusementsociety.org/index.html",
+        "http://www.gameamusementsociety.org/html/CallForPapers.html",
+        "http://www.gameamusementsociety.org/html/AuthorsInstruction.html"
+      ]
+    },
+    {
+      "id": "game-journal-it",
+      "acronym": "G|A|M|E",
+      "nameEn": "G|A|M|E: The Italian Journal of Game Studies",
+      "nameJa": null,
+      "organizer": "G|A|M|E (Italian Journal of Game Studies)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://www.gamejournal.it/",
+      "cfpUrl": "https://www.gamejournal.it/cfp/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [],
+      "pastPatternEn": "One themed call per issue, about once a year. For n.14/2026 (Queer and Trans Game Studies), abstracts were due 12 Jan 2026 and full papers 30 Mar 2026. The n.15/2027 call is not yet published.",
+      "pastPatternJa": "号ごとにテーマ別募集（ほぼ年1回）。14号（2026）はアブスト締切1月12日、本稿締切3月30日だった。15号（2027）の募集は未公表。",
+      "notesEn": "Open access, English-language Italian game studies journal.",
+      "notesJa": "イタリア発の英語OAゲーム研究誌。テーマ別募集のみ。",
+      "sources": [
+        "https://www.gamejournal.it/cfp/",
+        "https://www.gamejournal.it/n-14-2026-queer-trans-games/"
+      ]
+    },
+    {
       "id": "game-on-2027",
       "acronym": "GAME-ON 2027",
       "nameEn": "European GAME-ON Conference on Simulation and AI in Computer Games",
@@ -784,6 +1706,126 @@
         "https://www.eurosis.org/conf/gameon/2026/deadlines.html",
         "https://www.eurosis.org/cms/?q=taxonomy%2Fterm%2F257"
       ]
+    },
+    {
+      "id": "game-studies",
+      "acronym": "Game Studies",
+      "nameEn": "Game Studies: The International Journal of Computer Game Research",
+      "nameJa": null,
+      "organizer": "Game Studies (independent, open access)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://gamestudies.org/",
+      "cfpUrl": "https://gamestudies.org/2603/submission_guidelines",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [],
+      "pastPatternEn": "Normally takes submissions by email at any time (continuous flow, occasional themed calls). The guidelines (updated Oct 2025) say submissions are closed for now after unusually high volume in 2025.",
+      "pastPatternJa": "通常は随時メール投稿を受け付ける（テーマ別募集もときどきある）。ただし2025年10月更新の投稿規定では、2025年の投稿急増のため現在は投稿を停止中。",
+      "notesEn": "Open access, no fees mentioned. Double-blind review, max 8,000 words. Latest issue: Vol. 26 Issue 3 (July 2026).",
+      "notesJa": "オープンアクセス。ダブルブラインド査読、最大8,000語。最新号は26巻3号（2026年7月）。現在は投稿受付停止中。",
+      "sources": [
+        "https://gamestudies.org/",
+        "https://gamestudies.org/2603/submission_guidelines",
+        "https://gamestudies.org/2603/about"
+      ]
+    },
+    {
+      "id": "games-and-culture",
+      "acronym": "G&C",
+      "nameEn": "Games and Culture: A Journal of Interactive Media",
+      "nameJa": null,
+      "organizer": "SAGE Publications",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies", "social-science"],
+      "url": "https://journals.sagepub.com/home/gac",
+      "cfpUrl": "https://journals.sagepub.com/author-instructions/GAC",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Impact Factor 2.1 (5-year 3.0). Acceptance rate 4.6%. COPE member. No open special-issue calls found on the SAGE journal page.",
+      "notesJa": "IF 2.1（5年IF 3.0）、採択率4.6%。随時投稿可。SAGEのページに募集中の特集号は見当たらない。",
+      "sources": [
+        "https://journals.sagepub.com/home/gac",
+        "https://journals.sagepub.com/overview-metric/GAC"
+      ]
+    },
+    {
+      "id": "games-for-health-journal",
+      "acronym": "G4H Journal",
+      "nameEn": "Games for Health Journal",
+      "nameJa": null,
+      "organizer": "SAGE Publications (formerly Mary Ann Liebert)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["health", "serious-games"],
+      "url": "https://journals.sagepub.com/home/gfh",
+      "cfpUrl": "https://journals.sagepub.com/author-instructions/GFH",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": "Runs special-issue calls from time to time. The latest, 'Biometric Feedback Integration in Games for Physical and Cognitive Rehabilitation', closed on 30 June 2026.",
+      "pastPatternJa": "特集号の募集はときどきある。直近の「Biometric Feedback Integration in Games for Physical and Cognitive Rehabilitation」は2026年6月30日に締切済み。",
+      "notesEn": "Impact Factor 3.1 (5-year 3.8). The liebertpub.com page now redirects to SAGE.",
+      "notesJa": "IF 3.1。現在はSAGEから刊行。随時投稿可。",
+      "sources": [
+        "https://journals.sagepub.com/home/gfh",
+        "https://journals.sagepub.com/overview-metric/GFH"
+      ]
+    },
+    {
+      "id": "gamevironments",
+      "acronym": "gamevironments",
+      "nameEn": "gamevironments",
+      "nameJa": null,
+      "organizer": "University of Bremen (SuUB)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies", "social-science"],
+      "url": "https://journals.suub.uni-bremen.de/index.php/gamevironments",
+      "cfpUrl": "https://journals.suub.uni-bremen.de/index.php/gamevironments/openquests",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [
+        {
+          "label": "Special issue 2027: Bedroom Journalists? Zines and Early Player Cultures (full texts)",
+          "date": "2026-12-15",
+          "note": "Only for authors whose abstracts were accepted (abstracts closed 1 Jun 2026). Guest editors: Arno Görgen, Aurelia Brandenburg. Publication summer 2027."
+        }
+      ],
+      "pastPatternEn": "One regular and one special issue per year. Regular-issue call: peer-reviewed articles due mid-June (15 Jun 2026 for the Winter 2026 issue). Special-issue abstracts due around June of the previous year.",
+      "pastPatternJa": "年に通常号1冊・特集号1冊。通常号は6月中旬締切（2026年冬号は6月15日）。特集号のアブストは前年6月頃が締切。",
+      "notesEn": "Open access journal on video games and religion/culture.",
+      "notesJa": "ゲームと宗教・文化を扱うOA誌。2027年特集号の本稿締切（2026年12月15日）はアブスト採択者のみ。",
+      "sources": ["https://journals.suub.uni-bremen.de/index.php/gamevironments/openquests"]
     },
     {
       "id": "gamifin-2027",
@@ -1218,6 +2260,35 @@
       "sources": ["https://icec2026.cnam.fr/", "https://icec2026.cnam.fr/authors.html"]
     },
     {
+      "id": "icga-journal",
+      "acronym": "ICGA Journal",
+      "nameEn": "ICGA Journal: The Journal of the Computer Games Community",
+      "nameJa": null,
+      "organizer": "International Computer Games Association (ICGA); SAGE Publications",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["ai", "analog"],
+      "url": "https://journals.sagepub.com/home/icg",
+      "cfpUrl": "https://journals.sagepub.com/author-instructions/ICG",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Impact Factor 1.1. Covers game-playing programs, board/card and video games, and game AI. Moved from IOS Press to SAGE. Recent articles published Oct 2026.",
+      "notesJa": "IF 1.1。ゲームAI・ボード/カードゲームのプログラムなどを扱う。IOS PressからSAGEへ移管。随時投稿可。",
+      "sources": [
+        "https://journals.sagepub.com/home/icg",
+        "https://journals.sagepub.com/overview-metric/ICG"
+      ]
+    },
+    {
       "id": "icgj-2027",
       "acronym": "ICGJ 2027",
       "nameEn": "International Conference on Game Jams, Hackathons and Game Creation Events",
@@ -1435,6 +2506,47 @@
       "sources": ["https://www.segah.org/", "https://www.segah.org/2027/submissions.html"]
     },
     {
+      "id": "ieee-tog",
+      "acronym": "IEEE ToG",
+      "nameEn": "IEEE Transactions on Games",
+      "nameJa": null,
+      "organizer": "IEEE (Computational Intelligence Society)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["ai", "hci", "graphics", "engineering"],
+      "url": "https://transactions.games/",
+      "cfpUrl": "https://transactions.games/submit/submission-guidelines",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Special issue: Responsible and Human-Centered AI in Games: From Autonomy to Accountability",
+          "date": "2026-11-30",
+          "note": "Extended from 31 Oct 2026. Guest editors: Sandip Rakshit, Tripti Paul, Emily Chen. Tentative publication Aug 2027."
+        },
+        {
+          "label": "Special issue: Open Game Data for Games for Impact",
+          "date": "2027-01-31",
+          "note": "Guest editors: Erik Harpstead (lead), David Gagnon, Günter Wallner, Casper Harteveld, Emily Chen."
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Impact Factor 3.0. Double-anonymous review since Jan 2025. Submit via ScholarOne (mc.manuscriptcentral.com/tg-ieee). Extended versions of top IEEE CoG papers are invited.",
+      "notesJa": "IF 3.0。2025年からダブルブラインド査読。随時投稿可。特集号が2件募集中。",
+      "sources": [
+        "https://transactions.games/",
+        "https://transactions.games/special-issue/special-issue-on-responsible-and-human-centered-ai-in-games-from-autonomy-to-accountability",
+        "https://transactions.games/special-issue/special-issue-on-open-game-data-for-games-for-impact"
+      ]
+    },
+    {
       "id": "igbl-2027",
       "acronym": "iGBL 2027",
       "nameEn": "International Conference on Game-Based Learning (formerly Irish Conference on Game-Based Learning)",
@@ -1461,6 +2573,248 @@
       "sources": [
         "https://igbl-conference.com/",
         "https://ispr.info/2024/02/29/call-14th-international-conference-on-game-based-learning-igbl2024/"
+      ]
+    },
+    {
+      "id": "ijcgt",
+      "acronym": "IJCGT",
+      "nameEn": "International Journal of Computer Games Technology",
+      "nameJa": null,
+      "organizer": "Wiley (formerly Hindawi)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["engineering", "ai", "graphics"],
+      "url": "https://onlinelibrary.wiley.com/journal/2952",
+      "cfpUrl": "https://onlinelibrary.wiley.com/journal/2952",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Gold open access (APC applies). Impact Factor 2.0, CiteScore 4.6, acceptance rate 22%. Part of Wiley's Forward Series. Articles published through Oct 2026.",
+      "notesJa": "完全OA（APCあり）。IF 2.0、CiteScore 4.6、採択率22%。現在も随時投稿可。",
+      "sources": ["https://onlinelibrary.wiley.com/journal/2952"]
+    },
+    {
+      "id": "ijesports",
+      "acronym": "IJESPORTS",
+      "nameEn": "International Journal of Esports",
+      "nameJa": null,
+      "organizer": "International Journal of Esports (independent, open access)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["esports", "social-science"],
+      "url": "https://www.ijesports.org/",
+      "cfpUrl": "https://www.ijesports.org/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Open access, ISSN 2634-1069. Welcomes esports research from all specialties via its online portal. Articles published through Oct 2026.",
+      "notesJa": "OA誌。eスポーツ研究全般を随時受付。2026年10月にも論文を掲載。",
+      "sources": ["https://www.ijesports.org/"]
+    },
+    {
+      "id": "ijgbl",
+      "acronym": "IJGBL",
+      "nameEn": "International Journal of Game-Based Learning",
+      "nameJa": null,
+      "organizer": "IGI Global Scientific Publishing",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["education", "serious-games"],
+      "url": "https://www.igi-global.com/journal/international-journal-game-based-learning/41019",
+      "cfpUrl": "https://www.igi-global.com/calls-for-papers/international-journal-game-based-learning/41019",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Gold open access, APC USD 2,350. Published as a continuous volume since 2011. Editors-in-Chief: Leslie Haas, Jill Tussey. Double-anonymized review by at least three board members. Scopus/WoS status could not be confirmed on an official page.",
+      "notesJa": "完全OA、APC 2,350米ドル。2011年創刊。随時投稿可。Scopus/WoSへの収録は公式ページで確認できなかった。",
+      "sources": [
+        "https://www.igi-global.com/calls-for-papers/international-journal-game-based-learning/41019"
+      ]
+    },
+    {
+      "id": "ijgsi",
+      "acronym": "IJGSI",
+      "nameEn": "International Journal of Games and Social Impact",
+      "nameJa": null,
+      "organizer": "GLOW Lab, Lusófona University (Lisbon)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["serious-games", "education", "social-science"],
+      "url": "https://revistas.ulusofona.pt/index.php/ijgsi",
+      "cfpUrl": "https://revistas.ulusofona.pt/index.php/ijgsi/announcement",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Vol. 5 No. 1: Games Beyond Entertainment: Design, Pedagogy, Research and Social Impact (full papers)",
+          "date": "2026-11-15",
+          "note": "Extended from 31 Jul 2026. Linked to the Playful by Design Symposium 2026. Publication March 2027."
+        },
+        {
+          "label": "Vol. 5 No. 4: Games, Gamification, Media Literacy and Transformation in Educational Contexts (abstracts)",
+          "date": "2026-11-20",
+          "note": "Abstract notification 21 Dec 2026. Publication Dec 2027."
+        },
+        {
+          "label": "Vol. 5 No. 4: Games, Gamification, Media Literacy and Transformation in Educational Contexts (full papers)",
+          "date": "2027-02-28",
+          "note": "Final acceptance notification 28 Jul 2027."
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Semiannual, open access, no submission or processing fees. Has an ongoing open call alongside themed issues. ISSN 2975-8386. No indexing stated on the About page.",
+      "notesJa": "年2回刊行のOA誌、投稿料・APCなし。常時募集とテーマ号募集がある。索引データベースへの収録は記載なし。",
+      "sources": [
+        "https://revistas.ulusofona.pt/index.php/ijgsi/announcement",
+        "https://revistas.ulusofona.pt/index.php/ijgsi/announcement/view/259",
+        "https://revistas.ulusofona.pt/index.php/ijgsi/announcement/view/263",
+        "https://revistas.ulusofona.pt/index.php/ijgsi/about"
+      ]
+    },
+    {
+      "id": "ijrp",
+      "acronym": "IJRP",
+      "nameEn": "International Journal of Role-Playing",
+      "nameJa": null,
+      "organizer": "International Journal of Role-Playing (hosted by Uppsala University Library)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["analog", "game-studies", "narrative"],
+      "url": "https://journals.uu.se/IJRP",
+      "cfpUrl": "https://journals.uu.se/IJRP/CFP",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Open access, no fees for authors or readers. Takes submissions on all analog role-playing topics on an ongoing basis. Issue 18 published Apr 2026; several issues in 2026.",
+      "notesJa": "OA、著者・読者とも無料。アナログRPG研究を随時受付。2026年は複数号を刊行。",
+      "sources": ["https://journals.uu.se/IJRP/CFP", "https://journals.uu.se/IJRP"]
+    },
+    {
+      "id": "ijsg",
+      "acronym": "IJSG",
+      "nameEn": "International Journal of Serious Games",
+      "nameJa": null,
+      "organizer": "Serious Games Society",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["serious-games", "education"],
+      "url": "https://journal.seriousgamessociety.org/index.php/IJSG",
+      "cfpUrl": "https://journal.seriousgamessociety.org/index.php/IJSG/about/submissions",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Open access. Impact Factor 2.6 (2025), Scopus CiteScore 5.0. General call with no deadline. Latest issue: Vol. 13 No. 5 (17 Oct 2026). No open special issue.",
+      "notesJa": "オープンアクセス。IF 2.6（2025）、CiteScore 5.0。締切なしで随時投稿可。最新号は13巻5号（2026年10月）。",
+      "sources": [
+        "https://journal.seriousgamessociety.org/index.php/IJSG/announcement",
+        "https://journal.seriousgamessociety.org/index.php/IJSG/issue/current"
+      ]
+    },
+    {
+      "id": "international-journal-of-play",
+      "acronym": "IJP",
+      "nameEn": "International Journal of Play",
+      "nameJa": null,
+      "organizer": "Taylor & Francis; affiliated with The Association for the Study of Play (TASP)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["social-science", "education"],
+      "url": "https://www.tandfonline.com/journals/rijp20",
+      "cfpUrl": "https://www.tandfonline.com/journals/rijp20/about-this-journal",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Interdisciplinary journal on all aspects of play across the lifespan. Impact Factor 1.3 (2025). Hybrid open access (Open Select). Latest issue: Vol. 15 Issue 3 (2026).",
+      "notesJa": "生涯にわたる遊び全般を扱う学際誌。IF 1.3。ハイブリッドOA。随時投稿可。",
+      "sources": [
+        "https://www.tandfonline.com/journals/rijp20",
+        "https://www.tandfonline.com/journals/rijp20/about-this-journal"
+      ]
+    },
+    {
+      "id": "ipsj-journal-si-entertainment-computing",
+      "acronym": "情報処理学会論文誌 特集「エンタテインメントコンピューティング」",
+      "nameEn": "IPSJ Journal Special Issue: Entertainment Computing",
+      "nameJa": "情報処理学会論文誌「エンタテインメントコンピューティング」特集",
+      "organizer": "Information Processing Society of Japan (IPSJ)",
+      "region": "domestic",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "エンタテインメントコンピューティング (Entertainment Computing)",
+      "fields": ["hci", "engineering", "design-art"],
+      "url": "https://www.ipsj.or.jp/journal/cfp/cfp_list.html",
+      "cfpUrl": "https://www.ipsj.or.jp/journal/cfp/26-T.html",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [],
+      "pastPatternEn": "Recurring IPSJ Journal special issue (published Nov 2021, Nov 2023, Dec 2026). Latest call: deadline 2026-02-20 for the Dec 2026 issue (now closed). Next call not yet announced; it may fall after 2027.",
+      "pastPatternJa": "定期的に企画される特集(2021年11月号、2023年11月号、2026年12月号)。直近は投稿締切2026年2月20日(2026年12月号, 募集終了)。次回募集は未発表で、締切は2028年以降になる可能性あり。",
+      "notesEn": "Guest-editor special issue on entertainment computing; multimedia (video/audio) submission recommended. Regular IPSJ Journal papers are accepted any time, but this listing is for the game/entertainment special issue only.",
+      "notesJa": "ゲストエディタ制による特集。動画等マルチメディアデータの提出推奨。一般論文は随時投稿可だが、ここでは特集のみを対象。",
+      "sources": [
+        "https://www.ipsj.or.jp/journal/cfp/cfp_list.html",
+        "https://www.ipsj.or.jp/journal/cfp/26-T.html",
+        "https://ipsj.ixsq.nii.ac.jp/records/229403/export/json",
+        "https://ipsj.ixsq.nii.ac.jp/records/213798/export/json"
       ]
     },
     {
@@ -1596,6 +2950,35 @@
       ]
     },
     {
+      "id": "jasag-journal",
+      "acronym": "シミュレーション&ゲーミング",
+      "nameEn": "Studies in Simulation & Gaming (JASAG Journal)",
+      "nameJa": "シミュレーション&ゲーミング",
+      "organizer": "Japan Association of Simulation and Gaming (JASAG)",
+      "region": "domestic",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["simulation-gaming", "serious-games", "education", "social-science"],
+      "url": "https://jasag.org/journal",
+      "cfpUrl": "https://jasag.org/journal/journal-instruction",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Published twice a year; peer-reviewed papers (original, short report, review) accepted at any time. First author must be a JASAG member (or have applied) with dues paid. Submit by e-mail to the journal committee.",
+      "notesJa": "年2回発行。審査付論文(原著・短報・総説)を随時受付。筆頭著者は会員(投稿時は入会申請中も可)で当該年度会費納入済みであること。メールで投稿。",
+      "sources": [
+        "https://jasag.org/journal/journal-instruction",
+        "https://jasag.org/journal/submit"
+      ]
+    },
+    {
       "id": "jasag-spring-2027",
       "acronym": "JASAG Spring 2027",
       "nameEn": "JASAG Spring National Conference 2027",
@@ -1651,6 +3034,120 @@
       ]
     },
     {
+      "id": "jege",
+      "acronym": "JEGE",
+      "nameEn": "Journal of Electronic Gaming and Esports",
+      "nameJa": null,
+      "organizer": "Human Kinetics",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["esports", "health", "social-science"],
+      "url": "https://journals.humankinetics.com/view/journals/jege/jege-overview.xml",
+      "cfpUrl": "https://journals.humankinetics.com/view/journals/jege/jege-overview.xml",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Online-only, launched 2023. Latest issue: Vol. 4 (2026) Issue 1. Author guidelines are on the journal site. Its page lists Google Scholar as an index.",
+      "notesJa": "2023年創刊のオンライン誌。最新号は4巻1号（2026年1月）。随時投稿可。",
+      "sources": ["https://journals.humankinetics.com/view/journals/jege/jege-overview.xml"]
+    },
+    {
+      "id": "jgvw",
+      "acronym": "JGVW",
+      "nameEn": "Journal of Gaming & Virtual Worlds",
+      "nameJa": null,
+      "organizer": "Intellect",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies", "design-art"],
+      "url": "https://www.intellectbooks.com/journal-of-gaming-virtual-worlds",
+      "cfpUrl": "https://www.intellectbooks.com/journal-of-gaming-virtual-worlds",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [],
+      "pastPatternEn": "General submissions are paused and the portal reopens at the end of 2026. Usual issue deadlines: Issue 1 on 31 Aug, Issue 2 on 31 Dec, Issue 3 on 30 Apr. No special-issue calls are open now.",
+      "pastPatternJa": "一般投稿は停止中で、2026年末に再開予定。通常の締切は第1号8月31日、第2号12月31日、第3号4月30日。特集号の募集は現在ない。",
+      "notesEn": "Indexed in Scopus and ESCI. Three issues per year.",
+      "notesJa": "Scopus・ESCI収録。年3号。",
+      "sources": ["https://www.intellectbooks.com/journal-of-gaming-virtual-worlds"]
+    },
+    {
+      "id": "jmir-serious-games",
+      "acronym": "JMIR Serious Games",
+      "nameEn": "JMIR Serious Games",
+      "nameJa": null,
+      "organizer": "JMIR Publications",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["serious-games", "health", "gamification"],
+      "url": "https://games.jmir.org/",
+      "cfpUrl": "https://games.jmir.org/announcements",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Theme issue: SeGAH 2026 (Serious Games and Applications for Health)",
+          "date": "2026-10-31",
+          "note": "Only for invited authors who presented at SeGAH 2026. Guest editors: Duarte Duque, João L. Vilaça, Nuno Dias, Esteban Clua."
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Gold open access. APC USD 2,950 (Viewpoints USD 2,360, Research Letters USD 1,475).",
+      "notesJa": "完全OA、APC 2,950米ドル。随時投稿可。SeGAH 2026テーマ号（締切2026年10月31日）は招待著者のみ。",
+      "sources": [
+        "https://games.jmir.org/announcements",
+        "https://games.jmir.org/announcements/679",
+        "https://games.jmir.org/about-journal/article-processing-fees"
+      ]
+    },
+    {
+      "id": "journal-of-games-criticism",
+      "acronym": "JGC",
+      "nameEn": "Journal of Games Criticism",
+      "nameJa": null,
+      "organizer": "Journal of Games Criticism (independent, open access)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://gamescriticism.org/",
+      "cfpUrl": "https://gamescriticism.wordpress.com/submission-guidelines/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Rolling release schedule with Online First articles. Latest issue: Vol. 6 Issue 1 (Jan 2026). Reviews one submission per author at a time.",
+      "notesJa": "随時公開方式（ローリングリリース）。最新号は6巻1号（2026年1月）。",
+      "sources": ["https://gamescriticism.org/", "http://gamescriticism.org/about/"]
+    },
+    {
       "id": "jsai-2027",
       "acronym": "JSAI2027",
       "nameEn": "41st Annual Conference of the Japanese Society for Artificial Intelligence (JSAI2027)",
@@ -1698,6 +3195,71 @@
       ]
     },
     {
+      "id": "jsai-transactions-si-digital-game-ai-2027",
+      "acronym": "人工知能学会論文誌 特集「デジタルゲームにおける人工知能」",
+      "nameEn": "Transactions of the Japanese Society for Artificial Intelligence, Special Issue: Artificial Intelligence in Digital Games",
+      "nameJa": "人工知能学会論文誌 論文特集「デジタルゲームにおける人工知能」",
+      "organizer": "Japanese Society for Artificial Intelligence (JSAI)",
+      "region": "domestic",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "デジタルゲームにおける人工知能 (Artificial Intelligence in Digital Games)",
+      "fields": ["ai"],
+      "url": "https://www.ai-gakkai.or.jp/published_books/pse/",
+      "cfpUrl": "https://www.ai-gakkai.or.jp/published_books/pse/pse_20260928/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Special issue paper submission",
+          "date": "2027-01-18",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "To appear in Sep 2027 issue (Vol.42 No.5). Japanese papers only; technical papers and AI-system practice papers (no concept/letter/emerging papers). Topics: NPC decision-making, pathfinding, dialogue agents, player modeling, QA, live-ops optimization, content generation. Editor-in-chief: Youichiro Miyake. Submit via Editorial Manager.",
+      "notesJa": "2027年9月号(42巻5号)掲載予定。日本語論文のみ。原著論文(技術論文・AI応用システム論文)、コンセプト・速報・萌芽論文は不可。対象: キャラクターの意思決定、経路探索、対話エージェント、プレイヤーモデリング、品質保証支援、運営最適化、コンテンツ生成支援等。編集委員長: 三宅陽一郎。Editorial Managerで投稿。",
+      "sources": [
+        "https://www.ai-gakkai.or.jp/published_books/pse/pse_20260928/",
+        "https://www.ai-gakkai.or.jp/published_books/pse/"
+      ]
+    },
+    {
+      "id": "jsmg",
+      "acronym": "JSMG",
+      "nameEn": "Journal of Sound and Music in Games",
+      "nameJa": null,
+      "organizer": "Society for the Study of Sound and Music in Games (SSSMG); University of California Press",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["music-audio"],
+      "url": "https://online.ucpress.edu/jsmg",
+      "cfpUrl": "https://online.ucpress.edu/jsmg/pages/submit",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": "Special-issue calls come occasionally; the latest, Ludomusicology and Value, had full papers due 5 Jun 2026.",
+      "pastPatternJa": "特集号の募集はときどきあり、直近の「Ludomusicology and Value」は本稿締切2026年6月5日だった。",
+      "notesEn": "Quarterly. Submit via Scholastica (jsmg.scholasticahq.com). Double-blind review. Latest issue: Vol. 7 Issue 4 (Fall 2026).",
+      "notesJa": "季刊。Scholasticaから随時投稿可。最新号は7巻4号（2026年秋）。",
+      "sources": [
+        "https://online.ucpress.edu/jsmg",
+        "https://online.ucpress.edu/jsmg/pages/submit",
+        "https://societymusictheory.org/node/1699"
+      ]
+    },
+    {
       "id": "kgs-2027",
       "acronym": "KGS 2027",
       "nameEn": "Korea Game Society Conference 2027 (Spring/Fall)",
@@ -1722,6 +3284,46 @@
       "notesEn": "Korean domestic society holding twice-yearly conferences; submission deadlines are announced on kcgs.or.kr shortly before each event.",
       "notesJa": "韓国国内学会で年2回（春・秋）学術大会を開催。投稿締切は各大会前にkcgs.or.krで告知。",
       "sources": ["http://www.kcgs.or.kr/", "https://kgnews.co.kr/news/article.html?no=898568"]
+    },
+    {
+      "id": "loading-cgsa",
+      "acronym": "Loading",
+      "nameEn": "Loading: The Journal of the Canadian Game Studies Association",
+      "nameJa": null,
+      "organizer": "Canadian Game Studies Association (CGSA)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://loading.journals.publicknowledgeproject.org/index.php/loading",
+      "cfpUrl": "https://loading.journals.publicknowledgeproject.org/index.php/loading/announcement/view/8",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Themed issue proposals: Jeux, cultures et industries ludiques francophones",
+          "date": "2026-10-31",
+          "note": "2,500-word anonymized proposal to chartrand.roxanne@uqam.ca. Notification ~15 Nov 2026. Publication Aug 2027."
+        },
+        {
+          "label": "Themed issue full articles: Jeux, cultures et industries ludiques francophones",
+          "date": "2027-02-15",
+          "note": "Only for accepted proposals."
+        }
+      ],
+      "pastPatternEn": "General submissions are on hiatus (May 2026 announcement). Only the themed call is open.",
+      "pastPatternJa": "一般投稿は休止中（2026年5月告知）。テーマ号の募集のみ受付。",
+      "notesEn": "Bilingual (English/French) open access journal.",
+      "notesJa": "英仏バイリンガルのOA誌。フランス語圏テーマ号の企画締切は2026年10月31日、本稿締切は2027年2月15日。",
+      "sources": [
+        "https://loading.journals.publicknowledgeproject.org/index.php/loading/announcement",
+        "https://loading.journals.publicknowledgeproject.org/index.php/loading/announcement/view/8"
+      ]
     },
     {
       "id": "ludo-2027",
@@ -1780,6 +3382,38 @@
         "https://mig.siggraph.org/2026/",
         "https://listserv.uni-tuebingen.de/pipermail/ieee_vis/2026/003306.html"
       ]
+    },
+    {
+      "id": "mti-mdpi-game-based-approaches",
+      "acronym": "MTI (MDPI) SI: Game-Based Approaches in Education",
+      "nameEn": "Multimodal Technologies and Interaction — Special Issue: Technology-Enhanced Game-Based Approaches in Education: Learning, Emotions, and Motivation",
+      "nameJa": null,
+      "organizer": "MDPI",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Technology-Enhanced Game-Based Approaches in Education: Learning, Emotions, and Motivation",
+      "fields": ["education", "serious-games", "gamification"],
+      "url": "https://www.mdpi.com/journal/mti",
+      "cfpUrl": "https://www.mdpi.com/journal/mti/special_issues/D10Z5G0666",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Manuscript",
+          "date": "2026-12-31",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Guest editors: Ana Manzano-León, José M. Rodríguez Ferrer. MDPI special issue, gold OA with APC; the journal is Scopus-indexed. Papers are published continuously after acceptance.",
+      "notesJa": "教育におけるゲーム型アプローチ特集。締切は2026/12/31。MDPIの特集号（OA・APCあり）。",
+      "sources": ["https://www.mdpi.com/journal/mti/special_issues/D10Z5G0666"]
     },
     {
       "id": "nacvgm-2027",
@@ -1934,6 +3568,41 @@
       ]
     },
     {
+      "id": "nutr-metab-video-gaming",
+      "acronym": "Nutr Metab SI: Video Gaming & Metabolic Health",
+      "nameEn": "Nutrition & Metabolism — Special Issue: Video Gaming, Nutrition and Metabolic Health",
+      "nameJa": null,
+      "organizer": "BioMed Central (Springer Nature)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Video Gaming, Nutrition and Metabolic Health",
+      "fields": ["health"],
+      "url": "https://nutritionandmetabolism.biomedcentral.com/",
+      "cfpUrl": "https://link.springer.com/collections/ijhbadafij",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Submission",
+          "date": "2027-01-21",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "BMC collection, gold OA with APC. It covers gaming as a risk factor for diet and metabolism and also as a platform for nutrition education and behaviour change.",
+      "notesJa": "ビデオゲームと栄養・代謝健康のコレクション。締切は2027/1/21。OA（APCあり）。",
+      "sources": [
+        "https://link.springer.com/collections/ijhbadafij",
+        "https://nutritionandmetabolism.biomedcentral.com/articles/collections"
+      ]
+    },
+    {
       "id": "pcaaca-2027-game-studies",
       "acronym": "PCA/ACA 2027",
       "nameEn": "PCA/ACA 2027 National Conference (Game Studies Area)",
@@ -1999,6 +3668,70 @@
       ]
     },
     {
+      "id": "press-start",
+      "acronym": "Press Start",
+      "nameEn": "Press Start",
+      "nameJa": null,
+      "organizer": "University of Glasgow (student-led open access journal)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://press-start.gla.ac.uk/",
+      "cfpUrl": "https://press-start.gla.ac.uk/press-start/announcement/view/38",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Open Call for Papers 2026 (regular issue, published 2027)",
+          "date": "2026-12-04",
+          "note": "Full paper submissions; selected manuscripts appear in the 2027 issue."
+        }
+      ],
+      "pastPatternEn": "Annual open call announced Aug–Sep. Earlier years ran rolling submissions.",
+      "pastPatternJa": "毎年8〜9月に公募を告知。以前は随時投稿の時期もあった。",
+      "notesEn": "Open access game studies journal for students and early-career researchers.",
+      "notesJa": "学生・若手研究者向けのOAゲーム研究誌。締切は2026年12月4日。",
+      "sources": [
+        "https://press-start.gla.ac.uk/index.php/press-start/announcement",
+        "https://press-start.gla.ac.uk/press-start/announcement/view/38"
+      ]
+    },
+    {
+      "id": "replay-polish-game-studies",
+      "acronym": "Replay",
+      "nameEn": "Replay: The Polish Journal of Game Studies",
+      "nameJa": null,
+      "organizer": "University of Łódź (Lodz University Press)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://czasopisma.uni.lodz.pl/Replay",
+      "cfpUrl": "https://czasopisma.uni.lodz.pl/Replay/cfp",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [],
+      "pastPatternEn": "No submissions for 2026 because of a congress special issue. The journal says the 2027 CfP will be published in September, but it was not online as of 19 Oct 2026.",
+      "pastPatternJa": "2026年分は学会特集号のため受付終了。2027年の募集は9月公開予定とされていたが、2026年10月19日時点では未掲載。",
+      "notesEn": "Open access. Latest issue: Vol. 13 No. 1 (Dec 2025).",
+      "notesJa": "OA誌。最新号は13巻1号（2025年12月）。",
+      "sources": [
+        "https://czasopisma.uni.lodz.pl/Replay",
+        "https://czasopisma.uni.lodz.pl/Replay/cfp"
+      ]
+    },
+    {
       "id": "replaying-japan-2027",
       "acronym": "Replaying Japan 2027",
       "nameEn": "Replaying Japan 2027 (International Japan Game Studies Conference)",
@@ -2029,6 +3762,32 @@
       ]
     },
     {
+      "id": "replaying-japan-journal",
+      "acronym": "Replaying Japan",
+      "nameEn": "Replaying Japan (Journal of the Ritsumeikan Center for Game Studies)",
+      "nameJa": "Replaying Japan（立命館大学ゲーム研究センター）",
+      "organizer": "Ritsumeikan Center for Game Studies (RCGS), Ritsumeikan University",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://www.rcgs.jp/",
+      "cfpUrl": "https://www.rcgs.jp/?p=3533",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [],
+      "pastPatternEn": "Annual call. For Vol. 9 the deadline was 18 Sep 2026 (JST), submitted via EasyChair, with publication in March 2027. The Vol. 7 deadline was 22 Sep 2024. The next call is expected around June 2027 with a September deadline.",
+      "pastPatternJa": "年1回の募集。Vol.9は締切2026年9月18日（JST、EasyChair）、2027年3月刊行予定。Vol.7の締切は2024年9月22日。次回は2027年6月頃告知・9月締切の見込み。",
+      "notesEn": "Accepts English or Japanese. Categories: double-blind refereed articles, research notes, reviews and translations.",
+      "notesJa": "英語・日本語で投稿可。原著論文（ダブルブラインド査読）、研究ノート、レビュー、翻訳を受け付ける。",
+      "sources": ["https://www.rcgs.jp/?p=3533", "https://rcgs.jp/?p=2607"]
+    },
+    {
       "id": "sbgames-2027",
       "acronym": "SBGames 2027",
       "nameEn": "Brazilian Symposium on Computer Games and Digital Entertainment",
@@ -2057,6 +3816,101 @@
         "https://sol.sbc.org.br/index.php/sbgames_estendido/article/view/45890",
         "https://ci2s-enterprise.com.ar/2026/03/13/call-for-papers-sbgames-2026-computing-track/"
       ]
+    },
+    {
+      "id": "simulation-and-gaming",
+      "acronym": "S&G",
+      "nameEn": "Simulation & Gaming: An Interdisciplinary Journal of Theory, Practice and Research",
+      "nameJa": null,
+      "organizer": "SAGE Publications; sponsored by ISAGA and NASAGA",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["simulation-gaming", "education", "serious-games"],
+      "url": "https://journals.sagepub.com/home/sag",
+      "cfpUrl": "https://journals.sagepub.com/author-instructions/SAG",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": true,
+      "cfpPublished": true,
+      "deadlines": [],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Impact Factor 2.2 (5-year 3.2). Acceptance rate 11.1%. Submit via ScholarOne (mc.manuscriptcentral.com/sg). Publishes guest-edited symposium issues from time to time; none currently open.",
+      "notesJa": "IF 2.2、採択率11.1%。ISAGA・NASAGAが支援。随時投稿可。特集号はときどき組まれるが、現在募集中のものはない。",
+      "sources": [
+        "https://journals.sagepub.com/home/sag",
+        "https://journals.sagepub.com/overview-metric/SAG"
+      ]
+    },
+    {
+      "id": "sis-si-esports-sustainable",
+      "acronym": "SiS SI: Sustainable Esports",
+      "nameEn": "Sport in Society — Special Issue: Towards more professionalized and sustainable esports practices",
+      "nameJa": null,
+      "organizer": "Taylor & Francis",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Towards more professionalized and sustainable esports practices",
+      "fields": ["esports", "social-science"],
+      "url": "https://www.tandfonline.com/journals/fcss20",
+      "cfpUrl": "https://think.taylorandfrancis.com/special_issues/towards-more-professionalized-and-sustainable-esports-practices/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Full manuscript",
+          "date": "2026-11-16",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Guest editors: Florian Lefebvre and Đức Lợi Vũ (Hanoi School of Business and Management, VNU), Eric Perera (University of Montpellier). Papers are capped at 8,000 words in APA7, submitted via ScholarOne. Review starts 15 Feb 2027, final decisions are due 6 Sep 2027, and publication is planned for late 2027. The proposal stage has closed, so the full-manuscript deadline mainly applies to authors whose proposals were accepted.",
+      "notesJa": "Sport in Society誌のeスポーツ特集。本稿締切は2026/11/16。提案（要旨）段階は終了済み。",
+      "sources": [
+        "https://think.taylorandfrancis.com/special_issues/towards-more-professionalized-and-sustainable-esports-practices/"
+      ]
+    },
+    {
+      "id": "srep-game-based-learning",
+      "acronym": "Sci Rep SI: Game-Based Learning",
+      "nameEn": "Scientific Reports — Special Issue: Game-based learning and education",
+      "nameJa": null,
+      "organizer": "Springer Nature (Nature Portfolio)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "track",
+      "trackName": "Game-based learning and education",
+      "fields": ["education", "serious-games", "gamification"],
+      "url": "https://www.nature.com/srep/",
+      "cfpUrl": "https://www.nature.com/collections/jghgbcffjc",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Submission",
+          "date": "2026-10-31",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "Guest editors: Damon Daylamani-Zad, Roberto Dillon, Murat Ekici, Carina S. González. Guest-edited collection, gold OA with APC.",
+      "notesJa": "Scientific Reportsのゲーム型学習コレクション。締切は2026/10/31。OA（APCあり）。",
+      "sources": ["https://www.nature.com/collections/jghgbcffjc"]
     },
     {
       "id": "swpaca-2027-game-studies",
@@ -2126,6 +3980,36 @@
       "sources": ["https://studyofplay.org/2026-conference/", "https://studyofplay.org/"]
     },
     {
+      "id": "todigra",
+      "acronym": "ToDiGRA",
+      "nameEn": "Transactions of the Digital Games Research Association",
+      "nameJa": null,
+      "organizer": "Digital Games Research Association (DiGRA)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies"],
+      "url": "https://todigra.org/index.php/todigra",
+      "cfpUrl": "https://todigra.org/index.php/todigra/about/submissions",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [],
+      "pastPatternEn": "Unsolicited submissions are not accepted; only submissions to specific calls. Recent issues were special issues of selected papers from DiGRA chapter conferences (Nordic DiGRA, DiGRA Mexico). Latest issue: Vol. 7 No. 2 (Dec 2024).",
+      "pastPatternJa": "自由投稿は不可で、個別の募集への投稿のみ。最近の号はDiGRA支部大会（Nordic DiGRA、DiGRA Mexico）の選抜論文特集。最新号は7巻2号（2024年12月）。",
+      "notesEn": "Open access. No open call found as of Oct 2026, and no issue since Dec 2024.",
+      "notesJa": "オープンアクセス。2026年10月時点で募集はなく、2024年12月以降は号が出ていない。",
+      "sources": [
+        "https://todigra.org/index.php/todigra",
+        "https://todigra.org/index.php/todigra/about/submissions",
+        "https://todigra.org/index.php/todigra/issue/archive"
+      ]
+    },
+    {
       "id": "vgc-2027",
       "acronym": "VGC 2027",
       "nameEn": "Video Game Cultures Conference",
@@ -2181,6 +4065,35 @@
       "sources": [
         "https://videojogos2026.ulusofona.pt/",
         "https://ispr.info/2026/09/07/call-videojogos-2026-16th-conference-on-videogame-sciences-and-arts/"
+      ]
+    },
+    {
+      "id": "well-played",
+      "acronym": "Well Played",
+      "nameEn": "Well Played: A Journal on Video Games, Value and Meaning",
+      "nameJa": null,
+      "organizer": "Play Story Press (formerly ETC Press)",
+      "region": "international",
+      "venueType": "journal",
+      "gameScope": "whole",
+      "trackName": null,
+      "fields": ["game-studies", "design-art"],
+      "url": "https://playstorypress.org/category/well-played/",
+      "cfpUrl": "https://playstorypress.org/category/well-played/",
+      "eventStart": null,
+      "eventEnd": null,
+      "eventDateText": null,
+      "location": null,
+      "rollingSubmission": false,
+      "cfpPublished": false,
+      "deadlines": [],
+      "pastPatternEn": "Annual themed call announced in June, with a deadline around late September (30 Sep 2026 for 'Games, Value, and Meaning'). Issue released the following spring.",
+      "pastPatternJa": "毎年6月頃にテーマ別募集を告知し、締切は9月末頃（2026年は9月30日）。翌春に刊行。",
+      "notesEn": "Essays on the playing experience of digital, tabletop, larp and other games. V15 N1 released May 2026.",
+      "notesJa": "プレイ体験を論じるエッセイ誌。15巻1号は2026年5月刊行。",
+      "sources": [
+        "https://playstorypress.org/category/well-played/",
+        "https://ispr.info/2026/06/17/call-games-value-and-meaning-for-well-played-journal/"
       ]
     }
   ]
