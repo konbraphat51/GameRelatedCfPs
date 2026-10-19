@@ -37,6 +37,10 @@ export default defineComponent({
   background: var(--color-open-soft);
   color: var(--color-open);
 }
+.status-rolling {
+  background: var(--color-rolling-soft);
+  color: var(--color-rolling);
+}
 .status-unknown {
   background: var(--color-unknown-soft);
   color: var(--color-unknown);

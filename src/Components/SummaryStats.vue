@@ -80,6 +80,9 @@ export default defineComponent({
 .status-open {
   border-left-color: var(--color-open);
 }
+.status-rolling {
+  border-left-color: var(--color-rolling);
+}
 .status-unknown {
   border-left-color: var(--color-unknown);
 }

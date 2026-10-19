@@ -12,6 +12,8 @@
   --color-link: #3343c2;
   --color-open: #0f7a3d;
   --color-open-soft: #e3f4ea;
+  --color-rolling: #1f5fa8;
+  --color-rolling-soft: #e2edf9;
   --color-unknown: #a35a00;
   --color-unknown-soft: #fdf0dc;
   --color-closed: #6b6b6b;
@@ -33,6 +35,8 @@
     --color-link: #9aa6ff;
     --color-open: #5ad58e;
     --color-open-soft: #173322;
+    --color-rolling: #7fb3f0;
+    --color-rolling-soft: #16273d;
     --color-unknown: #f2b45c;
     --color-unknown-soft: #3a2a12;
     --color-closed: #9a9a9a;

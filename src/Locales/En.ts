@@ -3,21 +3,23 @@ const messages = {
   app: {
     title: "Game-Related CfPs 2027",
     subtitle:
-      "Calls for papers of 2027 academic conferences that are about games, or have a dedicated game track — in Japan and worldwide.",
+      "Calls for papers of 2027 academic conferences and journals that are about games, or have a dedicated game track or special issue — in Japan and worldwide.",
     lastUpdated: "Data last researched: {date}",
     disclaimer:
-      'Always confirm dates on the official website. "Unknown" means the 2027 call has not been published yet.',
+      'Always confirm dates on the official website. "Unknown" means the 2027 call has not been published yet; "Rolling" means submissions are accepted at any time.',
     source: "Source code & data on GitHub",
     contribute: "Found a mistake or a missing conference? Open an issue or pull request.",
   },
   summary: {
-    total: "Conferences",
+    total: "Venues",
     open: "Open calls",
+    rolling: "Rolling",
     unknown: "Unknown",
     closed: "Closed",
   },
   filter: {
     keyword: "Search",
+    venueType: "Type",
     keywordPlaceholder: "Name, organizer, location…",
     region: "Region",
     status: "CfP status",
@@ -32,18 +34,23 @@ const messages = {
     event: "Event date",
     name: "Name",
   },
+  venueType: {
+    conference: "Conference",
+    journal: "Journal",
+  },
   region: {
     domestic: "Japan",
     international: "International",
   },
   status: {
     open: "Open",
+    rolling: "Rolling",
     unknown: "Unknown",
     closed: "Closed",
   },
   scope: {
-    whole: "Whole conference",
-    track: "Game track",
+    whole: "Entirely about games",
+    track: "Game track / special issue",
   },
   field: {
     hci: "HCI",
@@ -67,6 +74,12 @@ const messages = {
     event: "Event",
     location: "Location",
     organizer: "Organizer",
+    publisher: "Publisher",
+    specialIssue: "Special issue",
+    submissions: "Submissions",
+    rolling: "Rolling — regular submissions accepted at any time",
+    notRolling: "Through calls only",
+    specialIssueDeadlines: "Special-issue deadlines",
     track: "Game track",
     deadlines: "Deadlines",
     cfpUnknown: "Unknown — the 2027 call has not been published yet.",

@@ -5,21 +5,23 @@ const messages: MessageSchema = {
   app: {
     title: "ゲーム関連学会 CfP 2027",
     subtitle:
-      "ゲームを主題とする、またはゲームを扱うトラックを持つ国内外の学術会議について、2027年開催回の論文募集 (CfP) をまとめています。",
+      "ゲームを主題とする、またはゲームを扱うトラック・特集号を持つ国内外の学術会議とジャーナルについて、2027年の論文募集 (CfP) をまとめています。",
     lastUpdated: "最終調査日: {date}",
     disclaimer:
-      "日程は必ず公式サイトでご確認ください。「Unknown」は 2027 年の募集が未公開であることを示します。",
+      "日程は必ず公式サイトでご確認ください。「Unknown」は 2027 年の募集が未公開、「随時募集」は通年で投稿を受け付けていることを示します。",
     source: "ソースコードとデータ (GitHub)",
     contribute: "誤りや掲載漏れはIssueまたはPull Requestでお知らせください。",
   },
   summary: {
     total: "掲載数",
     open: "募集中",
+    rolling: "随時募集",
     unknown: "Unknown",
     closed: "締切済",
   },
   filter: {
     keyword: "検索",
+    venueType: "種別",
     keywordPlaceholder: "名称・主催・開催地…",
     region: "地域",
     status: "CfP 状況",
@@ -34,18 +36,23 @@ const messages: MessageSchema = {
     event: "開催日",
     name: "名称",
   },
+  venueType: {
+    conference: "学会",
+    journal: "ジャーナル",
+  },
   region: {
     domestic: "国内",
     international: "国際",
   },
   status: {
     open: "募集中",
+    rolling: "随時募集",
     unknown: "Unknown",
     closed: "締切済",
   },
   scope: {
-    whole: "学会全体",
-    track: "ゲームトラック",
+    whole: "全体がゲーム",
+    track: "ゲームトラック・特集号",
   },
   field: {
     hci: "HCI",
@@ -69,6 +76,12 @@ const messages: MessageSchema = {
     event: "開催",
     location: "開催地",
     organizer: "主催",
+    publisher: "出版社・発行",
+    specialIssue: "特集号",
+    submissions: "投稿",
+    rolling: "随時募集 — 通常投稿は通年で受付",
+    notRolling: "募集時のみ",
+    specialIssueDeadlines: "特集号の締切",
     track: "ゲームトラック",
     deadlines: "締切",
     cfpUnknown: "Unknown — 2027年の募集は未公開です。",

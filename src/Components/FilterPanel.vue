@@ -42,7 +42,7 @@ import { useI18n } from "vue-i18n";
 import ChipGroup, { type ChipOption } from "./ChipGroup.vue";
 import type { FilterCriteria, SortKey } from "../Services/VenueFilter";
 import { CFP_STATUS_VALUES } from "../Types/CfpStatus";
-import { FIELD_VALUES } from "../Types/Venue";
+import { FIELD_VALUES, VENUE_TYPE_VALUES } from "../Types/Venue";
 
 /** Filter fields that hold multi-select arrays. */
 type ArrayField = Exclude<keyof FilterCriteria, "keyword">;
@@ -58,6 +58,12 @@ interface ChipGroupDefinition {
 const SORT_KEYS: readonly SortKey[] = ["deadline", "event", "name"];
 
 const CHIP_GROUPS: readonly ChipGroupDefinition[] = [
+  {
+    field: "venueTypes",
+    legendKey: "filter.venueType",
+    namespace: "venueType",
+    values: VENUE_TYPE_VALUES,
+  },
   {
     field: "regions",
     legendKey: "filter.region",

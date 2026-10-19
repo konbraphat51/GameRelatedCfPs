@@ -1,4 +1,4 @@
-<!-- Detailed card for one venue: identity, event info, CfP deadlines and links. -->
+<!-- Detailed card for one conference or journal: identity, event/submission info, deadlines and links. -->
 <template>
   <article class="venue-card" :class="`status-${status}`">
     <header class="card-header">
@@ -12,7 +12,8 @@
     </header>
 
     <div class="tags">
-      <span class="tag tag-region">{{ t(`region.${venue.region}`) }}</span>
+      <span class="tag tag-strong">{{ t(`venueType.${venue.venueType}`) }}</span>
+      <span class="tag tag-strong">{{ t(`region.${venue.region}`) }}</span>
       <span class="tag">{{ t(`scope.${venue.gameScope}`) }}</span>
       <span v-for="field in venue.fields" :key="field" class="tag tag-field">
         {{ t(`field.${field}`) }}
@@ -20,26 +21,38 @@
     </div>
 
     <dl class="facts">
-      <div>
-        <dt>{{ t("card.event") }}</dt>
-        <dd>{{ eventDateLabel }}</dd>
-      </div>
-      <div>
-        <dt>{{ t("card.location") }}</dt>
-        <dd>{{ venue.location ?? t("card.dateTbd") }}</dd>
-      </div>
-      <div>
-        <dt>{{ t("card.organizer") }}</dt>
-        <dd>{{ venue.organizer }}</dd>
-      </div>
+      <template v-if="isJournal">
+        <div>
+          <dt>{{ t("card.publisher") }}</dt>
+          <dd>{{ venue.organizer }}</dd>
+        </div>
+        <div>
+          <dt>{{ t("card.submissions") }}</dt>
+          <dd>{{ venue.rollingSubmission ? t("card.rolling") : t("card.notRolling") }}</dd>
+        </div>
+      </template>
+      <template v-else>
+        <div>
+          <dt>{{ t("card.event") }}</dt>
+          <dd>{{ eventDateLabel }}</dd>
+        </div>
+        <div>
+          <dt>{{ t("card.location") }}</dt>
+          <dd>{{ venue.location ?? t("card.dateTbd") }}</dd>
+        </div>
+        <div>
+          <dt>{{ t("card.organizer") }}</dt>
+          <dd>{{ venue.organizer }}</dd>
+        </div>
+      </template>
       <div v-if="venue.trackName" class="wide">
-        <dt>{{ t("card.track") }}</dt>
+        <dt>{{ isJournal ? t("card.specialIssue") : t("card.track") }}</dt>
         <dd>{{ venue.trackName }}</dd>
       </div>
     </dl>
 
-    <section class="cfp">
-      <h3>{{ t("card.deadlines") }}</h3>
+    <section v-if="status === 'unknown' || venue.deadlines.length > 0" class="cfp">
+      <h3>{{ isJournal ? t("card.specialIssueDeadlines") : t("card.deadlines") }}</h3>
       <DeadlineList v-if="status !== 'unknown'" :deadlines="venue.deadlines" :today="today" />
       <template v-else>
         <p class="unknown">{{ t("card.cfpUnknown") }}</p>
@@ -95,6 +108,7 @@ export default defineComponent({
     const isJapanese = computed(() => locale.value === "ja");
 
     const status = computed(() => resolveCfpStatus(props.venue, props.today));
+    const isJournal = computed(() => props.venue.venueType === "journal");
 
     const displayName = computed(() =>
       isJapanese.value && props.venue.nameJa ? props.venue.nameJa : props.venue.nameEn,
@@ -120,7 +134,7 @@ export default defineComponent({
         : (props.venue.notesEn ?? props.venue.notesJa),
     );
 
-    return { t, status, displayName, eventDateLabel, pastPattern, notes };
+    return { t, status, isJournal, displayName, eventDateLabel, pastPattern, notes };
   },
 });
 </script>
@@ -139,6 +153,9 @@ export default defineComponent({
 }
 .venue-card.status-open {
   border-top-color: var(--color-open);
+}
+.venue-card.status-rolling {
+  border-top-color: var(--color-rolling);
 }
 .venue-card.status-closed {
   border-top-color: var(--color-closed);
@@ -181,7 +198,7 @@ h2 a:hover {
   background: var(--color-tag);
   color: var(--color-text);
 }
-.tag-region {
+.tag-strong {
   font-weight: 700;
 }
 .tag-field {
