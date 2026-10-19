@@ -32,7 +32,7 @@
         <dt>{{ t("card.organizer") }}</dt>
         <dd>{{ conference.organizer }}</dd>
       </div>
-      <div v-if="conference.trackName">
+      <div v-if="conference.trackName" class="wide">
         <dt>{{ t("card.track") }}</dt>
         <dd>{{ conference.trackName }}</dd>
       </div>
@@ -196,6 +196,9 @@ h2 a:hover {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 8px 16px;
   margin: 0;
+}
+.facts .wide {
+  grid-column: 1 / -1;
 }
 .facts dt {
   font-size: 0.75rem;

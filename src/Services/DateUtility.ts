@@ -50,11 +50,14 @@ export function formatIsoDateRange(
   if (endIso === null || endIso === startIso) {
     return formatIsoDate(startIso, locale);
   }
+  // Both ends are formatted separately because Intl.formatRange falls back to numeric dates in ja.
   const formatter = new Intl.DateTimeFormat(locale, {
     year: "numeric",
     month: "short",
     day: "numeric",
     timeZone: "UTC",
   });
-  return formatter.formatRange(new Date(`${startIso}T00:00:00Z`), new Date(`${endIso}T00:00:00Z`));
+  const start = formatter.format(new Date(`${startIso}T00:00:00Z`));
+  const end = formatter.format(new Date(`${endIso}T00:00:00Z`));
+  return `${start} – ${end}`;
 }
