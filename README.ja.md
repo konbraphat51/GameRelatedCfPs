@@ -2,11 +2,11 @@
 
 [English version](README.md)
 
-ゲームに関連する国内外の学術会議について、**2027年開催回の論文募集 (CfP)** を一覧できる静的 Web サイトです。GitHub Pages で公開しています: <https://konbraphat51.github.io/GameRelatedCfPs/>
+ゲームに関連する国内外の学術会議とジャーナルについて、**2027年の論文募集 (CfP)** を一覧できる静的 Web サイトです。GitHub Pages で公開しています: <https://konbraphat51.github.io/GameRelatedCfPs/>
 
-- **学会全体がゲームを主題とするもの** (例: CHI PLAY, FDG, DiGRA, ゲームプログラミングワークショップ) と、**ゲームを扱うトラックを持つもの** (例: CHI の "Games and Play" サブコミッティ) を対象とします。ゲーム _理論_ (経済学) と産業系イベント (例: CEDEC, GDC) は対象外です。
-- 判明しているすべての投稿締切と残り日数を表示します。2027年の募集が未公開の学会は **Unknown** と表示し、前回開催時の実績をヒントとして併記します。
-- 各学会を1つ以上の研究**分野** (HCI, AI, ゲーム研究, 教育 など) に分類し、分野・地域 (国内/国際)・CfP 状況・ゲームの扱いで絞り込めます。
+- **学会全体がゲームを主題とするもの** (例: CHI PLAY, FDG, DiGRA, ゲームプログラミングワークショップ) と、**ゲームを扱うトラックを持つもの** (例: ICA のゲーム研究部会) を対象とします。ジャーナルも同様に、ゲーム専門誌 (例: IEEE Transactions on Games, Game Studies) と一般誌のゲーム関連特集号を対象とします。ゲーム _理論_ (経済学) と産業系イベント (例: CEDEC, GDC) は対象外です。
+- 判明しているすべての投稿締切と残り日数を表示します。2027年の募集が未公開のものは **Unknown** と表示して前回の実績を併記し、通年で投稿を受け付けるジャーナルは **随時募集** と表示します。
+- 各学会・ジャーナルを1つ以上の研究**分野** (HCI, AI, ゲーム研究, 教育 など) に分類し、種別 (学会/ジャーナル)・分野・地域 (国内/国際)・CfP 状況・ゲームの扱いで絞り込めます。
 - UI は英語 (既定) と日本語に対応しています。
 
 ## セットアップ (初回)
@@ -46,7 +46,7 @@ pnpm dev
 
 ## データの更新
 
-学会データはすべて [src/Data/Conferences.json](src/Data/Conferences.json) にあります。スキーマ・分野分類・更新手順は [Docs/DataGuide.ja.md](Docs/DataGuide.ja.md) を参照してください。調査メモは [ResearchNotes/](ResearchNotes/) にあります。
+データはすべて [src/Data/Venues.json](src/Data/Venues.json) にあります。スキーマ・分野分類・更新手順は [Docs/DataGuide.ja.md](Docs/DataGuide.ja.md) を参照してください。調査メモは [ResearchNotes/](ResearchNotes/) にあります。
 
 ## ドキュメント
 

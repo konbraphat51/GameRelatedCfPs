@@ -2,11 +2,11 @@
 
 [日本語版はこちら](README.ja.md)
 
-A static website that lists the **2027 calls for papers (CfPs)** of academic conferences related to games, both in Japan and internationally. The site is published on GitHub Pages: <https://konbraphat51.github.io/GameRelatedCfPs/>
+A static website that lists the **2027 calls for papers (CfPs)** of academic conferences and journals related to games, both in Japan and internationally. The site is published on GitHub Pages: <https://konbraphat51.github.io/GameRelatedCfPs/>
 
-- Covers academic conferences whose **whole scope is games** (e.g. CHI PLAY, FDG, DiGRA, Game Programming Workshop) and conferences that have a **dedicated game track** (e.g. the "Games and Play" subcommittee of CHI). Game _theory_ (economics) and industry events (e.g. CEDEC, GDC) are out of scope.
-- Shows every known submission deadline with the remaining days; conferences whose 2027 CfP is not yet published are marked **Unknown**, with a hint from the previous edition.
-- Each conference is classified into one or more research **fields** (HCI, AI, game studies, education, …) and can be filtered by field, region (Japan / international), CfP status and game focus.
+- Covers academic conferences whose **whole scope is games** (e.g. CHI PLAY, FDG, DiGRA, Game Programming Workshop) and conferences that have a **dedicated game track** (e.g. the game studies division of ICA). Journals are covered likewise: game journals (e.g. IEEE Transactions on Games, Game Studies) and game-related special issues of general journals. Game _theory_ (economics) and industry events (e.g. CEDEC, GDC) are out of scope.
+- Shows every known submission deadline with the remaining days; venues whose 2027 CfP is not yet published are marked **Unknown**, with a hint from the previous edition, and journals accepting submissions at any time are marked **Rolling**.
+- Each venue is classified into one or more research **fields** (HCI, AI, game studies, education, …) and can be filtered by type (conference / journal), field, region (Japan / international), CfP status and game focus.
 - UI in English (default) and Japanese.
 
 ## Setup (first time)
@@ -46,7 +46,7 @@ Every push to `main` runs [.github/workflows/DeployPages.yml](.github/workflows/
 
 ## Updating the data
 
-All conference data lives in [src/Data/Conferences.json](src/Data/Conferences.json). See [Docs/DataGuide.md](Docs/DataGuide.md) for the schema, the field taxonomy and the update procedure. Research notes are kept in [ResearchNotes/](ResearchNotes/).
+All venue data lives in [src/Data/Venues.json](src/Data/Venues.json). See [Docs/DataGuide.md](Docs/DataGuide.md) for the schema, the field taxonomy and the update procedure. Research notes are kept in [ResearchNotes/](ResearchNotes/).
 
 ## Documentation
 

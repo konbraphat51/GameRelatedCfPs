@@ -2,9 +2,9 @@
 
 [English version](DataGuide.md)
 
-学会データはすべて [src/Data/Conferences.json](../src/Data/Conferences.json) にあります。`pnpm test` で検証され、不正なデータは CI でデプロイされません。
+学会・ジャーナルのデータはすべて [src/Data/Venues.json](../src/Data/Venues.json) の `venues` キーにあります。`pnpm test` で検証され、不正なデータは CI でデプロイされません。
 
-## 掲載基準
+## 掲載基準 — 学会
 
 以下を**すべて**満たす学会を掲載します。
 
@@ -15,33 +15,43 @@
 
 単独のワークショップは、それ自体の重要度が高く、かつ 2027 年の募集が公開済みの場合のみ掲載します。
 
+## 掲載基準 — ジャーナル
+
+1. 正当で現在も刊行中の、査読付き**学術誌**であること (ハゲタカ誌・休刊誌は対象外)。
+2. **誌全体がゲームを主題とする** (`gameScope: "whole"`) か、一般誌の**ゲーム関連特集号** (`gameScope: "track"`、`trackName` に特集名、特集ごとに1レコード) であること。
+3. 特集号の締切は、調査日から 2027 年末までのものを記録します。
+4. 通年で通常投稿を受け付ける場合は `rollingSubmission: true` とし、締切の近い特集号がない限り **随時募集 (Rolling)** と表示します。定期的な募集でのみ投稿を受け付けるジャーナルは、次回の募集が公開されるまで `rollingSubmission: false`・`cfpPublished: false` とします。
+5. ジャーナルには開催日・開催地はありません (`eventStart`・`eventEnd`・`eventDateText`・`location` は null)。`id` に年は付けません。
+
 ## レコードのスキーマ
 
-| キー                              | 型                            | 備考                                                      |
-| --------------------------------- | ----------------------------- | --------------------------------------------------------- |
-| `id`                              | string                        | 一意な kebab-case の ASCII (例: `chi-play-2027`)          |
-| `acronym`                         | string                        | 表示タイトル (例: `CHI PLAY 2027`)                        |
-| `nameEn` / `nameJa`               | string / string \| null       | 正式名称。`nameJa` は公式の日本語名がある場合のみ         |
-| `organizer`                       | string                        | 主催団体 (英語表記)                                       |
-| `region`                          | `domestic` \| `international` | `domestic` = 日本の学会が国内で開催するもの               |
-| `gameScope`                       | `whole` \| `track`            | 掲載基準を参照                                            |
-| `trackName`                       | string \| null                | `gameScope` が `track` のとき必須                         |
-| `fields`                          | Field[]                       | 1つ以上の研究分野 (下記)                                  |
-| `url` / `cfpUrl`                  | string / string \| null       | 公式サイト (可能なら 2027 年版) と募集ページ              |
-| `eventStart` / `eventEnd`         | ISO 日付 \| null              | 公式発表がある場合のみ                                    |
-| `eventDateText`                   | string \| null                | 「2027年秋」など部分的な情報                              |
-| `location`                        | string \| null                | 英語で「City, Country」                                   |
-| `cfpPublished`                    | boolean                       | `false` の場合 **Unknown** と表示                         |
-| `deadlines`                       | `{label, date, note}[]`       | `cfpPublished` が true のとき必須 (空不可)。`date` は ISO |
-| `pastPatternEn` / `pastPatternJa` | string \| null                | 募集未公開の間に表示する前回実績                          |
-| `notesEn` / `notesJa`             | string \| null                | 短い備考                                                  |
-| `sources`                         | string[]                      | 情報を確認した URL (1つ以上)                              |
+| キー                              | 型                            | 備考                                                    |
+| --------------------------------- | ----------------------------- | ------------------------------------------------------- |
+| `id`                              | string                        | 一意な kebab-case の ASCII (例: `chi-play-2027`)        |
+| `acronym`                         | string                        | 表示タイトル (例: `CHI PLAY 2027`)                      |
+| `nameEn` / `nameJa`               | string / string \| null       | 正式名称。`nameJa` は公式の日本語名がある場合のみ       |
+| `organizer`                       | string                        | 主催団体 (ジャーナルは出版社)。英語表記                 |
+| `region`                          | `domestic` \| `international` | `domestic` = 日本の学会が国内で開催・発行するもの       |
+| `venueType`                       | `conference` \| `journal`     | 種別                                                    |
+| `gameScope`                       | `whole` \| `track`            | 掲載基準を参照                                          |
+| `trackName`                       | string \| null                | ゲームトラック名または特集名。`track` のとき必須        |
+| `fields`                          | Field[]                       | 1つ以上の研究分野 (下記)                                |
+| `url` / `cfpUrl`                  | string / string \| null       | 公式サイト (可能なら 2027 年版) と募集ページ            |
+| `eventStart` / `eventEnd`         | ISO 日付 \| null              | 公式発表がある場合のみ                                  |
+| `eventDateText`                   | string \| null                | 「2027年秋」など部分的な情報                            |
+| `location`                        | string \| null                | 英語で「City, Country」                                 |
+| `rollingSubmission`               | boolean                       | ジャーナルのみ: 通年で通常投稿を受付                    |
+| `cfpPublished`                    | boolean                       | `false` の場合 **Unknown** と表示                       |
+| `deadlines`                       | `{label, date, note}[]`       | `cfpPublished` なら必須 (随時募集を除く)。`date` は ISO |
+| `pastPatternEn` / `pastPatternJa` | string \| null                | 募集未公開の間に表示する前回実績                        |
+| `notesEn` / `notesJa`             | string \| null                | 短い備考                                                |
+| `sources`                         | string[]                      | 情報を確認した URL (1つ以上)                            |
 
 ルートの `lastUpdated` には最新の調査日を記録します。
 
 ## 分野の分類
 
-分野は、その学会がどの研究コミュニティを対象にしているかを表します。分野横断的な学会には**複数**の分野を付けます。CfP に一度だけ登場するトピックではなく、プログラムの相当部分を占める分野をすべて付与してください。
+分野は、その学会・ジャーナルがどの研究コミュニティを対象にしているかを表します。分野横断的なものには**複数**の分野を付けます。CfP に一度だけ登場するトピックではなく、プログラムの相当部分を占める分野をすべて付与してください。
 
 | 分野                | 意味                                                       |
 | ------------------- | ---------------------------------------------------------- |
