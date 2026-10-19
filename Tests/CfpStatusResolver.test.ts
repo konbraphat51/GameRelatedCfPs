@@ -1,7 +1,7 @@
 // Tests for CfP status derivation.
 import { describe, expect, it } from "vitest";
 import { findNextDeadline, resolveCfpStatus } from "../src/Services/CfpStatusResolver";
-import { createVenue } from "./Fixtures";
+import { createJournal, createVenue } from "./Fixtures";
 
 describe("resolveCfpStatus", () => {
   it("returns unknown when the CfP is not published", () => {
@@ -15,6 +15,17 @@ describe("resolveCfpStatus", () => {
 
   it("returns closed after the last deadline", () => {
     expect(resolveCfpStatus(createVenue(), "2027-03-02")).toBe("closed");
+  });
+
+  it("returns rolling for journals without upcoming special-issue deadlines", () => {
+    expect(resolveCfpStatus(createJournal(), "2026-10-19")).toBe("rolling");
+    const passed = createJournal({ deadlines: [{ label: "SI", date: "2026-01-01", note: null }] });
+    expect(resolveCfpStatus(passed, "2026-10-19")).toBe("rolling");
+  });
+
+  it("prefers open when a rolling journal has an upcoming special-issue deadline", () => {
+    const journal = createJournal({ deadlines: [{ label: "SI", date: "2027-01-31", note: null }] });
+    expect(resolveCfpStatus(journal, "2026-10-19")).toBe("open");
   });
 });
 

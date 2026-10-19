@@ -17,10 +17,16 @@ export function isDeadlinePassed(deadline: Deadline, todayIso: string): boolean 
   return deadline.date < todayIso;
 }
 
-/** Resolves the CfP status: unpublished CfPs are "unknown", otherwise open/closed by deadlines. */
+/** Resolves the CfP status; an upcoming deadline wins over rolling submission. */
 export function resolveCfpStatus(venue: Venue, todayIso: string): CfpStatus {
+  if (venue.cfpPublished && findNextDeadline(venue, todayIso) !== null) {
+    return "open";
+  }
+  if (venue.rollingSubmission) {
+    return "rolling";
+  }
   if (!venue.cfpPublished || venue.deadlines.length === 0) {
     return "unknown";
   }
-  return findNextDeadline(venue, todayIso) === null ? "closed" : "open";
+  return "closed";
 }

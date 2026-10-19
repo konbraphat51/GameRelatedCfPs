@@ -1,7 +1,7 @@
 // Tests for filtering and sorting venues.
 import { describe, expect, it } from "vitest";
 import { createEmptyCriteria, filterVenues, sortVenues } from "../src/Services/VenueFilter";
-import { createVenue } from "./Fixtures";
+import { createJournal, createVenue } from "./Fixtures";
 
 const TODAY = "2026-10-19";
 
@@ -49,6 +49,24 @@ describe("filterVenues", () => {
   it("searches the Japanese name case-insensitively", () => {
     const criteria = { ...createEmptyCriteria(), keyword: "未定" };
     expect(filterVenues(all, criteria, TODAY).map((c) => c.id)).toEqual(["unknown"]);
+  });
+});
+
+describe("venue type", () => {
+  const journal = createJournal({ id: "journal", acronym: "D-JOURNAL" });
+
+  it("filters journals", () => {
+    const criteria = { ...createEmptyCriteria(), venueTypes: ["journal" as const] };
+    expect(filterVenues([...all, journal], criteria, TODAY).map((c) => c.id)).toEqual(["journal"]);
+  });
+
+  it("orders rolling journals between open and closed calls", () => {
+    expect(sortVenues([...all, journal], "deadline", TODAY).map((c) => c.id)).toEqual([
+      "open",
+      "journal",
+      "closed",
+      "unknown",
+    ]);
   });
 });
 

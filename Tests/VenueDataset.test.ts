@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { loadVenueDataset } from "../src/Services/VenueRepository";
 import { validateVenue, validateVenues } from "../src/Services/VenueValidator";
 import { isValidIsoDate } from "../src/Services/DateUtility";
-import { createVenue } from "./Fixtures";
+import { createJournal, createVenue } from "./Fixtures";
 
 describe("Venues.json", () => {
   const dataset = loadVenueDataset();
@@ -28,6 +28,11 @@ describe("validateVenue", () => {
 
   it("requires deadlines when the CfP is published", () => {
     expect(validateVenue(createVenue({ deadlines: [] }))).toHaveLength(1);
+  });
+
+  it("accepts rolling journals without deadlines but rejects event dates on journals", () => {
+    expect(validateVenue(createJournal())).toEqual([]);
+    expect(validateVenue(createJournal({ eventStart: "2027-01-01" }))).toHaveLength(1);
   });
 
   it("detects duplicated ids", () => {

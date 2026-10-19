@@ -50,7 +50,7 @@ export default defineComponent({
     const sortKey = ref<SortKey>("deadline");
 
     const statusCounts = computed(() => {
-      const counts: Record<CfpStatus, number> = { open: 0, unknown: 0, closed: 0 };
+      const counts: Record<CfpStatus, number> = { open: 0, rolling: 0, unknown: 0, closed: 0 };
       for (const venue of dataset.venues) {
         counts[resolveCfpStatus(venue, today)] += 1;
       }

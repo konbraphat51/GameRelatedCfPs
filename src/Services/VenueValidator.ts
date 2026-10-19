@@ -1,5 +1,5 @@
 // Validates venue records so data mistakes are caught by tests rather than in the UI.
-import { FIELD_VALUES, type Venue } from "../Types/Venue";
+import { FIELD_VALUES, VENUE_TYPE_VALUES, type Venue } from "../Types/Venue";
 import { isValidIsoDate } from "./DateUtility";
 
 /** Returns human-readable problems found in one venue record (empty when valid). */
@@ -14,6 +14,15 @@ export function validateVenue(venue: Venue): string[] {
   }
   if (!["domestic", "international"].includes(venue.region)) {
     report(`invalid region "${venue.region}"`);
+  }
+  if (!VENUE_TYPE_VALUES.includes(venue.venueType)) {
+    report(`invalid venueType "${venue.venueType}"`);
+  }
+  if (venue.venueType === "journal" && (venue.eventStart !== null || venue.eventEnd !== null)) {
+    report("journals must not have event dates");
+  }
+  if (venue.rollingSubmission && venue.venueType !== "journal") {
+    report("rollingSubmission is only valid for journals");
   }
   if (!["whole", "track"].includes(venue.gameScope)) {
     report(`invalid gameScope "${venue.gameScope}"`);
@@ -38,8 +47,8 @@ export function validateVenue(venue: Venue): string[] {
   if (venue.eventStart && venue.eventEnd && venue.eventEnd < venue.eventStart) {
     report("eventEnd is before eventStart");
   }
-  if (venue.cfpPublished && venue.deadlines.length === 0) {
-    report("cfpPublished requires at least one deadline");
+  if (venue.cfpPublished && !venue.rollingSubmission && venue.deadlines.length === 0) {
+    report("cfpPublished requires a deadline or rolling submission");
   }
   for (const deadline of venue.deadlines) {
     if (!isValidIsoDate(deadline.date)) {
