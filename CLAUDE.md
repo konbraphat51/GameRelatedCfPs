@@ -117,3 +117,13 @@ export default {
 ## Claude Notes
 
 =Claude can freely edit below this line. Use this area to share project knowledge throught different chat sessions. Capture conventions, structure, commands, and gotchas so that agents joining later stay consistent with existing decisions.=
+
+### Project notes
+
+- Static Vue 3 + Vite SPA deployed to GitHub Pages (`base: "/GameRelatedCfPs/"`) by `.github/workflows/DeployPages.yml`.
+- Components use `<script lang="ts">` + `defineComponent` with `setup()` (Options-style SFC shell as requested above).
+- Scope (user decisions): academic conferences only (no CEDEC/GDC/industry), editions held in 2027, game theory excluded; unpublished CfPs show "Unknown".
+- Each conference gets one or more `fields` (taxonomy in `Docs/DataGuide.md`), assigned by Claude's judgement.
+- Data: `src/Data/Conferences.json`; validated by `Tests/ConferenceDataset.test.ts`. Research notes: `ResearchNotes/YYYYMMDD_*.md` (Japanese).
+- TypeScript is pinned to 6.x because vue-tsc does not support TypeScript 7 yet.
+- `CLAUDE.md` is in `.prettierignore`; do not reformat it.
