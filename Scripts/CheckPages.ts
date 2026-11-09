@@ -39,7 +39,11 @@ async function runCheck(ids: string[], showAll: boolean): Promise<void> {
     toIsoDate(new Date()),
     TARGET_YEAR,
   );
-  await writeJsonFile(PENDING_SNAPSHOTS_PATH, results);
+  // A check limited to some ids adds to the pending results instead of replacing them.
+  const previous =
+    ids.length === 0 ? [] : await readJsonFileOr<PageCheckResult[]>(PENDING_SNAPSHOTS_PATH, []);
+  const kept = previous.filter((result) => !ids.includes(result.id));
+  await writeJsonFile(PENDING_SNAPSHOTS_PATH, [...kept, ...results]);
 
   const shown = results
     .filter((result) => showAll || result.change !== "unchanged")
