@@ -25,27 +25,27 @@
 
 ## レコードのスキーマ
 
-| キー                              | 型                            | 備考                                                    |
-| --------------------------------- | ----------------------------- | ------------------------------------------------------- |
-| `id`                              | string                        | 一意な kebab-case の ASCII (例: `chi-play-2027`)        |
-| `acronym`                         | string                        | 表示タイトル (例: `CHI PLAY 2027`)                      |
-| `nameEn` / `nameJa`               | string / string \| null       | 正式名称。`nameJa` は公式の日本語名がある場合のみ       |
-| `organizer`                       | string                        | 主催団体 (ジャーナルは出版社)。英語表記                 |
-| `region`                          | `domestic` \| `international` | `domestic` = 日本の学会が国内で開催・発行するもの       |
-| `venueType`                       | `conference` \| `journal`     | 種別                                                    |
-| `gameScope`                       | `whole` \| `track`            | 掲載基準を参照                                          |
-| `trackName`                       | string \| null                | ゲームトラック名または特集名。`track` のとき必須        |
-| `fields`                          | Field[]                       | 1つ以上の研究分野 (下記)                                |
-| `url` / `cfpUrl`                  | string / string \| null       | 公式サイト (可能なら 2027 年版) と募集ページ            |
-| `eventStart` / `eventEnd`         | ISO 日付 \| null              | 公式発表がある場合のみ                                  |
-| `eventDateText`                   | string \| null                | 「2027年秋」など部分的な情報                            |
-| `location`                        | string \| null                | 英語で「City, Country」                                 |
-| `rollingSubmission`               | boolean                       | ジャーナルのみ: 通年で通常投稿を受付                    |
-| `cfpPublished`                    | boolean                       | `false` の場合 **Unknown** と表示                       |
-| `deadlines`                       | `{label, date, note}[]`       | `cfpPublished` なら必須 (随時募集を除く)。`date` は ISO |
-| `pastPatternEn` / `pastPatternJa` | string \| null                | 募集未公開の間に表示する前回実績                        |
-| `notesEn` / `notesJa`             | string \| null                | 短い備考                                                |
-| `sources`                         | string[]                      | 情報を確認した URL (1つ以上)                            |
+| キー                              | 型                            | 備考                                                                                                 |
+| --------------------------------- | ----------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `id`                              | string                        | 一意な kebab-case の ASCII (例: `chi-play-2027`)                                                     |
+| `acronym`                         | string                        | 表示タイトル (例: `CHI PLAY 2027`)                                                                   |
+| `nameEn` / `nameJa`               | string / string \| null       | 正式名称。`nameJa` は公式の日本語名がある場合のみ                                                    |
+| `organizer`                       | string                        | 主催団体 (ジャーナルは出版社)。英語表記                                                              |
+| `region`                          | `domestic` \| `international` | `domestic` = 日本の学会が国内で開催・発行するもの                                                    |
+| `venueType`                       | `conference` \| `journal`     | 種別                                                                                                 |
+| `gameScope`                       | `whole` \| `track`            | 掲載基準を参照                                                                                       |
+| `trackName`                       | string \| null                | ゲームトラック名または特集名。`track` のとき必須                                                     |
+| `fields`                          | Field[]                       | 1つ以上の研究分野 (下記)                                                                             |
+| `url` / `cfpUrl`                  | string / string \| null       | 公式サイト (可能なら 2027 年版) と募集ページ                                                         |
+| `eventStart` / `eventEnd`         | ISO 日付 \| null              | 公式発表がある場合のみ                                                                               |
+| `eventDateText`                   | string \| null                | 「2027年秋」など部分的な情報                                                                         |
+| `location`                        | string \| null                | 英語で「City, Country」                                                                              |
+| `rollingSubmission`               | boolean                       | ジャーナルのみ: 通年で通常投稿を受付                                                                 |
+| `cfpPublished`                    | boolean                       | `false` の場合 **Unknown** と表示                                                                    |
+| `deadlines`                       | `{label, date, note}[]`       | `cfpPublished` なら必須 (随時募集を除く)。`date` は ISO。投稿締切のみ (採否通知・カメラレディは不可) |
+| `pastPatternEn` / `pastPatternJa` | string \| null                | 募集未公開の間に表示する前回実績                                                                     |
+| `notesEn` / `notesJa`             | string \| null                | 短い備考                                                                                             |
+| `sources`                         | string[]                      | 情報を確認した URL (1つ以上)                                                                         |
 
 ルートの `lastUpdated` には最新の調査日を記録します。
 
@@ -78,10 +78,10 @@
    - `changed` / `new`: 前回確認時から変化した、またはスナップショットがない
    - `stale`: 変化はないが 180 日間確認していない
    - `thin` / `error`: スクリプト描画・アクセス拒否 (出版社の HTTP 403 が多い)・到達不能。手作業か Web 検索で確認
-2. 該当項目の公式サイトを再確認します (2027年版ページと募集ページを優先)。`pnpm data:show <id>` でレコードを表示できます。
+2. 該当項目の公式サイトを再確認します (2027年版ページと募集ページを優先)。`pnpm data:show <id>` でレコードを、`pnpm data:peek <url>` でページの締切関連行を (日本語ページも正しく) 表示できます。
 3. CfP が公開されていたら `cfpPublished: true` にし、`deadlines`・`cfpUrl`・開催日を記入し、`pastPattern*` を null にします。確認したページを `sources` に追加します。
 4. 未掲載の媒体を探します。`pnpm data:known` で掲載済み・除外済みの一覧を確認できます。
-5. 変更をパッチファイルに書き、`pnpm data:patch <file>` で適用します (形式は下記。新しい `lastUpdated` も含める)。
+5. 変更をパッチファイルに書き、`pnpm data:patch <file>` で適用します (形式は下記。新しい `lastUpdated` も含める)。`--dry-run` を付けると書き込まずに検証だけを行います。
 6. `pnpm data:check --accept` で確認済みページを記録し、`pnpm test` を実行してからコミットします。
 
 Claude Code では `/data-update` がこの手順を実行します (README 参照)。
@@ -99,4 +99,4 @@ Claude Code では `/data-update` がこの手順を実行します (README 参�
 
 - 既存 id の `upsert` は指定したキーだけを置き換えます (`sources` は和集合)。新しい id にはレコードスキーマの全キーが必要です。
 - `exclude` は [Maintenance/Excluded.json](../Maintenance/Excluded.json) (調査済みで不採用としたシリーズの一覧) に追記します。`recheck: true` は理由が変わり得るもの (休止中のシリーズ等) を示します。
-- 書き込み前に結果のデータセット全体を検証します。
+- 書き込み前に結果のデータセット全体を検証します。新規レコードの CfP ページが掲載中の項目ですでに参照されている場合 (例: ジャーナルの締切として登録済みの特集号) も拒否します。

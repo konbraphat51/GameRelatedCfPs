@@ -149,7 +149,7 @@ sequenceDiagram
 
 ## データ保守
 
-更新用 CLI はデータセットを LLM のコンテキストに載せないためのものです。`VenueDigest` が簡潔な表示を作り、`VenuePatcher` が小さなパッチをマージして `VenueValidator` で再検証し、`JsonFile` が Prettier 形式で書き込みます。`PageWatcher` (と `PageSignal`) は各ページの CfP に関係する行だけをハッシュ化するため、無関係な更新では再確認が発生しません。PDF はバイト列でハッシュ化します。
+更新用 CLI はデータセットを LLM のコンテキストに載せないためのものです。`VenueDigest` が簡潔な表示を作り、`VenuePatcher` が小さなパッチをマージして `VenueValidator` で再検証し、`JsonFile` が Prettier 形式で書き込みます。`PageFetcher` は正直な User-Agent でページを取得し、`data:check` と `data:peek` で共用します。`PageWatcher` (と `PageSignal`) は各ページの CfP に関係する行だけをハッシュ化するため、無関係な更新では再確認が発生しません。PDF はバイト列でハッシュ化します。
 
 ```mermaid
 sequenceDiagram

@@ -149,7 +149,7 @@ Sorting by "next deadline" lists `open` venues by date, then `rolling`, `closed`
 
 ## Data maintenance
 
-The update CLIs keep the dataset out of the LLM context: `VenueDigest` prints compact views, `VenuePatcher` merges small patches and re-validates them with `VenueValidator`, and `JsonFile` writes Prettier-formatted JSON. `PageWatcher` (with `PageSignal`) fingerprints only the CfP-relevant lines of each page, so unrelated edits do not trigger a review; PDFs are fingerprinted by their bytes.
+The update CLIs keep the dataset out of the LLM context: `VenueDigest` prints compact views, `VenuePatcher` merges small patches and re-validates them with `VenueValidator`, and `JsonFile` writes Prettier-formatted JSON. `PageFetcher` downloads pages with an honest user agent and is shared by `data:check` and `data:peek`. `PageWatcher` (with `PageSignal`) fingerprints only the CfP-relevant lines of each page, so unrelated edits do not trigger a review; PDFs are fingerprinted by their bytes.
 
 ```mermaid
 sequenceDiagram

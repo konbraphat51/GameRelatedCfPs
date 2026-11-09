@@ -25,27 +25,27 @@ Standalone workshops are listed only when they are significant on their own and 
 
 ## Record schema
 
-| Key                               | Type                          | Notes                                                           |
-| --------------------------------- | ----------------------------- | --------------------------------------------------------------- |
-| `id`                              | string                        | Unique kebab-case ASCII, e.g. `chi-play-2027`                   |
-| `acronym`                         | string                        | Display title, e.g. `CHI PLAY 2027`                             |
-| `nameEn` / `nameJa`               | string / string \| null       | Full names; `nameJa` only when an official Japanese name exists |
-| `organizer`                       | string                        | Organising society, or publisher for journals, in English       |
-| `region`                          | `domestic` \| `international` | `domestic` = organised/published in Japan by a Japanese society |
-| `venueType`                       | `conference` \| `journal`     | Kind of venue                                                   |
-| `gameScope`                       | `whole` \| `track`            | See inclusion criteria                                          |
-| `trackName`                       | string \| null                | Game track or special-issue title; required for `track`         |
-| `fields`                          | Field[]                       | One or more research fields (see below)                         |
-| `url` / `cfpUrl`                  | string / string \| null       | Official site (2027 page if available) and CfP page             |
-| `eventStart` / `eventEnd`         | ISO date \| null              | Only when officially announced                                  |
-| `eventDateText`                   | string \| null                | Partial information such as "Autumn 2027"                       |
-| `location`                        | string \| null                | "City, Country" in English                                      |
-| `rollingSubmission`               | boolean                       | Journals only: regular submissions accepted any time            |
-| `cfpPublished`                    | boolean                       | `false` → shown as **Unknown**                                  |
-| `deadlines`                       | `{label, date, note}[]`       | Non-empty when `cfpPublished` unless rolling; `date` is ISO     |
-| `pastPatternEn` / `pastPatternJa` | string \| null                | Hint from the previous edition while the CfP is unpublished     |
-| `notesEn` / `notesJa`             | string \| null                | Short remarks                                                   |
-| `sources`                         | string[]                      | At least one URL the information was verified from              |
+| Key                               | Type                          | Notes                                                                                                                          |
+| --------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                              | string                        | Unique kebab-case ASCII, e.g. `chi-play-2027`                                                                                  |
+| `acronym`                         | string                        | Display title, e.g. `CHI PLAY 2027`                                                                                            |
+| `nameEn` / `nameJa`               | string / string \| null       | Full names; `nameJa` only when an official Japanese name exists                                                                |
+| `organizer`                       | string                        | Organising society, or publisher for journals, in English                                                                      |
+| `region`                          | `domestic` \| `international` | `domestic` = organised/published in Japan by a Japanese society                                                                |
+| `venueType`                       | `conference` \| `journal`     | Kind of venue                                                                                                                  |
+| `gameScope`                       | `whole` \| `track`            | See inclusion criteria                                                                                                         |
+| `trackName`                       | string \| null                | Game track or special-issue title; required for `track`                                                                        |
+| `fields`                          | Field[]                       | One or more research fields (see below)                                                                                        |
+| `url` / `cfpUrl`                  | string / string \| null       | Official site (2027 page if available) and CfP page                                                                            |
+| `eventStart` / `eventEnd`         | ISO date \| null              | Only when officially announced                                                                                                 |
+| `eventDateText`                   | string \| null                | Partial information such as "Autumn 2027"                                                                                      |
+| `location`                        | string \| null                | "City, Country" in English                                                                                                     |
+| `rollingSubmission`               | boolean                       | Journals only: regular submissions accepted any time                                                                           |
+| `cfpPublished`                    | boolean                       | `false` → shown as **Unknown**                                                                                                 |
+| `deadlines`                       | `{label, date, note}[]`       | Non-empty when `cfpPublished` unless rolling; `date` is ISO; submission deadlines only (no notification or camera-ready dates) |
+| `pastPatternEn` / `pastPatternJa` | string \| null                | Hint from the previous edition while the CfP is unpublished                                                                    |
+| `notesEn` / `notesJa`             | string \| null                | Short remarks                                                                                                                  |
+| `sources`                         | string[]                      | At least one URL the information was verified from                                                                             |
 
 `lastUpdated` at the root records the date of the latest research pass.
 
@@ -78,10 +78,10 @@ Fields describe the research communities a venue serves. Interdisciplinary venue
    - `changed` / `new`: the page differs from the last reviewed version, or has no snapshot yet;
    - `stale`: unchanged but not reviewed for 180 days;
    - `thin` / `error`: script-rendered, blocked (often HTTP 403 from publishers) or unreachable — check by hand or by web search.
-2. Re-check those venues on their official sites; prefer the 2027 page and the CfP page. `pnpm data:show <id>` prints a record.
+2. Re-check those venues on their official sites; prefer the 2027 page and the CfP page. `pnpm data:show <id>` prints a record, and `pnpm data:peek <url>` prints a page's deadline-related lines (with correct decoding of Japanese pages).
 3. When a CfP appears, set `cfpPublished: true`, fill `deadlines`, `cfpUrl` and event dates, and clear the `pastPattern*` hints. Add the page you verified to `sources`.
 4. Search for unlisted venues; `pnpm data:known` lists what is already listed or excluded.
-5. Write the changes as a patch file and apply it with `pnpm data:patch <file>` (format below), including the new `lastUpdated`.
+5. Write the changes as a patch file and apply it with `pnpm data:patch <file>` (format below), including the new `lastUpdated`. `--dry-run` validates without writing.
 6. Run `pnpm data:check --accept` to record the reviewed pages, then `pnpm test`, and commit.
 
 With Claude Code, `/data-update` performs these steps (see the README).
@@ -99,4 +99,4 @@ With Claude Code, `/data-update` performs these steps (see the README).
 
 - `upsert` with an existing id replaces only the given keys (`sources` are unioned); a new id needs every key of the record schema.
 - `exclude` appends to [Maintenance/Excluded.json](../Maintenance/Excluded.json), the list of series that were researched and rejected. `recheck: true` marks reasons that may change (e.g. a dormant series).
-- The resulting dataset is validated before anything is written.
+- The resulting dataset is validated before anything is written. A new record is also rejected when its specific CfP page is already cited by a listed venue (e.g. a special issue already tracked as a journal deadline).

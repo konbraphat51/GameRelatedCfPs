@@ -31,20 +31,21 @@ pnpm dev
 
 ## 主要コマンド
 
-| コマンド                    | 用途                                                                       |
-| --------------------------- | -------------------------------------------------------------------------- |
-| `pnpm dev`                  | ホットリロード付き開発サーバを起動                                         |
-| `pnpm build`                | 型チェック後、静的サイトを `dist/` にビルド                                |
-| `pnpm preview`              | 本番ビルドをローカルで配信                                                 |
-| `pnpm test`                 | 単体テスト (データセットの検証を含む) を実行                               |
-| `pnpm lint`                 | ESLint を実行                                                              |
-| `pnpm typecheck`            | `vue-tsc` による型チェック                                                 |
-| `pnpm format`               | Prettier で整形                                                            |
-| `pnpm issue-body`           | 本日時点の情報更新 Issue のチェックリストを出力                            |
-| `pnpm data:check`           | CfP ページが変化した項目を列挙 (LLM 不要)。`--accept` で確認済みとして記録 |
-| `pnpm data:known`           | 掲載中の全項目と除外済みシリーズを1行ずつ出力                              |
-| `pnpm data:show <id>...`    | 指定 id のレコード全体を出力                                               |
-| `pnpm data:patch <file>...` | JSON パッチを検証してデータセットと除外リストに適用                        |
+| コマンド                                | 用途                                                                         |
+| --------------------------------------- | ---------------------------------------------------------------------------- |
+| `pnpm dev`                              | ホットリロード付き開発サーバを起動                                           |
+| `pnpm build`                            | 型チェック後、静的サイトを `dist/` にビルド                                  |
+| `pnpm preview`                          | 本番ビルドをローカルで配信                                                   |
+| `pnpm test`                             | 単体テスト (データセットの検証を含む) を実行                                 |
+| `pnpm lint`                             | ESLint を実行                                                                |
+| `pnpm typecheck`                        | `vue-tsc` による型チェック                                                   |
+| `pnpm format`                           | Prettier で整形                                                              |
+| `pnpm issue-body`                       | 本日時点の情報更新 Issue のチェックリストを出力                              |
+| `pnpm data:check`                       | CfP ページが変化した項目を列挙 (LLM 不要)。`--accept` で確認済みとして記録   |
+| `pnpm data:known`                       | 掲載中の全項目と除外済みシリーズを1行ずつ出力                                |
+| `pnpm data:show <id>...`                | 指定 id のレコード全体を出力                                                 |
+| `pnpm data:patch <file>... [--dry-run]` | JSON パッチを検証してデータセットと除外リストに適用 (`--dry-run` は検証のみ) |
+| `pnpm data:peek <url>... [--all]`       | ページの締切関連行を前後の行付きで出力 (日本語の文字コードにも対応)          |
 
 ## デプロイ
 
@@ -64,7 +65,8 @@ pnpm dev
 
 1. `pnpm data:check` を実行し、CfP ページが変化した (または読み取れなかった) 項目だけを調査します。
 2. 調査は Sonnet のサブエージェント `cfp-checker` (掲載中の項目) と `cfp-scout` (新規探索。[.claude/skills/DataUpdate/Sources.md](.claude/skills/DataUpdate/Sources.md) と [Maintenance/Excluded.json](Maintenance/Excluded.json) で重複調査を回避) に任せます。
-3. 変更は `pnpm data:patch` で書き込むため、200 KB のデータセットを会話に読み込みません。
+3. エージェントは `pnpm data:peek` でページを読み (WebFetch より安価で、Shift_JIS/EUC-JP の日本語ページも正しく読める)、`pnpm data:patch --dry-run` でパッチを自己検証します。
+4. 変更は `pnpm data:patch` で書き込むため、200 KB のデータセットを会話に読み込みません。
 
 更新中の許可確認を省くには、`.claude/settings.local.json` (共有するなら `.claude/settings.json`) に次を追加します。
 
@@ -78,6 +80,7 @@ pnpm dev
       "Bash(pnpm --silent data:show:*)",
       "Bash(pnpm --silent data:check:*)",
       "Bash(pnpm --silent data:patch:*)",
+      "Bash(pnpm --silent data:peek:*)",
       "Bash(pnpm test)"
     ]
   }

@@ -130,4 +130,4 @@ export default {
 - `.github/workflows/DataUpdateIssue.yml` opens a bimonthly data-update issue for konbraphat51; body from `pnpm issue-body` (`Scripts/`, run with tsx).
 - TypeScript is pinned to 6.x because vue-tsc does not support TypeScript 7 yet.
 - `CLAUDE.md` is in `.prettierignore`; do not reformat it.
-- Data updates: use `/data-update` (`.claude/skills/DataUpdate/`). Never Read `src/Data/Venues.json` (~60k tokens); use `pnpm --silent data:known|data:show|data:patch|data:check`. Rejected series go to `Maintenance/Excluded.json`; reviewed page fingerprints to `Maintenance/PageSnapshots.json`.
+- Data updates: use `/data-update` (`.claude/skills/DataUpdate/`). Never Read `src/Data/Venues.json` (~60k tokens); use `pnpm --silent data:known|data:show|data:patch|data:check|data:peek` (`data:peek` instead of WebFetch: it decodes Shift_JIS pages that WebFetch garbles). Rejected series go to `Maintenance/Excluded.json`; reviewed page fingerprints to `Maintenance/PageSnapshots.json`.
