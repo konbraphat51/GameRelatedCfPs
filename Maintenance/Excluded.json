@@ -197,12 +197,6 @@
       "venueType": "journal",
       "reason": "Its 2027 special issues are about game theory",
       "recheck": false
-    },
-    {
-      "name": "Journal of Gaming & Virtual Worlds SI 'Motherplay'",
-      "venueType": "journal",
-      "reason": "Journal already listed; SI not verified on an official page",
-      "recheck": true
     }
   ]
 }
