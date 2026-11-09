@@ -27,6 +27,10 @@ describe("buildUpdateIssueBody", () => {
     expect(body.startsWith(`@${MAINTAINER} `)).toBe(true);
   });
 
+  it("points to the Claude Code skill", () => {
+    expect(body).toContain("run `/data-update`");
+  });
+
   it("lists each venue in the section matching its status", () => {
     expect(body).toContain("### CfP not yet published (Unknown) (1)");
     expect(body).toContain("[UNKNOWN](https://example.org/)");

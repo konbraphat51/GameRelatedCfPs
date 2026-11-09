@@ -43,6 +43,8 @@ export function buildUpdateIssueBody(dataset: VenueDataset, todayIso: string): s
     "",
     "Update `src/Data/Venues.json` following [Docs/DataGuide.md](../blob/main/Docs/DataGuide.md), set `lastUpdated`, run `pnpm test`, and close this issue with the commit.",
     "",
+    "**With Claude Code:** run `/data-update` in this repository. It runs `pnpm data:check` first, so only venues whose CfP page changed are researched; the checklist below is the full list for manual work.",
+    "",
     ...formatSection(
       "CfP not yet published (Unknown)",
       "Check whether the 2027 call, dates or venue have been announced.",
