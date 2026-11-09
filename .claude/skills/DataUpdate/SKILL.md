@@ -1,0 +1,50 @@
+---
+name: data-update
+description: Bimonthly CfP data refresh for this repository — re-check Unknown/changed venues and discover unlisted game-related conferences, journals and special issues at minimal token cost. Use when handling a "Data update: YYYY-MM" issue or when asked to update/refresh Venues.json or look for new CfPs.
+---
+
+# Data update (cost-optimised)
+
+## Cost rules — follow strictly
+
+- **Never Read `src/Data/Venues.json`** (~60k tokens) or the `ResearchNotes/` files. Use the CLIs instead:
+  - `pnpm --silent data:known` — one line per venue + the excluded list (~7k tokens; only the scout needs it).
+  - `pnpm --silent data:show <id>...` — full records for given ids only.
+  - `pnpm --silent data:patch <patch.json>...` — validated writes (see "Patch format").
+  - `pnpm --silent data:check` — LLM-free page-change detection; `--accept` records reviewed pages.
+- **Only research what `data:check` flags.** Pages whose CfP-relevant text is unchanged are skipped (each page is still force-reviewed every 180 days as "stale").
+- **Delegate web research** to the `cfp-checker` and `cfp-scout` subagents (Sonnet). Do not fetch pages in the main context. Subagents write patch files to the scratchpad and reply with one line per venue; do not ask them for more.
+- Run pnpm commands with the **Bash** tool (the README lists a permission allowlist that avoids prompts). Redirect long output to a scratchpad file and read only what you need.
+
+## Procedure
+
+1. `git pull`, then `pnpm --silent data:check > <scratch>/Check.txt` and read that file (a short TSV: `status change id detail url`).
+2. Triage the rows. Review `unknown` and `closed` rows of every change kind, and `open` and `rolling` rows only when the change is `changed`, `new` or `stale`. Skip `open`/`rolling` rows that are `thin`/`error`: they are mostly publishers blocking bots (HTTP 403) or script-rendered pages, and new special issues there are covered by the scout's publisher searches.
+3. Split the review ids into batches of **at most 10** and start one `cfp-checker` per batch **in the same message** (≤ 4 in parallel), each with:
+   `Today is YYYY-MM-DD. Check: id1 id2 ... Write the patch to <scratch>/Patch-N.json.`
+4. In the same message, start one `cfp-scout`:
+   `Today is YYYY-MM-DD. Write the patch to <scratch>/Discovery.json.`
+5. When all agents have replied, write `<scratch>/Date.json` = `{ "lastUpdated": "YYYY-MM-DD" }` and run
+   `pnpm --silent data:patch <scratch>/Patch-*.json <scratch>/Discovery.json <scratch>/Date.json`.
+   If it is rejected, fix only the reported records (edit the patch file) and re-run; nothing is written on rejection.
+6. `pnpm --silent data:check --accept <ids reviewed successfully>` (or plain `--accept` when every review succeeded). Do not accept ids whose review failed, so they are flagged again next time.
+7. `pnpm test`, then commit data, snapshots and excluded list together:
+   `feat(data): bimonthly data update YYYY-MM` with `Closes #<issue>` when there is an issue. Push only if the user asks.
+8. Report to the user in Japanese: counts reviewed / updated / added / excluded, newly published CfPs with their deadlines, and anything marked `needs-human`.
+
+A research note in `ResearchNotes/` is not needed for routine updates; record exclusions through the patch `exclude` list instead.
+
+## Patch format
+
+```json
+{
+  "lastUpdated": "2027-01-01",
+  "upsert": [{ "id": "existing-id", "cfpPublished": true, "deadlines": [...], "sources": ["https://..."] }],
+  "remove": ["cancelled-edition-id"],
+  "exclude": [{ "name": "Series", "venueType": "conference", "reason": "...", "recheck": false }]
+}
+```
+
+- Existing ids: only the given keys are replaced; `sources` are unioned.
+- New ids: every key of the record schema in `Docs/DataGuide.md` is required.
+- The whole dataset is validated (`VenueValidator`) before anything is written.
