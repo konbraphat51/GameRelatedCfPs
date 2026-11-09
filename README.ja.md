@@ -31,16 +31,20 @@ pnpm dev
 
 ## 主要コマンド
 
-| コマンド          | 用途                                            |
-| ----------------- | ----------------------------------------------- |
-| `pnpm dev`        | ホットリロード付き開発サーバを起動              |
-| `pnpm build`      | 型チェック後、静的サイトを `dist/` にビルド     |
-| `pnpm preview`    | 本番ビルドをローカルで配信                      |
-| `pnpm test`       | 単体テスト (データセットの検証を含む) を実行    |
-| `pnpm lint`       | ESLint を実行                                   |
-| `pnpm typecheck`  | `vue-tsc` による型チェック                      |
-| `pnpm format`     | Prettier で整形                                 |
-| `pnpm issue-body` | 本日時点の情報更新 Issue のチェックリストを出力 |
+| コマンド                    | 用途                                                                       |
+| --------------------------- | -------------------------------------------------------------------------- |
+| `pnpm dev`                  | ホットリロード付き開発サーバを起動                                         |
+| `pnpm build`                | 型チェック後、静的サイトを `dist/` にビルド                                |
+| `pnpm preview`              | 本番ビルドをローカルで配信                                                 |
+| `pnpm test`                 | 単体テスト (データセットの検証を含む) を実行                               |
+| `pnpm lint`                 | ESLint を実行                                                              |
+| `pnpm typecheck`            | `vue-tsc` による型チェック                                                 |
+| `pnpm format`               | Prettier で整形                                                            |
+| `pnpm issue-body`           | 本日時点の情報更新 Issue のチェックリストを出力                            |
+| `pnpm data:check`           | CfP ページが変化した項目を列挙 (LLM 不要)。`--accept` で確認済みとして記録 |
+| `pnpm data:known`           | 掲載中の全項目と除外済みシリーズを1行ずつ出力                              |
+| `pnpm data:show <id>...`    | 指定 id のレコード全体を出力                                               |
+| `pnpm data:patch <file>...` | JSON パッチを検証してデータセットと除外リストに適用                        |
 
 ## デプロイ
 
@@ -53,6 +57,32 @@ pnpm dev
 ## データの更新
 
 データはすべて [src/Data/Venues.json](src/Data/Venues.json) にあります。スキーマ・分野分類・更新手順は [Docs/DataGuide.ja.md](Docs/DataGuide.ja.md) を参照してください。調査メモは [ResearchNotes/](ResearchNotes/) にあります。
+
+### Claude Code で更新する
+
+このリポジトリで `/data-update` を実行します (スキル: [.claude/skills/DataUpdate/SKILL.md](.claude/skills/DataUpdate/SKILL.md))。コストを抑えるため、次のように動きます。
+
+1. `pnpm data:check` を実行し、CfP ページが変化した (または読み取れなかった) 項目だけを調査します。
+2. 調査は Sonnet のサブエージェント `cfp-checker` (掲載中の項目) と `cfp-scout` (新規探索。[.claude/skills/DataUpdate/Sources.md](.claude/skills/DataUpdate/Sources.md) と [Maintenance/Excluded.json](Maintenance/Excluded.json) で重複調査を回避) に任せます。
+3. 変更は `pnpm data:patch` で書き込むため、200 KB のデータセットを会話に読み込みません。
+
+更新中の許可確認を省くには、`.claude/settings.local.json` (共有するなら `.claude/settings.json`) に次を追加します。
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(pnpm --silent data:known)",
+      "Bash(pnpm --silent data:show:*)",
+      "Bash(pnpm --silent data:check:*)",
+      "Bash(pnpm --silent data:patch:*)",
+      "Bash(pnpm test)"
+    ]
+  }
+}
+```
 
 ## ドキュメント
 

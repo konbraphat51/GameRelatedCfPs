@@ -31,16 +31,20 @@ pnpm dev
 
 ## Important CLIs
 
-| Command           | Purpose                                             |
-| ----------------- | --------------------------------------------------- |
-| `pnpm dev`        | Start the development server with hot reload        |
-| `pnpm build`      | Type-check and build the static site into `dist/`   |
-| `pnpm preview`    | Serve the production build locally                  |
-| `pnpm test`       | Run unit tests, including validation of the dataset |
-| `pnpm lint`       | Run ESLint                                          |
-| `pnpm typecheck`  | Run `vue-tsc` type checking                         |
-| `pnpm format`     | Format all files with Prettier                      |
-| `pnpm issue-body` | Print the data-update issue checklist for today     |
+| Command                     | Purpose                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------- |
+| `pnpm dev`                  | Start the development server with hot reload                                          |
+| `pnpm build`                | Type-check and build the static site into `dist/`                                     |
+| `pnpm preview`              | Serve the production build locally                                                    |
+| `pnpm test`                 | Run unit tests, including validation of the dataset                                   |
+| `pnpm lint`                 | Run ESLint                                                                            |
+| `pnpm typecheck`            | Run `vue-tsc` type checking                                                           |
+| `pnpm format`               | Format all files with Prettier                                                        |
+| `pnpm issue-body`           | Print the data-update issue checklist for today                                       |
+| `pnpm data:check`           | List venues whose CfP page changed (no LLM needed); `--accept` records reviewed pages |
+| `pnpm data:known`           | One-line digest of every listed venue and every excluded series                       |
+| `pnpm data:show <id>...`    | Print full records for the given ids                                                  |
+| `pnpm data:patch <file>...` | Validate and apply JSON patches to the dataset and the excluded list                  |
 
 ## Deployment
 
@@ -53,6 +57,32 @@ Every push to `main` runs [.github/workflows/DeployPages.yml](.github/workflows/
 ## Updating the data
 
 All venue data lives in [src/Data/Venues.json](src/Data/Venues.json). See [Docs/DataGuide.md](Docs/DataGuide.md) for the schema, the field taxonomy and the update procedure. Research notes are kept in [ResearchNotes/](ResearchNotes/).
+
+### With Claude Code
+
+Run `/data-update` in this repository (skill: [.claude/skills/DataUpdate/SKILL.md](.claude/skills/DataUpdate/SKILL.md)). To keep the cost low it:
+
+1. runs `pnpm data:check`, so only venues whose CfP page changed (or could not be read) are researched;
+2. delegates research to the Sonnet subagents `cfp-checker` (listed venues) and `cfp-scout` (new venues, using [.claude/skills/DataUpdate/Sources.md](.claude/skills/DataUpdate/Sources.md) and [Maintenance/Excluded.json](Maintenance/Excluded.json) to avoid repeats);
+3. writes changes through `pnpm data:patch`, so the 200 KB dataset is never loaded into the conversation.
+
+To skip permission prompts during the update, add this to `.claude/settings.local.json` (or `.claude/settings.json` to share it):
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(pnpm --silent data:known)",
+      "Bash(pnpm --silent data:show:*)",
+      "Bash(pnpm --silent data:check:*)",
+      "Bash(pnpm --silent data:patch:*)",
+      "Bash(pnpm test)"
+    ]
+  }
+}
+```
 
 ## Documentation
 

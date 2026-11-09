@@ -18,7 +18,9 @@ src/
 ├── Data/Venues.json        The dataset
 └── Styles/Global.css       Design tokens (light/dark) and base styles
 Tests/                      Vitest unit tests, including dataset validation
-Scripts/                    Data-update issue body builder (run with tsx)
+Scripts/                    Maintenance CLIs run with tsx (issue body, data:check/known/show/patch)
+Maintenance/                Excluded.json and PageSnapshots.json used by the update CLIs
+.claude/                    Claude Code skill (/data-update) and subagents for the data update
 .github/workflows/          GitHub Pages deployment and the bimonthly update issue
 ```
 
@@ -144,6 +146,28 @@ Sorting by "next deadline" lists `open` venues by date, then `rolling`, `closed`
 ## Update reminder
 
 `Scripts/UpdateIssueBuilder.ts` reuses `CfpStatusResolver` to group venues into re-check checklists. `.github/workflows/DataUpdateIssue.yml` runs `pnpm issue-body` every two months and opens an issue with that output, assigned to konbraphat51.
+
+## Data maintenance
+
+The update CLIs keep the dataset out of the LLM context: `VenueDigest` prints compact views, `VenuePatcher` merges small patches and re-validates them with `VenueValidator`, and `JsonFile` writes Prettier-formatted JSON. `PageWatcher` (with `PageSignal`) fingerprints only the CfP-relevant lines of each page, so unrelated edits do not trigger a review; PDFs are fingerprinted by their bytes.
+
+```mermaid
+sequenceDiagram
+  actor Maintainer as Maintainer / Claude
+  participant Check as pnpm data:check
+  participant Web as Venue sites
+  participant Agents as cfp-checker / cfp-scout
+  participant Patch as pnpm data:patch
+  Maintainer->>Check: run
+  Check->>Web: fetch the CfP page of every venue
+  Check-->>Maintainer: changed / new / stale / thin / error rows
+  Maintainer->>Agents: ids to review, discovery
+  Agents->>Web: verify (a few calls each)
+  Agents-->>Maintainer: patch files + one line per venue
+  Maintainer->>Patch: apply patches
+  Patch-->>Maintainer: validated Venues.json and Excluded.json
+  Maintainer->>Check: --accept (record reviewed snapshots)
+```
 
 ## Localization
 

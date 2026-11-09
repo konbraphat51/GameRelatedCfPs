@@ -74,8 +74,29 @@
 
 ## 更新手順
 
-1. 各学会の公式サイトを再確認します (2027年版ページと募集ページを優先)。
-2. CfP が公開されたら `cfpPublished: true` にし、`deadlines`・`cfpUrl`・開催日を記入し、`pastPattern*` を null にします。
-3. 確認したページを `sources` に追加します。
-4. `lastUpdated` を更新します。
-5. `pnpm test` と `pnpm build` を実行してからコミットします。
+1. `pnpm data:check` を実行します。各項目の `cfpUrl` (なければ `url`) を取得し、CfP に関係する行 (年・締切・投稿などの語を含む行) だけのハッシュを [Maintenance/PageSnapshots.json](../Maintenance/PageSnapshots.json) と比較します。出力された行だけを確認すれば十分です。
+   - `changed` / `new`: 前回確認時から変化した、またはスナップショットがない
+   - `stale`: 変化はないが 180 日間確認していない
+   - `thin` / `error`: スクリプト描画・アクセス拒否 (出版社の HTTP 403 が多い)・到達不能。手作業か Web 検索で確認
+2. 該当項目の公式サイトを再確認します (2027年版ページと募集ページを優先)。`pnpm data:show <id>` でレコードを表示できます。
+3. CfP が公開されていたら `cfpPublished: true` にし、`deadlines`・`cfpUrl`・開催日を記入し、`pastPattern*` を null にします。確認したページを `sources` に追加します。
+4. 未掲載の媒体を探します。`pnpm data:known` で掲載済み・除外済みの一覧を確認できます。
+5. 変更をパッチファイルに書き、`pnpm data:patch <file>` で適用します (形式は下記。新しい `lastUpdated` も含める)。
+6. `pnpm data:check --accept` で確認済みページを記録し、`pnpm test` を実行してからコミットします。
+
+Claude Code では `/data-update` がこの手順を実行します (README 参照)。
+
+### パッチの形式
+
+```json
+{
+  "lastUpdated": "2027-01-01",
+  "upsert": [{ "id": "existing-id", "cfpPublished": true, "deadlines": [], "sources": [] }],
+  "remove": ["cancelled-edition-id"],
+  "exclude": [{ "name": "Series", "venueType": "conference", "reason": "Why", "recheck": false }]
+}
+```
+
+- 既存 id の `upsert` は指定したキーだけを置き換えます (`sources` は和集合)。新しい id にはレコードスキーマの全キーが必要です。
+- `exclude` は [Maintenance/Excluded.json](../Maintenance/Excluded.json) (調査済みで不採用としたシリーズの一覧) に追記します。`recheck: true` は理由が変わり得るもの (休止中のシリーズ等) を示します。
+- 書き込み前に結果のデータセット全体を検証します。

@@ -74,8 +74,29 @@ Fields describe the research communities a venue serves. Interdisciplinary venue
 
 ## Update procedure
 
-1. Re-check each conference's official site; prefer the 2027 page and the CfP page.
-2. When a CfP appears, set `cfpPublished: true`, fill `deadlines`, `cfpUrl` and event dates, and clear the `pastPattern*` hints.
-3. Add the page you verified to `sources`.
-4. Update `lastUpdated`.
-5. Run `pnpm test` and `pnpm build`, then commit.
+1. Run `pnpm data:check`. It fetches each venue's `cfpUrl` (else `url`), keeps only CfP-relevant lines (years, deadline and submission words) and compares their hash with [Maintenance/PageSnapshots.json](../Maintenance/PageSnapshots.json). Only the rows it prints need attention:
+   - `changed` / `new`: the page differs from the last reviewed version, or has no snapshot yet;
+   - `stale`: unchanged but not reviewed for 180 days;
+   - `thin` / `error`: script-rendered, blocked (often HTTP 403 from publishers) or unreachable — check by hand or by web search.
+2. Re-check those venues on their official sites; prefer the 2027 page and the CfP page. `pnpm data:show <id>` prints a record.
+3. When a CfP appears, set `cfpPublished: true`, fill `deadlines`, `cfpUrl` and event dates, and clear the `pastPattern*` hints. Add the page you verified to `sources`.
+4. Search for unlisted venues; `pnpm data:known` lists what is already listed or excluded.
+5. Write the changes as a patch file and apply it with `pnpm data:patch <file>` (format below), including the new `lastUpdated`.
+6. Run `pnpm data:check --accept` to record the reviewed pages, then `pnpm test`, and commit.
+
+With Claude Code, `/data-update` performs these steps (see the README).
+
+### Patch format
+
+```json
+{
+  "lastUpdated": "2027-01-01",
+  "upsert": [{ "id": "existing-id", "cfpPublished": true, "deadlines": [], "sources": [] }],
+  "remove": ["cancelled-edition-id"],
+  "exclude": [{ "name": "Series", "venueType": "conference", "reason": "Why", "recheck": false }]
+}
+```
+
+- `upsert` with an existing id replaces only the given keys (`sources` are unioned); a new id needs every key of the record schema.
+- `exclude` appends to [Maintenance/Excluded.json](../Maintenance/Excluded.json), the list of series that were researched and rejected. `recheck: true` marks reasons that may change (e.g. a dormant series).
+- The resulting dataset is validated before anything is written.

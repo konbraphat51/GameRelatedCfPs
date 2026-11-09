@@ -18,7 +18,9 @@ src/
 ├── Data/Venues.json        データセット
 └── Styles/Global.css       デザイントークン (ライト/ダーク) と基本スタイル
 Tests/                      Vitest 単体テスト (データセット検証を含む)
-Scripts/                    情報更新 Issue の本文生成 (tsx で実行)
+Scripts/                    保守用 CLI (tsx で実行。Issue 本文、data:check/known/show/patch)
+Maintenance/                更新 CLI が使う Excluded.json と PageSnapshots.json
+.claude/                    データ更新用の Claude Code スキル (/data-update) とサブエージェント
 .github/workflows/          GitHub Pages デプロイと2か月ごとの更新 Issue
 ```
 
@@ -144,6 +146,28 @@ sequenceDiagram
 ## 更新リマインダ
 
 `Scripts/UpdateIssueBuilder.ts` は `CfpStatusResolver` を再利用して、状況ごとの再確認チェックリストを作ります。`.github/workflows/DataUpdateIssue.yml` が2か月ごとに `pnpm issue-body` を実行し、その出力を本文として konbraphat51 宛ての Issue を作成します。
+
+## データ保守
+
+更新用 CLI はデータセットを LLM のコンテキストに載せないためのものです。`VenueDigest` が簡潔な表示を作り、`VenuePatcher` が小さなパッチをマージして `VenueValidator` で再検証し、`JsonFile` が Prettier 形式で書き込みます。`PageWatcher` (と `PageSignal`) は各ページの CfP に関係する行だけをハッシュ化するため、無関係な更新では再確認が発生しません。PDF はバイト列でハッシュ化します。
+
+```mermaid
+sequenceDiagram
+  actor Maintainer as 保守者 / Claude
+  participant Check as pnpm data:check
+  participant Web as 各媒体のサイト
+  participant Agents as cfp-checker / cfp-scout
+  participant Patch as pnpm data:patch
+  Maintainer->>Check: 実行
+  Check->>Web: 全項目の CfP ページを取得
+  Check-->>Maintainer: changed / new / stale / thin / error の行
+  Maintainer->>Agents: 確認する id、新規探索
+  Agents->>Web: 少数の呼び出しで確認
+  Agents-->>Maintainer: パッチファイルと1項目1行の結果
+  Maintainer->>Patch: パッチを適用
+  Patch-->>Maintainer: 検証済みの Venues.json と Excluded.json
+  Maintainer->>Check: --accept (確認済みスナップショットを記録)
+```
 
 ## 多言語化
 
