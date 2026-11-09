@@ -35,6 +35,13 @@ describe("validateVenue", () => {
     expect(validateVenue(createJournal({ eventStart: "2027-01-01" }))).toHaveLength(1);
   });
 
+  it("rejects notification and camera-ready dates as deadlines", () => {
+    const deadlines = [{ label: "Acceptance notification", date: "2027-01-01", note: null }];
+    expect(validateVenue(createVenue({ deadlines }))).toEqual([
+      'sample-2027: deadline "Acceptance notification" is not a submission deadline',
+    ]);
+  });
+
   it("detects duplicated ids", () => {
     const record = createVenue();
     expect(validateVenues([record, record])).toContain("sample-2027: duplicated id");

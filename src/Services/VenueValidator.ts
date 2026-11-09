@@ -2,6 +2,9 @@
 import { FIELD_VALUES, VENUE_TYPE_VALUES, type Venue } from "../Types/Venue";
 import { isValidIsoDate } from "./DateUtility";
 
+// Dates that are not submission deadlines (notification, camera-ready) must not be listed.
+const NON_SUBMISSION_LABEL = /notification|acceptance letter|camera[- ]?ready|採否|採択通知|通知/i;
+
 /** Returns human-readable problems found in one venue record (empty when valid). */
 export function validateVenue(venue: Venue): string[] {
   const problems: string[] = [];
@@ -53,6 +56,9 @@ export function validateVenue(venue: Venue): string[] {
   for (const deadline of venue.deadlines) {
     if (!isValidIsoDate(deadline.date)) {
       report(`deadline "${deadline.label}" has invalid date "${deadline.date}"`);
+    }
+    if (NON_SUBMISSION_LABEL.test(deadline.label)) {
+      report(`deadline "${deadline.label}" is not a submission deadline`);
     }
   }
   if (venue.sources.length === 0) {
