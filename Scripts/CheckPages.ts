@@ -1,5 +1,4 @@
 // CLI entry: `pnpm data:check` lists venues whose CfP page changed; `pnpm data:check --accept` records the reviewed state.
-import { createHash } from "node:crypto";
 import { toIsoDate } from "../src/Services/DateUtility";
 import type { VenueDataset } from "../src/Types/Venue";
 import {
@@ -10,11 +9,10 @@ import {
   readJsonFileOr,
   writeJsonFile,
 } from "./JsonFile";
-import { decodeBody } from "./PageSignal";
+import { fetchPage } from "./PageFetcher";
 import {
   checkPages,
   mergeSnapshots,
-  type FetchedPage,
   type PageCheckResult,
   type PageSnapshots,
 } from "./PageWatcher";
@@ -23,28 +21,8 @@ import { selectVenues } from "./VenueDigest";
 // Year whose CfPs the dataset tracks.
 const TARGET_YEAR = "2027";
 
-const USER_AGENT =
-  "Mozilla/5.0 (compatible; GameRelatedCfPs-PageWatcher; +https://github.com/konbraphat51/GameRelatedCfPs)";
-
 // Review order: unknown first, open last.
 const STATUS_PRIORITY = ["unknown", "closed", "rolling", "open"];
-
-/** Downloads a page with a timeout; HTML is decoded (incl. non-UTF-8 Japanese pages), PDFs are hashed. */
-async function fetchPage(url: string): Promise<FetchedPage> {
-  const response = await fetch(url, {
-    headers: { "User-Agent": USER_AGENT, "Accept-Language": "en,ja;q=0.8" },
-    signal: AbortSignal.timeout(20_000),
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
-  }
-  const contentType = response.headers.get("content-type");
-  const body = await response.arrayBuffer();
-  if (/pdf|octet-stream/i.test(contentType ?? "")) {
-    return { binaryHash: createHash("sha256").update(new Uint8Array(body)).digest("hex") };
-  }
-  return { html: decodeBody(body, contentType) };
-}
 
 /** Fetches pages, stores the results as pending and prints those that need review. */
 async function runCheck(ids: string[], showAll: boolean): Promise<void> {

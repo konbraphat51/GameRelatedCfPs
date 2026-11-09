@@ -1,6 +1,6 @@
 // Tests for CfP page change detection.
 import { describe, expect, it } from "vitest";
-import { decodeBody, extractSignalLines } from "../Scripts/PageSignal";
+import { decodeBody, extractSignalContext, extractSignalLines } from "../Scripts/PageSignal";
 import { checkPages, classifyPage, mergeSnapshots } from "../Scripts/PageWatcher";
 import { createVenue } from "./Fixtures";
 
@@ -15,6 +15,13 @@ describe("extractSignalLines", () => {
       "Paper deadline: March 1, 2027",
       "Notification of acceptance: May 2027",
     ]);
+  });
+});
+
+describe("extractSignalContext", () => {
+  it("adds the neighbouring lines so headings stay attached to dates", () => {
+    const html = "<p>Intro</p><p>Section A</p><p>Deadline: 2027-01-10</p><p>Venue</p><p>End</p>";
+    expect(extractSignalContext(html)).toEqual(["Section A", "Deadline: 2027-01-10", "Venue"]);
   });
 });
 

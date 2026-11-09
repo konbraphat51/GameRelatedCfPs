@@ -16,7 +16,8 @@
     "data:patch": "tsx Scripts/ApplyVenuePatch.ts",
     "data:show": "tsx Scripts/ShowVenues.ts",
     "data:known": "tsx Scripts/ListKnownVenues.ts",
-    "data:check": "tsx Scripts/CheckPages.ts"
+    "data:check": "tsx Scripts/CheckPages.ts",
+    "data:peek": "tsx Scripts/PeekPages.ts"
   },
   "dependencies": {
     "vue": "^3.5.44",

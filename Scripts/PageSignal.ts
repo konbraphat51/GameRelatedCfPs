@@ -40,10 +40,27 @@ export function convertHtmlToLines(html: string): string[] {
 
 /** Returns the distinct lines of `html` that look CfP-related, in page order. */
 export function extractSignalLines(html: string): string[] {
-  const lines = convertHtmlToLines(html).filter(
-    (line) => SIGNAL_PATTERN.test(line) && !NOISE_PATTERN.test(line),
-  );
+  const lines = convertHtmlToLines(html).filter(isSignalLine);
   return [...new Set(lines.map((line) => line.slice(0, 300)))];
+}
+
+/** True when a text line looks CfP-related and is not known noise. */
+export function isSignalLine(line: string): boolean {
+  return SIGNAL_PATTERN.test(line) && !NOISE_PATTERN.test(line);
+}
+
+/** Returns CfP-related lines plus `radius` neighbouring lines each, for human/LLM reading. */
+export function extractSignalContext(html: string, radius = 1): string[] {
+  const lines = convertHtmlToLines(html);
+  const keep = new Set<number>();
+  lines.forEach((line, index) => {
+    if (isSignalLine(line)) {
+      for (let offset = -radius; offset <= radius; offset++) {
+        keep.add(index + offset);
+      }
+    }
+  });
+  return lines.filter((_, index) => keep.has(index)).map((line) => line.slice(0, 300));
 }
 
 /** Returns a short, stable hash of `lines`. */
