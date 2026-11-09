@@ -29,6 +29,17 @@ describe("applyVenuePatches", () => {
     expect(rejected.problems[0]).toMatch(/^gamma-2027: new record lacks/);
   });
 
+  it("rejects new records whose CfP page an existing record already cites", () => {
+    const cfpUrl = "https://a.example/special-issue";
+    const dataset = { ...DATASET, venues: [createVenue({ id: "beta-2027", sources: [cfpUrl] })] };
+    const result = applyVenuePatches(dataset, EXCLUDED, [
+      { upsert: [createVenue({ id: "alpha-2027", cfpUrl })] },
+    ]);
+    expect(result.problems).toEqual([
+      "alpha-2027: its CfP page is already used by beta-2027 (duplicate?)",
+    ]);
+  });
+
   it("rejects unknown keys, unknown removals and invalid results", () => {
     const result = applyVenuePatches(DATASET, EXCLUDED, [
       {

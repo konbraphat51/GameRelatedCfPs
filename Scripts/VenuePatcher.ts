@@ -72,6 +72,18 @@ function findUnknownKeys(record: object): string[] {
   return Object.keys(record).filter((key) => !VENUE_KEYS.includes(key as keyof Venue));
 }
 
+/** Returns the id of an existing venue citing the new record's specific CfP page, if any. */
+export function findVenueSharingUrl(venues: readonly Venue[], record: Venue): string | null {
+  const pages = [record.cfpUrl, record.url].filter((url): url is string => {
+    // Site roots (e.g. a society's home page) are legitimately shared.
+    return url !== null && /^https?:\/\/[^/]+\/./.test(url);
+  });
+  const owner = venues.find((venue) =>
+    [venue.url, venue.cfpUrl, ...venue.sources].some((url) => url !== null && pages.includes(url)),
+  );
+  return owner?.id ?? null;
+}
+
 /** Merges a partial record into an existing one; `sources` are unioned instead of replaced. */
 function mergeVenue(existing: Venue, partial: Partial<Venue>): Venue {
   const merged = { ...existing, ...partial };
@@ -108,6 +120,11 @@ export function applyVenuePatches(
       const missingKeys = VENUE_KEYS.filter((key) => !(key in partial));
       if (missingKeys.length > 0) {
         problems.push(`${partial.id}: new record lacks ${missingKeys.join(", ")}`);
+        continue;
+      }
+      const duplicate = findVenueSharingUrl([...venues.values()], partial as Venue);
+      if (duplicate) {
+        problems.push(`${partial.id}: its CfP page is already used by ${duplicate} (duplicate?)`);
         continue;
       }
       venues.set(partial.id, partial as Venue);
