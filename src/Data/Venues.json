@@ -1,6 +1,38 @@
 {
-  "lastUpdated": "2026-10-19",
+  "lastUpdated": "2026-11-10",
   "venues": [
+    {
+      "nameJa": null,
+      "region": "international",
+      "venueType": "conference",
+      "gameScope": "whole",
+      "trackName": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "eventDateText": null,
+      "id": "4ggs-2027",
+      "acronym": "4GGS 2027",
+      "nameEn": "4th Geogames Symposium",
+      "organizer": "Geogames Lab / Universidade Federal de Goiás",
+      "fields": ["game-studies", "design-art", "social-science"],
+      "url": "https://geogameslab.net/",
+      "cfpUrl": "https://easychair.org/cfp/4GGS",
+      "eventStart": "2027-05-30",
+      "eventEnd": "2027-06-02",
+      "location": "Goiás, Brazil",
+      "deadlines": [
+        {
+          "label": "Abstract / short paper submission",
+          "date": "2026-12-20",
+          "note": "00:00 UTC"
+        }
+      ],
+      "notesEn": "Geogames (games grounded in real-world geographic data); theme: cultural heritage and place. Short papers, workshops, game demos, student forum, panels.",
+      "notesJa": "ジオゲーム(実世界の地理データに基づくゲーム)のシンポジウム。2027年のテーマは文化遺産と場所。",
+      "sources": ["https://easychair.org/cfp/4GGS"]
+    },
     {
       "id": "absel-2027",
       "acronym": "ABSEL 2027",
@@ -23,8 +55,8 @@
       "deadlines": [
         {
           "label": "Paper submissions",
-          "date": "2026-10-26",
-          "note": null
+          "date": "2026-11-09",
+          "note": "Extended from 2026-10-26"
         }
       ],
       "pastPatternEn": null,
@@ -698,6 +730,38 @@
         "https://digra.org/conferences/",
         "https://digraconference2026.com/important-dates"
       ]
+    },
+    {
+      "nameJa": null,
+      "region": "international",
+      "venueType": "conference",
+      "gameScope": "whole",
+      "trackName": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "eventDateText": null,
+      "id": "digra-central-asia-2027",
+      "acronym": "DiGRA Central Asia 2027",
+      "nameEn": "DiGRA Central Asia Conference 2027",
+      "organizer": "DiGRA Central Asia",
+      "fields": ["game-studies", "education", "gamification"],
+      "url": "https://digra.org/digra-central-asia-conference-2027-call-for-papers/",
+      "cfpUrl": "https://digra.org/digra-central-asia-conference-2027-call-for-papers/",
+      "eventStart": "2027-02-27",
+      "eventEnd": "2027-02-27",
+      "location": "Tashkent, Uzbekistan",
+      "deadlines": [
+        {
+          "label": "Abstract submission",
+          "date": "2026-11-23",
+          "note": "23:59 UTC+5"
+        }
+      ],
+      "notesEn": "Second conference of the series; English abstracts of 150-300 words reviewed by the programme committee.",
+      "notesJa": "シリーズ第2回。英語の150〜300語アブストラクトを programme committee が審査。",
+      "sources": ["https://digra.org/digra-central-asia-conference-2027-call-for-papers/"]
     },
     {
       "id": "digra-japan-annual-2027",
@@ -1584,6 +1648,38 @@
       ]
     },
     {
+      "nameJa": null,
+      "region": "international",
+      "venueType": "conference",
+      "gameScope": "whole",
+      "trackName": null,
+      "rollingSubmission": false,
+      "cfpPublished": true,
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "eventDateText": null,
+      "id": "gachacon-2027",
+      "acronym": "GachaCon 2027",
+      "nameEn": "GachaCon 2027: Otome Games",
+      "organizer": "School of Creative Media, City University of Hong Kong",
+      "fields": ["game-studies", "social-science"],
+      "url": "https://digra.org/call-for-papers-gachacon-2027-otome-games/",
+      "cfpUrl": "https://digra.org/call-for-papers-gachacon-2027-otome-games/",
+      "eventStart": "2027-02-01",
+      "eventEnd": "2027-02-03",
+      "location": "Hong Kong, China (hybrid)",
+      "deadlines": [
+        {
+          "label": "Extended abstracts",
+          "date": "2026-11-30",
+          "note": null
+        }
+      ],
+      "notesEn": "Hybrid academic conference on otome games, free to attend. Announced on the DiGRA site; the page does not state peer review.",
+      "notesJa": "乙女ゲームをテーマとするハイブリッド学術会議で参加無料。DiGRAサイトで告知。査読の有無は明記なし。",
+      "sources": ["https://digra.org/call-for-papers-gachacon-2027-otome-games/"]
+    },
+    {
       "id": "gala-2027",
       "acronym": "GALA Conf 2027",
       "nameEn": "Games and Learning Alliance Conference 2027",
@@ -2135,9 +2231,9 @@
       "deadlines": [],
       "pastPatternEn": "2026: papers due 2026-01-09, posters/demos due 2026-03-27; symposium 2026-05-13 to 05-15 at Lucasfilm, San Francisco",
       "pastPatternJa": "2026年版: 論文締切 2026-01-09、ポスター/デモ締切 2026-03-27。会期 2026-05-13〜05-15 (サンフランシスコ、Lucasfilm)",
-      "notesEn": "Annual series. As of 2026-10-19, i3dsymposium.org still redirects to the 2026 site and /2027/ returns 404. Papers are published in PACMCGIT.",
-      "notesJa": "毎年開催。2026-10-19時点でi3dsymposium.orgは2026年サイトへ転送され、/2027/は404。論文はPACMCGITに掲載。",
-      "sources": ["https://i3dsymposium.org/2026/"]
+      "notesEn": "Annual series. As of 2026-11-10, i3dsymposium.org/2027/ exists but all dates (deadlines, symposium) are TBD and no CfP is published. Papers are published in PACMCGIT.",
+      "notesJa": "毎年開催。2026-11-10時点でi3dsymposium.org/2027/は公開されているが、締切・会期ともにすべて未定(TBD)でCfPは未発表。論文はPACMCGITに掲載。",
+      "sources": ["https://i3dsymposium.org/2026/", "https://i3dsymposium.org/2027/"]
     },
     {
       "id": "ica-2027-game-studies",
