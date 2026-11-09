@@ -1,0 +1,197 @@
+{
+  "series": [
+    {
+      "name": "ACM CHI",
+      "venueType": "conference",
+      "reason": "Topical subcommittees (incl. Games and Play) removed from 2027; no game track",
+      "recheck": true
+    },
+    {
+      "name": "GECCO",
+      "venueType": "conference",
+      "reason": "None of its tracks is about games",
+      "recheck": false
+    },
+    { "name": "IEEE GCCE", "venueType": "conference", "reason": "No game track", "recheck": false },
+    {
+      "name": "VS-Games",
+      "venueType": "conference",
+      "reason": "Not held since 2019",
+      "recheck": false
+    },
+    {
+      "name": "EAI INTETAIN",
+      "venueType": "conference",
+      "reason": "Last held in 2023",
+      "recheck": false
+    },
+    {
+      "name": "Computers and Games (CG)",
+      "venueType": "conference",
+      "reason": "Held in even years only (CG 2026 already held)",
+      "recheck": false
+    },
+    {
+      "name": "Meaningful Play",
+      "venueType": "conference",
+      "reason": "Biennial; held October 2026, next expected 2028",
+      "recheck": false
+    },
+    {
+      "name": "Philosophy of Computer Games Conference",
+      "venueType": "conference",
+      "reason": "Dormant since 2019",
+      "recheck": true
+    },
+    {
+      "name": "Clash of Realities",
+      "venueType": "conference",
+      "reason": "2022 announced as the final edition",
+      "recheck": false
+    },
+    {
+      "name": "Games+Learning+Society (GLS)",
+      "venueType": "conference",
+      "reason": "Dormant since 2022",
+      "recheck": true
+    },
+    {
+      "name": "Games and Literary Theory",
+      "venueType": "conference",
+      "reason": "Irregular; no 2027 edition announced",
+      "recheck": true
+    },
+    {
+      "name": "Finnish Game Research Days",
+      "venueType": "conference",
+      "reason": "Participation limited to Finland-affiliated researchers",
+      "recheck": false
+    },
+    {
+      "name": "Games for Change Festival",
+      "venueType": "conference",
+      "reason": "Festival, not an academic conference",
+      "recheck": false
+    },
+    {
+      "name": "SCMS",
+      "venueType": "conference",
+      "reason": "No game-specific submission route",
+      "recheck": false
+    },
+    {
+      "name": "DiGRA regional chapters (Chinese / Italia / UK / India)",
+      "venueType": "conference",
+      "reason": "No 2027 edition announced and no regular cycle",
+      "recheck": true
+    },
+    {
+      "name": "遊戯史学会",
+      "venueType": "conference",
+      "reason": "Dissolved at the end of 2018",
+      "recheck": false
+    },
+    {
+      "name": "日本eスポーツ学会 / 日本ボードゲーム学会 etc.",
+      "venueType": "conference",
+      "reason": "No such academic society found",
+      "recheck": false
+    },
+    {
+      "name": "インタラクション / VRSJ大会 / 日本教育工学会 / 情報処理学会全国大会",
+      "venueType": "conference",
+      "reason": "No explicit game track",
+      "recheck": false
+    },
+    {
+      "name": "CSEDU / Mensch und Computer / BEA",
+      "venueType": "conference",
+      "reason": "No explicit game track",
+      "recheck": false
+    },
+    {
+      "name": "NGES",
+      "venueType": "conference",
+      "reason": "New series whose quality could not be verified",
+      "recheck": true
+    },
+    {
+      "name": "ICSGGBL / ICGGBL etc. (WASET)",
+      "venueType": "conference",
+      "reason": "Predatory conference",
+      "recheck": false
+    },
+    {
+      "name": "CEDEC / GDC / BitSummit / Nordic Game / gamescom dev etc.",
+      "venueType": "conference",
+      "reason": "Industry events (academic venues only by user decision)",
+      "recheck": false
+    },
+    {
+      "name": "Computers in Entertainment (ACM)",
+      "venueType": "journal",
+      "reason": "Ceased with Vol. 16 No. 4 (2018)",
+      "recheck": false
+    },
+    {
+      "name": "Journal of Virtual Worlds Research",
+      "venueType": "journal",
+      "reason": "No issues since 2020",
+      "recheck": false
+    },
+    {
+      "name": "Game & Puzzle Design",
+      "venueType": "journal",
+      "reason": "No updates since 2019",
+      "recheck": false
+    },
+    {
+      "name": "Kinephanos",
+      "venueType": "journal",
+      "reason": "Covers popular culture in general, not games specifically",
+      "recheck": false
+    },
+    {
+      "name": "International Journal of Gaming and Computer-Mediated Simulations (IGI)",
+      "venueType": "journal",
+      "reason": "Current publication status could not be confirmed",
+      "recheck": true
+    },
+    {
+      "name": "Journal of Play in Adulthood / Ludic Language Pedagogy",
+      "venueType": "journal",
+      "reason": "Activity status could not be confirmed",
+      "recheck": true
+    },
+    {
+      "name": "CSHPE 'Games & Play in HPE' / Front. Psychol. 'Games for Teaching in PE'",
+      "venueType": "journal",
+      "reason": "Physical-education sport games, not game research",
+      "recheck": false
+    },
+    {
+      "name": "The Lion and the Unicorn 52.2 'Child's Play'",
+      "venueType": "journal",
+      "reason": "Not confirmed on an official page (UPenn CFP list only)",
+      "recheck": false
+    },
+    {
+      "name": "Discover Education / MDPI Trends in Higher Education / AI & Antiquity special issues",
+      "venueType": "journal",
+      "reason": "Unclear indexing status",
+      "recheck": false
+    },
+    {
+      "name": "日本バーチャルリアリティ学会論文誌 特集「食とVR」",
+      "venueType": "journal",
+      "reason": "Games are only one of many subtopics",
+      "recheck": false
+    },
+    {
+      "name": "MDPI Games",
+      "venueType": "journal",
+      "reason": "Its 2027 special issues are about game theory",
+      "recheck": false
+    }
+  ]
+}
