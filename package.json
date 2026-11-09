@@ -15,7 +15,8 @@
     "issue-body": "tsx Scripts/PrintUpdateIssueBody.ts",
     "data:patch": "tsx Scripts/ApplyVenuePatch.ts",
     "data:show": "tsx Scripts/ShowVenues.ts",
-    "data:known": "tsx Scripts/ListKnownVenues.ts"
+    "data:known": "tsx Scripts/ListKnownVenues.ts",
+    "data:check": "tsx Scripts/CheckPages.ts"
   },
   "dependencies": {
     "vue": "^3.5.44",
