@@ -51,9 +51,9 @@ pnpm dev
 
 `main` への push のたびに [.github/workflows/DeployPages.yml](.github/workflows/DeployPages.yml) が lint・テスト・ビルドを行い、GitHub Pages にデプロイします。初回のみリポジトリ設定で **Pages → Build and deployment → Source** を **GitHub Actions** に設定してください。
 
-## 2か月ごとの更新リマインダ
+## 毎月の更新リマインダ
 
-[.github/workflows/DataUpdateIssue.yml](.github/workflows/DataUpdateIssue.yml) が奇数月 (1・3・5・7・9・11月) の1日 00:00 UTC に「Data update: YYYY-MM」Issue を作成します。@konbraphat51 を assignee に設定しメンションするため GitHub から通知が届きます。本文には再確認すべき項目 (Unknown、締切間近、締切済、ジャーナル) がチェックリストで並びます。Actions タブの **Run workflow** から手動実行もできます。公開リポジトリでは 60 日間コミットがないと GitHub がスケジュール実行を停止しますが、各 Issue に従ってデータ更新をコミットすれば継続します。停止した場合は Actions タブから再有効化できます。
+[.github/workflows/DataUpdateIssue.yml](.github/workflows/DataUpdateIssue.yml) が毎月1日 00:00 UTC に「Data update: YYYY-MM」Issue を作成します。@konbraphat51 を assignee に設定しメンションするため GitHub から通知が届きます。本文には再確認すべき項目 (Unknown、締切間近、締切済、ジャーナル) がチェックリストで並びます。Actions タブの **Run workflow** から手動実行もできます。公開リポジトリでは 60 日間コミットがないと GitHub がスケジュール実行を停止しますが、各 Issue に従ってデータ更新をコミットすれば継続します。停止した場合は Actions タブから再有効化できます。
 
 ## データの更新
 

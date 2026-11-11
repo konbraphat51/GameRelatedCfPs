@@ -21,7 +21,7 @@ Tests/                      Vitest 単体テスト (データセット検証を�
 Scripts/                    保守用 CLI (tsx で実行。Issue 本文、data:check/known/show/patch)
 Maintenance/                更新 CLI が使う Excluded.json と PageSnapshots.json
 .claude/                    データ更新用の Claude Code スキル (/data-update) とサブエージェント
-.github/workflows/          GitHub Pages デプロイと2か月ごとの更新 Issue
+.github/workflows/          GitHub Pages デプロイと毎月の更新 Issue
 ```
 
 ## レイヤ
@@ -145,7 +145,7 @@ sequenceDiagram
 
 ## 更新リマインダ
 
-`Scripts/UpdateIssueBuilder.ts` は `CfpStatusResolver` を再利用して、状況ごとの再確認チェックリストを作ります。`.github/workflows/DataUpdateIssue.yml` が2か月ごとに `pnpm issue-body` を実行し、その出力を本文として konbraphat51 宛ての Issue を作成します。
+`Scripts/UpdateIssueBuilder.ts` は `CfpStatusResolver` を再利用して、状況ごとの再確認チェックリストを作ります。`.github/workflows/DataUpdateIssue.yml` が毎月 `pnpm issue-body` を実行し、その出力を本文として konbraphat51 宛ての Issue を作成します。
 
 ## データ保守
 

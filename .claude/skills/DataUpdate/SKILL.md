@@ -1,6 +1,6 @@
 ---
 name: data-update
-description: Bimonthly CfP data refresh for this repository — re-check Unknown/changed venues and discover unlisted game-related conferences, journals and special issues at minimal token cost. Use when handling a "Data update: YYYY-MM" issue or when asked to update/refresh Venues.json or look for new CfPs.
+description: Monthly CfP data refresh for this repository — re-check Unknown/changed venues and discover unlisted game-related conferences, journals and special issues at minimal token cost. Use when handling a "Data update: YYYY-MM" issue or when asked to update/refresh Venues.json or look for new CfPs.
 ---
 
 # Data update (cost-optimised)
@@ -33,7 +33,7 @@ description: Bimonthly CfP data refresh for this repository — re-check Unknown
    Before applying, glance at new records from the scout (`node -e` one-line summary of id/acronym/deadlines, not the whole file) for scope and duplicates. For `needs-human` rows, one `data:peek` of the reported URL often settles it; otherwise leave them for the report.
 6. `pnpm --silent data:check --accept <ids>` with every id reported `unchanged` or `updated`, plus the ids the scout added (run `pnpm --silent data:check <added ids>` first so they have pending snapshots). Do not accept `needs-human` ids, so they are flagged again next time.
 7. `pnpm test`, then commit data, snapshots and excluded list together:
-   `feat(data): bimonthly data update YYYY-MM` with `Closes #<issue>` when there is an issue. Push only if the user asks.
+   `feat(data): monthly data update YYYY-MM` with `Closes #<issue>` when there is an issue. Push only if the user asks.
 8. Report to the user in Japanese: counts reviewed / updated / added / excluded, newly published CfPs with their deadlines, and anything marked `needs-human` or `unverified`, plus the subagent token usage.
 
 A research note in `ResearchNotes/` is not needed for routine updates; record exclusions through the patch `exclude` list instead.

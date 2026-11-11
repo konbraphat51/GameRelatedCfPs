@@ -39,7 +39,7 @@ export function buildUpdateIssueBody(dataset: VenueDataset, todayIso: string): s
     );
 
   return [
-    `@${MAINTAINER} It is time for the bimonthly data update (dataset last researched: ${dataset.lastUpdated}).`,
+    `@${MAINTAINER} It is time for the monthly data update (dataset last researched: ${dataset.lastUpdated}).`,
     "",
     "Update `src/Data/Venues.json` following [Docs/DataGuide.md](../blob/main/Docs/DataGuide.md), set `lastUpdated`, run `pnpm test`, and close this issue with the commit.",
     "",
