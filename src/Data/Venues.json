@@ -80,23 +80,30 @@
       "gameScope": "whole",
       "trackName": null,
       "fields": ["ai", "analog"],
-      "url": "https://icga.org/",
-      "cfpUrl": null,
-      "eventStart": null,
-      "eventEnd": null,
+      "url": "https://icga.org/?page_id=4211",
+      "cfpUrl": "https://icga.org/?page_id=4211",
+      "eventStart": "2027-05-14",
+      "eventEnd": "2027-05-15",
       "eventDateText": null,
-      "location": null,
+      "location": "Taipei, Taiwan",
       "rollingSubmission": false,
-      "cfpPublished": false,
-      "deadlines": [],
-      "pastPatternEn": "2025: papers due 2025-08-10 (extended from 08-01); held online 2025-10-21 to 10-23",
-      "pastPatternJa": "2025年版: 論文締切 2025-08-10 (08-01から延長)。オンライン開催 2025-10-21〜10-23",
-      "notesEn": "ACG is held in odd years and its sister conference, Computers and Games (CG), in even years. CG 2026 took place 2026-06-19 to 06-20 in Maastricht, so ACG would next be due in 2027. No 2027 announcement found on icga.org as of 2026-10-19.",
-      "notesJa": "ACGは奇数年、姉妹会議のComputers and Games (CG) は偶数年に開催。CG 2026は2026-06-19〜20にマーストリヒトで開催済みのため、次のACGは2027年の見込み。2026-10-19時点でicga.orgに2027年の告知なし。",
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Paper submission",
+          "date": "2027-01-15",
+          "note": "23:59 AoE (UTC-12)"
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "On-site in Taipei. Proceedings planned as a Springer LNCS volume. Held in odd years; Computers and Games (CG) is held in even years.",
+      "notesJa": "台北での現地開催。論文集はSpringer LNCSの1巻として刊行予定。ACGは奇数年、Computers and Games (CG) は偶数年に開催。",
       "sources": [
         "https://icga.org/",
         "https://easychair.org/cfp/ACG_2025",
-        "https://easychair.org/cfp/CG_2026"
+        "https://easychair.org/cfp/CG_2026",
+        "https://icga.org/?page_id=4211"
       ]
     },
     {
