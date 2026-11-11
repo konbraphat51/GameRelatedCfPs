@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-10",
+  "lastUpdated": "2026-11-11",
   "venues": [
     {
       "nameJa": null,
@@ -775,22 +775,59 @@
       "trackName": null,
       "fields": ["game-studies", "design-art", "engineering", "education", "social-science"],
       "url": "https://digrajapan.org/",
-      "cfpUrl": null,
+      "cfpUrl": "https://digrajapan.org/?p=11597",
       "eventStart": null,
       "eventEnd": null,
       "eventDateText": "Expected Feb/Mar 2027 (not yet announced)",
       "location": null,
       "rollingSubmission": false,
-      "cfpPublished": false,
-      "deadlines": [],
-      "pastPatternEn": "16th (2026-02-21/22, Kindai Univ. Higashi-Osaka): CfP posted 2025-11-03; peer-reviewed (special) session paper 2025-12-09; abstract 2026-01-08; presentation application 2026-01-15; final paper 2026-01-30.",
-      "pastPatternJa": "第16回（2026-02-21/22・近畿大学東大阪キャンパス）: CFP公開 2025-11-03、特選セッション査読用原稿 2025-12-09、概要提出 2026-01-08、発表申込 2026-01-15、最終原稿 2026-01-30。",
-      "notesEn": "As of 2026-10-19 no announcement of the 17th annual conference found on the society site.",
-      "notesJa": "2026-10-19時点で学会サイトに第17回年次大会の告知なし。",
+      "cfpPublished": true,
+      "deadlines": [
+        {
+          "label": "Selected session: draft paper",
+          "date": "2026-12-18",
+          "note": null
+        },
+        {
+          "label": "Organized session: application",
+          "date": "2026-12-18",
+          "note": null
+        },
+        {
+          "label": "General / interactive session: application",
+          "date": "2027-01-08",
+          "note": null
+        },
+        {
+          "label": "Lightning talk: application",
+          "date": "2027-01-15",
+          "note": null
+        },
+        {
+          "label": "Selected session: final paper",
+          "date": "2027-01-29",
+          "note": null
+        },
+        {
+          "label": "General / organized session: draft paper",
+          "date": "2027-01-29",
+          "note": null
+        },
+        {
+          "label": "Lightning talk: presentation material",
+          "date": "2027-02-06",
+          "note": null
+        }
+      ],
+      "pastPatternEn": null,
+      "pastPatternJa": null,
+      "notesEn": "CfP published (announcement page captured by the user on 2026-11-11 because the site returned HTTP 503 to bots). Event dates and venue not confirmed yet.",
+      "notesJa": "CFP公開済み（サイトがボットに503を返したため、2026-11-11にユーザー提供の告知ページ画像で確認）。開催日・会場は未確認。",
       "sources": [
         "https://digrajapan.org/",
         "https://digrajapan.org/?page_id=10984",
-        "https://digrajapan.org/?s=%E5%B9%B4%E6%AC%A1%E5%A4%A7%E4%BC%9A"
+        "https://digrajapan.org/?s=%E5%B9%B4%E6%AC%A1%E5%A4%A7%E4%BC%9A",
+        "https://digrajapan.org/?p=11597"
       ]
     },
     {
