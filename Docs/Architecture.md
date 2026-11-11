@@ -21,7 +21,7 @@ Tests/                      Vitest unit tests, including dataset validation
 Scripts/                    Maintenance CLIs run with tsx (issue body, data:check/known/show/patch)
 Maintenance/                Excluded.json and PageSnapshots.json used by the update CLIs
 .claude/                    Claude Code skill (/data-update) and subagents for the data update
-.github/workflows/          GitHub Pages deployment and the bimonthly update issue
+.github/workflows/          GitHub Pages deployment and the monthly update issue
 ```
 
 ## Layers
@@ -145,7 +145,7 @@ Sorting by "next deadline" lists `open` venues by date, then `rolling`, `closed`
 
 ## Update reminder
 
-`Scripts/UpdateIssueBuilder.ts` reuses `CfpStatusResolver` to group venues into re-check checklists. `.github/workflows/DataUpdateIssue.yml` runs `pnpm issue-body` every two months and opens an issue with that output, assigned to konbraphat51.
+`Scripts/UpdateIssueBuilder.ts` reuses `CfpStatusResolver` to group venues into re-check checklists. `.github/workflows/DataUpdateIssue.yml` runs `pnpm issue-body` every month and opens an issue with that output, assigned to konbraphat51.
 
 ## Data maintenance
 

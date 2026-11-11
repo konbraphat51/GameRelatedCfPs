@@ -1,9 +1,9 @@
-# Opens a data-update issue every two months (1st of Jan/Mar/May/Jul/Sep/Nov) and assigns the maintainer.
-name: Bimonthly data update issue
+# Opens a data-update issue every month (1st of the month) and assigns the maintainer.
+name: Monthly data update issue
 
 on:
   schedule:
-    - cron: "0 0 1 */2 *"
+    - cron: "0 0 1 * *"
   workflow_dispatch:
 
 permissions:

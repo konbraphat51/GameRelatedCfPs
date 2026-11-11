@@ -127,7 +127,7 @@ export default {
 - Each conference gets one or more `fields` (taxonomy in `Docs/DataGuide.md`), assigned by Claude's judgement.
 - Data: `src/Data/Venues.json`; validated by `Tests/VenueDataset.test.ts`. Research notes: `ResearchNotes/YYYYMMDD_*.md` (Japanese).
 - Favourites are stored in the `game-related-cfps-favorites` cookie (user asked for cookies) via `src/Services/FavoriteCookie.ts`.
-- `.github/workflows/DataUpdateIssue.yml` opens a bimonthly data-update issue for konbraphat51; body from `pnpm issue-body` (`Scripts/`, run with tsx).
+- `.github/workflows/DataUpdateIssue.yml` opens a monthly data-update issue for konbraphat51; body from `pnpm issue-body` (`Scripts/`, run with tsx).
 - TypeScript is pinned to 6.x because vue-tsc does not support TypeScript 7 yet.
 - `CLAUDE.md` is in `.prettierignore`; do not reformat it.
 - Data updates: use `/data-update` (`.claude/skills/DataUpdate/`). Never Read `src/Data/Venues.json` (~60k tokens); use `pnpm --silent data:known|data:show|data:patch|data:check|data:peek` (`data:peek` instead of WebFetch: it decodes Shift_JIS pages that WebFetch garbles). Rejected series go to `Maintenance/Excluded.json`; reviewed page fingerprints to `Maintenance/PageSnapshots.json`.

@@ -51,9 +51,9 @@ pnpm dev
 
 Every push to `main` runs [.github/workflows/DeployPages.yml](.github/workflows/DeployPages.yml), which lints, tests, builds and deploys to GitHub Pages. In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions** once.
 
-## Bimonthly update reminder
+## Monthly update reminder
 
-[.github/workflows/DataUpdateIssue.yml](.github/workflows/DataUpdateIssue.yml) opens a "Data update: YYYY-MM" issue at 00:00 UTC on the 1st of every odd month (Jan, Mar, May, Jul, Sep, Nov). It is assigned to and mentions @konbraphat51, so GitHub sends a notification, and it lists every venue to re-check (Unknown calls, calls closing soon, passed calls, journals). It can also be run manually from the Actions tab (**Run workflow**). GitHub pauses scheduled workflows in public repositories after 60 days without commits; committing the data update that each issue asks for keeps the schedule active, and a paused workflow can be re-enabled from the Actions tab.
+[.github/workflows/DataUpdateIssue.yml](.github/workflows/DataUpdateIssue.yml) opens a "Data update: YYYY-MM" issue at 00:00 UTC on the 1st of every month. It is assigned to and mentions @konbraphat51, so GitHub sends a notification, and it lists every venue to re-check (Unknown calls, calls closing soon, passed calls, journals). It can also be run manually from the Actions tab (**Run workflow**). GitHub pauses scheduled workflows in public repositories after 60 days without commits; committing the data update that each issue asks for keeps the schedule active, and a paused workflow can be re-enabled from the Actions tab.
 
 ## Updating the data
 
